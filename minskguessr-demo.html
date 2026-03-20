@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MinskGuessr</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Inter:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#0e0f11;--surface:#161819;--surface2:#1f2124;--border:rgba(255,255,255,0.08);--accent:#d4f04e;--text:#f0f0ee;--text-dim:#7a7a72;--red:#f05a4f;--green:#4fd88a;--radius:12px}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:hidden;display:flex;flex-direction:column}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;z-index:10}
+  .logo{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;letter-spacing:-0.5px;color:var(--accent)}
+  .logo span{color:var(--text-dim);font-weight:400}
+  .round-indicator{display:flex;gap:6px;align-items:center}
+  .round-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:1.5px solid var(--text-dim);transition:all 0.3s}
+  .round-dot.active{background:var(--accent);border-color:var(--accent)}
+  .round-dot.done{background:var(--text-dim);border-color:var(--text-dim)}
+  .score-display{font-family:'Unbounded',sans-serif;font-size:14px;color:var(--text-dim)}
+  .score-display span{color:var(--accent);font-size:16px}
+  .game-area{flex:1;position:relative;overflow:hidden}
+  #panorama{width:100%;height:100%}
+  .map-panel{position:absolute;bottom:20px;right:20px;width:340px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);z-index:100}
+  .map-header{padding:10px 14px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--text-dim)}
+  .map-hint{font-size:11px;color:var(--text-dim)}
+  .map-hint.placed{color:var(--green)}
+  #map{width:100%;height:220px;cursor:crosshair}
+  .map-footer{padding:10px 14px;display:flex;gap:8px;align-items:center;background:var(--surface2);border-top:1px solid var(--border)}
+  .btn{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;transition:all 0.15s;letter-spacing:0.3px}
+  .btn-primary{background:var(--accent);color:#0e0f11;flex:1}
+  .btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px)}
+  .btn-primary:disabled{background:var(--surface2);color:var(--text-dim);cursor:not-allowed;transform:none;border:1px solid var(--border)}
+  .btn-secondary{background:transparent;color:var(--text-dim);border:1px solid var(--border);font-size:11px;padding:8px 10px}
+  .result-overlay{position:absolute;inset:0;background:rgba(14,15,17,0.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity 0.4s ease}
+  .result-overlay.visible{opacity:1;pointer-events:all}
+  .result-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px 40px;text-align:center;max-width:420px;width:90%;transform:translateY(20px);transition:transform 0.4s ease;box-shadow:0 24px 80px rgba(0,0,0,0.6)}
+  .result-overlay.visible .result-card{transform:translateY(0)}
+  .result-map-container{width:100%;height:200px;border-radius:10px;overflow:hidden;margin-bottom:20px;border:1px solid var(--border)}
+  #result-map{width:100%;height:100%}
+  .score-big{font-family:'Unbounded',sans-serif;font-size:52px;font-weight:700;line-height:1;margin-bottom:4px}
+  .score-big.great{color:var(--accent)}.score-big.good{color:var(--green)}.score-big.ok{color:#f0a04f}.score-big.bad{color:var(--red)}
+  .score-label{font-size:13px;color:var(--text-dim);margin-bottom:16px}
+  .dist-label{font-size:14px;color:var(--text-dim);margin-bottom:24px}
+  .dist-label strong{color:var(--text);font-weight:500}
+  .loading-screen{position:absolute;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:300;transition:opacity 0.5s ease}
+  .loading-screen.hidden{opacity:0;pointer-events:none}
+  .loading-logo{font-family:'Unbounded',sans-serif;font-size:28px;font-weight:700;color:var(--accent)}
+  .loading-sub{font-size:13px;color:var(--text-dim)}
+  .loading-dots{display:flex;gap:6px}
+  .loading-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:bounce 1.4s infinite ease-in-out}
+  .loading-dot:nth-child(2){animation-delay:0.2s}.loading-dot:nth-child(3){animation-delay:0.4s}
+  @keyframes bounce{0%,80%,100%{transform:scale(0.6);opacity:0.4}40%{transform:scale(1);opacity:1}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">Minsk<span>Guessr</span></div>
+  <div class="round-indicator" id="round-dots"></div>
+  <div class="score-display">Очки: <span id="total-score">0</span></div>
+</div>
+
+<div class="game-area">
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-logo">MinskGuessr</div>
+    <div class="loading-sub" id="loading-sub">Загружаем...</div>
+    <div class="loading-dots"><div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div></div>
+  </div>
+
+  <div id="panorama"></div>
+
+  <div class="map-panel">
+    <div class="map-header">
+      <span>📍 Где это?</span>
+      <span class="map-hint" id="map-hint">Кликни на карту</span>
+    </div>
+    <div id="map"></div>
+    <div class="map-footer">
+      <button class="btn btn-secondary" onclick="clearGuess()">✕</button>
+      <button class="btn btn-primary" id="guess-btn" disabled onclick="submitGuess()">Подтвердить →</button>
+    </div>
+  </div>
+
+  <div class="result-overlay" id="result-overlay">
+    <div class="result-card" id="result-card">
+      <div class="result-map-container"><div id="result-map"></div></div>
+      <div class="score-big" id="round-score">0</div>
+      <div class="score-label" id="score-label">очков</div>
+      <div class="dist-label" id="dist-label">Расстояние: <strong>—</strong></div>
+      <button class="btn btn-primary" style="width:100%" onclick="nextRound()">Следующий раунд →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Базовые локации — будут заменены на locations.json после сбора
+const LOCATIONS = [
+  {id:1,lat:53.9045,lng:27.5615,panoId:null},
+  {id:2,lat:53.8994,lng:27.5589,panoId:null},
+  {id:3,lat:53.9041,lng:27.5652,panoId:null},
+  {id:4,lat:53.9083,lng:27.5495,panoId:null},
+  {id:5,lat:53.8952,lng:27.5613,panoId:null},
+  {id:6,lat:53.9037,lng:27.5785,panoId:null},
+  {id:7,lat:53.8889,lng:27.5490,panoId:null},
+  {id:8,lat:53.8961,lng:27.5432,panoId:null},
+  {id:9,lat:53.9190,lng:27.5668,panoId:null},
+  {id:10,lat:53.9310,lng:27.5900,panoId:null},
+  {id:11,lat:53.8770,lng:27.5530,panoId:null},
+  {id:12,lat:53.9120,lng:27.6010,panoId:null},
+  {id:13,lat:53.8860,lng:27.6200,panoId:null},
+  {id:14,lat:53.9250,lng:27.5120,panoId:null},
+  {id:15,lat:53.9080,lng:27.4930,panoId:null},
+  {id:16,lat:53.8720,lng:27.5780,panoId:null},
+  {id:17,lat:53.9510,lng:27.5610,panoId:null},
+  {id:18,lat:53.8640,lng:27.5080,panoId:null},
+  {id:19,lat:53.9400,lng:27.6500,panoId:null},
+  {id:20,lat:53.9050,lng:27.4680,panoId:null},
+];
+
+const ROUNDS = 5;
+const GKEY = 'AIzaSyCLsKut8hOnE1Pc_d6xjsZ7xMpVrsFScPc';
+
+let state = {
+  locations: [], gameLocations: [], currentRound: 0, totalScore: 0,
+  guessMarker: null, guessCoords: null, guessMap: null,
+  svPanorama: null, svService: null, resultMap: null,
+};
+
+async function initMap() {
+  // Try to load locations.json first
+  try {
+    const resp = await fetch('locations.json');
+    if (resp.ok) state.locations = await resp.json();
+    else state.locations = LOCATIONS;
+  } catch(e) { state.locations = LOCATIONS; }
+
+  state.svService = new google.maps.StreetViewService();
+  buildRoundDots();
+  startGame();
+}
+
+function startGame() {
+  const shuffled = [...state.locations].sort(() => Math.random() - 0.5);
+  state.gameLocations = shuffled.slice(0, Math.min(ROUNDS, shuffled.length));
+  state.currentRound = 0;
+  state.totalScore = 0;
+  document.getElementById('total-score').textContent = '0';
+  startRound();
+}
+
+function startRound() {
+  updateRoundDots();
+  document.getElementById('loading-screen').classList.remove('hidden');
+  document.getElementById('loading-sub').textContent = 'Загружаем панораму...';
+  state.guessCoords = null;
+  document.getElementById('guess-btn').disabled = true;
+  document.getElementById('map-hint').textContent = 'Кликни на карту';
+  document.getElementById('map-hint').className = 'map-hint';
+
+  const loc = state.gameLocations[state.currentRound];
+
+  // Init guess map once
+  if (!state.guessMap) initGuessMap();
+  else if (state.guessMarker) { state.guessMarker.setMap(null); state.guessMarker = null; }
+
+  // Load panorama
+  loadPanorama(loc);
+}
+
+function loadPanorama(loc) {
+  const panoEl = document.getElementById('panorama');
+
+  const showPano = (panoId) => {
+    if (state.svPanorama) {
+      state.svPanorama.setPano(panoId);
+      state.svPanorama.setPov({ heading: Math.random() * 360, pitch: 0 });
+    } else {
+      state.svPanorama = new google.maps.StreetViewPanorama(panoEl, {
+        pano: panoId,
+        pov: { heading: Math.random() * 360, pitch: 0 },
+        zoom: 0,
+        disableDefaultUI: true,
+        showRoadLabels: false,
+        linksControl: false,
+        panControl: true,
+        zoomControl: true,
+        fullscreenControl: false,
+        motionTracking: false,
+        motionTrackingControl: false,
+      });
+    }
+    setTimeout(() => document.getElementById('loading-screen').classList.add('hidden'), 600);
+  };
+
+  if (loc.panoId) {
+    showPano(loc.panoId);
+  } else {
+    // Find nearest panorama
+    state.svService.getPanorama({ location: { lat: loc.lat, lng: loc.lng }, radius: 200 }, (data, status) => {
+      if (status === 'OK') {
+        showPano(data.location.pano);
+      } else {
+        // No panorama — show coords hint
+        panoEl.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--surface);flex-direction:column;gap:12px"><div style="font-size:40px">📍</div><div style="font-size:13px;color:var(--text-dim)">Street View недоступен для этой точки</div><div style="font-size:12px;color:var(--text-dim);opacity:0.6">Поставь метку наугад</div></div>';
+        setTimeout(() => document.getElementById('loading-screen').classList.add('hidden'), 400);
+      }
+    });
+  }
+}
+
+function initGuessMap() {
+  const mapStyles = [
+    {elementType:'geometry',stylers:[{color:'#1f2124'}]},
+    {elementType:'labels.text.fill',stylers:[{color:'#7a7a72'}]},
+    {elementType:'labels.text.stroke',stylers:[{color:'#0e0f11'}]},
+    {featureType:'road',elementType:'geometry',stylers:[{color:'#2c2f33'}]},
+    {featureType:'water',elementType:'geometry',stylers:[{color:'#161819'}]},
+    {featureType:'poi',stylers:[{visibility:'off'}]},
+    {featureType:'transit',stylers:[{visibility:'off'}]},
+  ];
+
+  state.guessMap = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 53.904, lng: 27.562 }, zoom: 10,
+    disableDefaultUI: true, zoomControl: true, styles: mapStyles,
+    restriction: { latLngBounds: { north:54.05, south:53.75, east:27.85, west:27.30 }, strictBounds: false },
+  });
+
+  state.guessMap.addListener('click', e => {
+    placeGuessMarker({ lat: e.latLng.lat(), lng: e.latLng.lng() });
+  });
+}
+
+function placeGuessMarker(coords) {
+  state.guessCoords = coords;
+  if (state.guessMarker) state.guessMarker.setMap(null);
+  state.guessMarker = new google.maps.Marker({
+    position: coords, map: state.guessMap,
+    icon: { path: google.maps.SymbolPath.CIRCLE, scale: 10, fillColor: '#f05a4f', fillOpacity: 1, strokeColor: '#fff', strokeWeight: 2.5 },
+  });
+  document.getElementById('guess-btn').disabled = false;
+  document.getElementById('map-hint').textContent = 'Метка поставлена ✓';
+  document.getElementById('map-hint').className = 'map-hint placed';
+}
+
+function clearGuess() {
+  if (state.guessMarker) { state.guessMarker.setMap(null); state.guessMarker = null; }
+  state.guessCoords = null;
+  document.getElementById('guess-btn').disabled = true;
+  document.getElementById('map-hint').textContent = 'Кликни на карту';
+  document.getElementById('map-hint').className = 'map-hint';
+}
+
+function haversineKm(lat1,lng1,lat2,lng2) {
+  const R=6371,dLat=(lat2-lat1)*Math.PI/180,dLng=(lng2-lng1)*Math.PI/180;
+  const a=Math.sin(dLat/2)**2+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+
+function calcScore(d) { return Math.max(0, Math.round(5000 * Math.exp(-d / 0.35))); }
+
+function submitGuess() {
+  if (!state.guessCoords) return;
+  const loc = state.gameLocations[state.currentRound];
+  const dist = haversineKm(state.guessCoords.lat, state.guessCoords.lng, loc.lat, loc.lng);
+  const score = calcScore(dist);
+  state.totalScore += score;
+  document.getElementById('total-score').textContent = state.totalScore.toLocaleString('ru');
+  showResult(loc, dist, score);
+}
+
+function showResult(loc, distKm, score) {
+  const scoreEl = document.getElementById('round-score');
+  scoreEl.textContent = score.toLocaleString('ru');
+  scoreEl.className = 'score-big ' + (score>=4000?'great':score>=2500?'good':score>=1000?'ok':'bad');
+  document.getElementById('score-label').textContent = 'очков за раунд';
+  const distText = distKm < 1 ? Math.round(distKm*1000)+' м' : distKm.toFixed(2)+' км';
+  document.getElementById('dist-label').innerHTML = 'Расстояние: <strong>' + distText + '</strong>';
+
+  // Result map
+  if (state.resultMap) {
+    state.resultMap.setCenter({ lat: (state.guessCoords.lat+loc.lat)/2, lng: (state.guessCoords.lng+loc.lng)/2 });
+  } else {
+    const mapStyles = [{elementType:'geometry',stylers:[{color:'#1f2124'}]},{elementType:'labels.text.fill',stylers:[{color:'#7a7a72'}]},{featureType:'road',elementType:'geometry',stylers:[{color:'#2c2f33'}]},{featureType:'water',elementType:'geometry',stylers:[{color:'#161819'}]},{featureType:'poi',stylers:[{visibility:'off'}]}];
+    state.resultMap = new google.maps.Map(document.getElementById('result-map'), {
+      center: { lat: (state.guessCoords.lat+loc.lat)/2, lng: (state.guessCoords.lng+loc.lng)/2 },
+      zoom: 11, disableDefaultUI: true, styles: mapStyles,
+    });
+  }
+
+  // Clear old markers/lines
+  if (state._resultOverlays) state._resultOverlays.forEach(o => o.setMap(null));
+  state._resultOverlays = [];
+
+  // Real location (green)
+  const greenM = new google.maps.Marker({
+    position: { lat: loc.lat, lng: loc.lng }, map: state.resultMap,
+    icon: { path: google.maps.SymbolPath.CIRCLE, scale: 10, fillColor: '#4fd88a', fillOpacity: 1, strokeColor: '#fff', strokeWeight: 2.5 },
+  });
+
+  // Guess (red)
+  const redM = new google.maps.Marker({
+    position: state.guessCoords, map: state.resultMap,
+    icon: { path: google.maps.SymbolPath.CIRCLE, scale: 10, fillColor: '#f05a4f', fillOpacity: 1, strokeColor: '#fff', strokeWeight: 2.5 },
+  });
+
+  // Line
+  const line = new google.maps.Polyline({
+    path: [state.guessCoords, { lat: loc.lat, lng: loc.lng }],
+    geodesic: true, strokeColor: '#d4f04e', strokeOpacity: 0.8, strokeWeight: 2,
+    map: state.resultMap,
+  });
+
+  state._resultOverlays = [greenM, redM, line];
+
+  // Fit bounds
+  const bounds = new google.maps.LatLngBounds();
+  bounds.extend(state.guessCoords);
+  bounds.extend({ lat: loc.lat, lng: loc.lng });
+  state.resultMap.fitBounds(bounds, 30);
+
+  document.getElementById('result-overlay').classList.add('visible');
+}
+
+function nextRound() {
+  document.getElementById('result-overlay').classList.remove('visible');
+  state.currentRound++;
+  if (state.currentRound >= state.gameLocations.length) { showFinal(); return; }
+  startRound();
+}
+
+function showFinal() {
+  const ratio = state.totalScore / (state.gameLocations.length * 5000);
+  const comment = ratio>=0.9?'🏆 Настоящий минчанин!':ratio>=0.7?'🗺️ Знаешь город неплохо':ratio>=0.4?'🚌 Нужно больше гулять':'🌍 Ты точно был в Минске?';
+  document.getElementById('result-card').innerHTML = '<div style="font-family:Unbounded,sans-serif;font-size:14px;color:var(--text-dim);margin-bottom:8px">ИТОГО</div><div class="score-big great">' + state.totalScore.toLocaleString('ru') + '</div><div class="score-label" style="margin-bottom:24px">из ' + (state.gameLocations.length*5000).toLocaleString('ru') + ' возможных</div><div class="dist-label" style="margin-bottom:24px">' + comment + '</div><button class="btn btn-primary" style="width:100%" onclick="location.reload()">Играть снова →</button>';
+  document.getElementById('result-overlay').classList.add('visible');
+}
+
+function buildRoundDots() {
+  const c = document.getElementById('round-dots'); c.innerHTML = '';
+  for (let i=0;i<ROUNDS;i++) { const d=document.createElement('div'); d.className='round-dot'+(i===0?' active':''); d.id='dot-'+i; c.appendChild(d); }
+}
+
+function updateRoundDots() {
+  for (let i=0;i<ROUNDS;i++) { const d=document.getElementById('dot-'+i); if(!d)return; d.className='round-dot'; if(i<state.currentRound)d.classList.add('done'); else if(i===state.currentRound)d.classList.add('active'); }
+}
+<\/script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLsKut8hOnE1Pc_d6xjsZ7xMpVrsFScPc&callback=initMap" async defer></script>
+</body>
+</html>
