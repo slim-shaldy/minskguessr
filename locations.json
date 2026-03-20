@@ -1,3236 +1,3628 @@
 [
   {
     "id": 1,
-    "lat": 53.915022,
-    "lng": 27.633754,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzZUhyNHdF"
+    "lat": 53.881762560475075,
+    "lng": 27.58490697140977,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2M4OFhjNmdF",
+    "name": ""
   },
   {
     "id": 2,
-    "lat": 53.892166,
-    "lng": 27.644054,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNqZHlWVmc."
+    "lat": 53.89366087582165,
+    "lng": 27.64491112853654,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV3ckNnRFE.",
+    "name": ""
   },
   {
     "id": 3,
-    "lat": 53.875977,
-    "lng": 27.628261,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3l1YmJ3clFF"
+    "lat": 53.914648483152696,
+    "lng": 27.63408783843064,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzZUhyNHdF",
+    "name": ""
   },
   {
     "id": 4,
-    "lat": 53.881644,
-    "lng": 27.583286,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2M4OFhjNmdF"
+    "lat": 53.876057983876294,
+    "lng": 27.627956934482903,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3l1YmJ3clFF",
+    "name": ""
   },
   {
     "id": 5,
-    "lat": 53.870344,
-    "lng": 27.542381,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1OUdyRVE."
+    "lat": 53.87730907744767,
+    "lng": 27.485648400914727,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzYTNQUmc.",
+    "name": ""
   },
   {
     "id": 6,
-    "lat": 53.876786,
-    "lng": 27.487156,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzYTNQUmc."
+    "lat": 53.87030691450131,
+    "lng": 27.54236321742515,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1OUdyRVE.",
+    "name": ""
   },
   {
     "id": 7,
-    "lat": 53.905112,
-    "lng": 27.43806,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ242OEwwMndF"
+    "lat": 53.90928867631432,
+    "lng": 27.51991024779523,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2l4TmEwcHdF",
+    "name": ""
   },
   {
     "id": 8,
-    "lat": 53.908788,
-    "lng": 27.520065,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2l4TmEwcHdF"
+    "lat": 53.90465534464912,
+    "lng": 27.437923397738363,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ242OEwwMndF",
+    "name": ""
   },
   {
     "id": 9,
-    "lat": 53.904303,
-    "lng": 27.540714,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDYyOEdta2dF"
+    "lat": 53.911666696555436,
+    "lng": 27.587499981310334,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDQwX25GaXdF",
+    "name": ""
   },
   {
     "id": 10,
-    "lat": 53.912226,
-    "lng": 27.58667,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDQwX25GaXdF"
+    "lat": 53.954114880019056,
+    "lng": 27.673541339570978,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEwS1RSOUFF",
+    "name": ""
   },
   {
     "id": 11,
-    "lat": 53.935071,
-    "lng": 27.65401,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR6T2ljb2dF"
+    "lat": 53.93503278470951,
+    "lng": 27.65411565433804,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR6T2ljb2dF",
+    "name": ""
   },
   {
     "id": 12,
-    "lat": 53.953055,
-    "lng": 27.67358,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEwS1RSOUFF"
+    "lat": 53.90464710733707,
+    "lng": 27.54079640547851,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDYyOEdta2dF",
+    "name": ""
   },
   {
     "id": 13,
-    "lat": 53.932645,
-    "lng": 27.693836,
-    "panoId": "CAoSHENJQUJJaENweHdBUHgtZlhtUUFTdDM0SDlDY2k."
+    "lat": 53.94273879403424,
+    "lng": 27.424255754772293,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREgwYVhsT0E.",
+    "name": ""
   },
   {
     "id": 14,
-    "lat": 53.950227,
-    "lng": 27.68285,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR6S0RwQWc."
+    "lat": 53.932311971608364,
+    "lng": 27.69358055936213,
+    "panoId": "CAoSHENJQUJJaENweHdBUHgtZlhtUUFTdDM0SDlDY2k.",
+    "name": ""
   },
   {
     "id": 15,
-    "lat": 53.942548,
-    "lng": 27.425652,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREgwYVhsT0E."
+    "lat": 53.950292631297195,
+    "lng": 27.683365907922273,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR6S0RwQWc.",
+    "name": ""
   },
   {
     "id": 16,
-    "lat": 53.930422,
-    "lng": 27.48127,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3E4NlduV3c."
+    "lat": 53.93056849065933,
+    "lng": 27.481685198563746,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3E4NlduV3c.",
+    "name": ""
   },
   {
     "id": 17,
-    "lat": 53.909192,
-    "lng": 27.4823,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHluZS1SNWdF"
+    "lat": 53.9094914841541,
+    "lng": 27.48199423613239,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHluZS1SNWdF",
+    "name": ""
   },
   {
     "id": 18,
-    "lat": 53.942893,
-    "lng": 27.685079,
-    "panoId": "CAoSHENJQUJJaERCLTFnNmZrNkpkcnlleEVtaFc5eTM."
+    "lat": 53.912783606576085,
+    "lng": 27.67440245503333,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHl1cXZMdEFF",
+    "name": ""
   },
   {
     "id": 19,
-    "lat": 53.91354,
-    "lng": 27.675247,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHl1cXZMdEFF"
+    "lat": 53.94313433448244,
+    "lng": 27.685190194447078,
+    "panoId": "CAoSHENJQUJJaERCLTFnNmZrNkpkcnlleEVtaFc5eTM.",
+    "name": ""
   },
   {
     "id": 20,
-    "lat": 53.942121,
-    "lng": 27.643462,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFgwS3EtdVFF"
+    "lat": 53.94213726216571,
+    "lng": 27.643473288733237,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFgwS3EtdVFF",
+    "name": ""
   },
   {
     "id": 21,
-    "lat": 53.930191,
-    "lng": 27.649665,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzSmFYT0E."
+    "lat": 53.927374047212375,
+    "lng": 27.650233955206904,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHExWTNYT1E.",
+    "name": ""
   },
   {
     "id": 22,
-    "lat": 53.930625,
-    "lng": 27.639022,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZvdEtoQ3c."
+    "lat": 53.930613030357655,
+    "lng": 27.63882606680742,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZvdEtoQ3c.",
+    "name": ""
   },
   {
     "id": 23,
-    "lat": 53.927435,
-    "lng": 27.65016,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHExWTNYT1E."
+    "lat": 53.930017093611454,
+    "lng": 27.64938251873412,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzSmFYT0E.",
+    "name": ""
   },
   {
     "id": 24,
-    "lat": 53.919545,
-    "lng": 27.640226,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFg0TDNpS1E."
+    "lat": 53.91961080487113,
+    "lng": 27.639718820565534,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFg0TDNpS1E.",
+    "name": ""
   },
   {
     "id": 25,
-    "lat": 53.926852,
-    "lng": 27.611998,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREd2TnVBa1FF"
+    "lat": 53.94328018537063,
+    "lng": 27.615906320485536,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VqWmJkTFE.",
+    "name": ""
   },
   {
     "id": 26,
-    "lat": 53.929904,
-    "lng": 27.597865,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRG55YXVRS1E."
+    "lat": 53.92983768551039,
+    "lng": 27.59833471128344,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRG55YXVRS1E.",
+    "name": ""
   },
   {
     "id": 27,
-    "lat": 53.943571,
-    "lng": 27.615326,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VqWmJkTFE."
+    "lat": 53.926838662409,
+    "lng": 27.61208969555644,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREd2TnVBa1FF",
+    "name": ""
   },
   {
     "id": 28,
-    "lat": 53.931005,
-    "lng": 27.577725,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHF5NkxSR0E."
+    "lat": 53.931486017121514,
+    "lng": 27.57807178040202,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHF5NkxSR0E.",
+    "name": ""
   },
   {
     "id": 29,
-    "lat": 53.93216,
-    "lng": 27.561715,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREV4YnZucFFF"
+    "lat": 53.929770674802626,
+    "lng": 27.56934863953515,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFoZld1amdF",
+    "name": ""
   },
   {
     "id": 30,
-    "lat": 53.929236,
-    "lng": 27.569225,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFoZld1amdF"
+    "lat": 53.93237142678786,
+    "lng": 27.560837461457343,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREV4YnZucFFF",
+    "name": ""
   },
   {
     "id": 31,
-    "lat": 53.922463,
-    "lng": 27.561157,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsYl9yVnc."
+    "lat": 53.921845402460875,
+    "lng": 27.56213422831116,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsYl9yVnc.",
+    "name": ""
   },
   {
     "id": 32,
-    "lat": 53.923171,
-    "lng": 27.545201,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHF6YkdzM2dF"
+    "lat": 53.9239518803216,
+    "lng": 27.544807228112205,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHF6YkdzM2dF",
+    "name": ""
   },
   {
     "id": 33,
-    "lat": 53.910468,
-    "lng": 27.539775,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNqdTJOQ2c."
+    "lat": 53.904411021747485,
+    "lng": 27.556481902433145,
+    "panoId": "22uaeywn3RPLavXSAmnTRw",
+    "name": ""
   },
   {
     "id": 34,
-    "lat": 53.90779,
-    "lng": 27.532231,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2s1cWJYNkFF"
+    "lat": 53.91108048046899,
+    "lng": 27.540066882620913,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNqdTJOQ2c.",
+    "name": ""
   },
   {
     "id": 35,
-    "lat": 53.907487,
-    "lng": 27.551114,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR5OXI4UVE."
+    "lat": 53.907068671295974,
+    "lng": 27.53157728815825,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2s1cWJYNkFF",
+    "name": ""
   },
   {
     "id": 36,
-    "lat": 53.901914,
-    "lng": 27.554848,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1o1SkNvTXc."
+    "lat": 53.90776961002563,
+    "lng": 27.550723011412767,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR5OXI4UVE.",
+    "name": ""
   },
   {
     "id": 37,
-    "lat": 53.897192,
-    "lng": 27.55621,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR6SWlZSlE."
+    "lat": 53.8972386920414,
+    "lng": 27.556156549516043,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR6SWlZSlE.",
+    "name": ""
   },
   {
     "id": 38,
-    "lat": 53.891845,
-    "lng": 27.574348,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTEhqX1FF"
+    "lat": 53.89234800176071,
+    "lng": 27.574299166861504,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTEhqX1FF",
+    "name": ""
   },
   {
     "id": 39,
-    "lat": 53.844324,
-    "lng": 27.506676,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2NpOG53UHc."
+    "lat": 53.84521978857102,
+    "lng": 27.505730917849768,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2NpOG53UHc.",
+    "name": ""
   },
   {
     "id": 40,
-    "lat": 53.848979,
-    "lng": 27.471652,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2IwZWJaeFFF"
+    "lat": 53.84892679068785,
+    "lng": 27.471698797564724,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2IwZWJaeFFF",
+    "name": ""
   },
   {
     "id": 41,
-    "lat": 53.855409,
-    "lng": 27.485642,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0s2OHVRb3dF"
+    "lat": 53.85569200302323,
+    "lng": 27.486100007887973,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0s2OHVRb3dF",
+    "name": ""
   },
   {
     "id": 42,
-    "lat": 53.845953,
-    "lng": 27.535329,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3FfTkhrQnc."
+    "lat": 53.85291378594465,
+    "lng": 27.552987116684065,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRG14NG15LWdF",
+    "name": ""
   },
   {
     "id": 43,
-    "lat": 53.85331,
-    "lng": 27.55198,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRG14NG15LWdF"
+    "lat": 53.84662620379093,
+    "lng": 27.53503264687675,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3FfTkhrQnc.",
+    "name": ""
   },
   {
     "id": 44,
-    "lat": 53.844539,
-    "lng": 27.575993,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0h6T2pJYXc."
+    "lat": 53.84475475085776,
+    "lng": 27.57625797389474,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0h6T2pJYXc.",
+    "name": ""
   },
   {
     "id": 45,
-    "lat": 53.837542,
-    "lng": 27.63068,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsX0hEVlE."
+    "lat": 53.88152921071136,
+    "lng": 27.598054706948616,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3ExYXZJTEE.",
+    "name": ""
   },
   {
     "id": 46,
-    "lat": 53.864026,
-    "lng": 27.666889,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqZHJNQ2c."
+    "lat": 53.83765700012627,
+    "lng": 27.631231021066107,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsX0hEVlE.",
+    "name": ""
   },
   {
     "id": 47,
-    "lat": 53.881467,
-    "lng": 27.598369,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3ExYXZJTEE."
+    "lat": 53.8637999857847,
+    "lng": 27.667125622023438,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqZHJNQ2c.",
+    "name": ""
   },
   {
     "id": 48,
-    "lat": 53.864922,
-    "lng": 27.613385,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzJqTmJ3WFE."
+    "lat": 53.865158014099144,
+    "lng": 27.612092078461384,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzJqTmJ3WFE.",
+    "name": ""
   },
   {
     "id": 49,
-    "lat": 53.90332,
-    "lng": 27.607462,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1gxNkRuN2dF"
+    "lat": 53.91944497686655,
+    "lng": 27.498611424104162,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREVzWldEaXdF",
+    "name": ""
   },
   {
     "id": 50,
-    "lat": 53.917625,
-    "lng": 27.553006,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1U4cVNzMndF"
+    "lat": 53.903662147190325,
+    "lng": 27.60711794491152,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1gxNkRuN2dF",
+    "name": ""
   },
   {
     "id": 51,
-    "lat": 53.919344,
-    "lng": 27.498074,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREVzWldEaXdF"
+    "lat": 53.91701512227543,
+    "lng": 27.552947855272215,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1U4cVNzMndF",
+    "name": ""
   },
   {
     "id": 52,
-    "lat": 53.891027,
-    "lng": 27.525025,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGFpSTY5bXdF"
+    "lat": 53.890337983969296,
+    "lng": 27.525063707148206,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGFpSTY5bXdF",
+    "name": ""
   },
   {
     "id": 53,
-    "lat": 53.884502,
-    "lng": 27.503296,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VwWmZCVUE."
+    "lat": 53.8847961000807,
+    "lng": 27.504818033733546,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VwWmZCVUE.",
+    "name": ""
   },
   {
     "id": 54,
-    "lat": 53.901473,
-    "lng": 27.474219,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0N6NUtKa3dF"
+    "lat": 53.9019049247859,
+    "lng": 27.47401226485847,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0N6NUtKa3dF",
+    "name": ""
   },
   {
     "id": 55,
-    "lat": 53.906024,
-    "lng": 27.454723,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VuZFh3b3dF"
+    "lat": 53.90567991721181,
+    "lng": 27.45482491120685,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VuZFh3b3dF",
+    "name": ""
   },
   {
     "id": 56,
-    "lat": 53.915908,
-    "lng": 27.437064,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDd6WVR1X3dF"
+    "lat": 53.909787999505404,
+    "lng": 27.5068450661079,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRxX213X1FF",
+    "name": ""
   },
   {
     "id": 57,
-    "lat": 53.92974,
-    "lng": 27.476203,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VvSmYzb0FF"
+    "lat": 53.89501481643333,
+    "lng": 27.49935780954387,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsYmUyRlE.",
+    "name": ""
   },
   {
     "id": 58,
-    "lat": 53.910067,
-    "lng": 27.50588,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRxX213X1FF"
+    "lat": 53.929881877328086,
+    "lng": 27.47699985066139,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VvSmYzb0FF",
+    "name": ""
   },
   {
     "id": 59,
-    "lat": 53.895138,
-    "lng": 27.499075,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsYmUyRlE."
+    "lat": 53.915771884347365,
+    "lng": 27.43732721810451,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDd6WVR1X3dF",
+    "name": ""
   },
   {
     "id": 60,
-    "lat": 53.907188,
-    "lng": 27.572097,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzQ3TG11V3c."
+    "lat": 53.909058200187346,
+    "lng": 27.557534787563533,
+    "panoId": "F1rN4nhe9mdGHbxgo2Vcyw",
+    "name": ""
   },
   {
     "id": 61,
-    "lat": 53.908957,
-    "lng": 27.55772,
-    "panoId": "F1rN4nhe9mdGHbxgo2Vcyw"
+    "lat": 53.90445470642592,
+    "lng": 27.584679331526612,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0V1T2VGOWdF",
+    "name": ""
   },
   {
     "id": 62,
-    "lat": 53.904402,
-    "lng": 27.584499,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0V1T2VGOWdF"
+    "lat": 53.89843290221331,
+    "lng": 27.60448157662063,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VrNXVHQ3c.",
+    "name": ""
   },
   {
     "id": 63,
-    "lat": 53.898055,
-    "lng": 27.605229,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VrNXVHQ3c."
+    "lat": 53.90713833740775,
+    "lng": 27.571806981533015,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzQ3TG11V3c.",
+    "name": ""
   },
   {
     "id": 64,
-    "lat": 53.878989,
-    "lng": 27.610054,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqYnIwZkE."
+    "lat": 53.879329728227475,
+    "lng": 27.609727873590064,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqYnIwZkE.",
+    "name": ""
   },
   {
     "id": 65,
-    "lat": 53.86084,
-    "lng": 27.677775,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRyZUs0SWc."
+    "lat": 53.861018217070736,
+    "lng": 27.677905754724314,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRyZUs0SWc.",
+    "name": ""
   },
   {
     "id": 66,
-    "lat": 53.96037,
-    "lng": 27.594079,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h0NTdtd1FF"
+    "lat": 53.9601669732196,
+    "lng": 27.59387926227054,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h0NTdtd1FF",
+    "name": ""
   },
   {
     "id": 67,
-    "lat": 53.928389,
-    "lng": 27.533109,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VvZDdld1FF"
+    "lat": 53.92833859681545,
+    "lng": 27.53335741935483,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VvZDdld1FF",
+    "name": ""
   },
   {
     "id": 68,
-    "lat": 53.955253,
-    "lng": 27.535135,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFucUgza3dF"
+    "lat": 53.955225598730685,
+    "lng": 27.53471016630726,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFucUgza3dF",
+    "name": ""
   },
   {
     "id": 69,
-    "lat": 53.945959,
-    "lng": 27.455999,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2VucjJWN2dF"
+    "lat": 53.916138750188495,
+    "lng": 27.568241164159968,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREM4ZEtXQnc.",
+    "name": ""
   },
   {
     "id": 70,
-    "lat": 53.887616,
-    "lng": 27.451994,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHExYnJ1WEE."
+    "lat": 53.94604737840802,
+    "lng": 27.456882469062844,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2VucjJWN2dF",
+    "name": ""
   },
   {
     "id": 71,
-    "lat": 53.916643,
-    "lng": 27.567005,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREM4ZEtXQnc."
+    "lat": 53.88742150321131,
+    "lng": 27.451364747716813,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHExYnJ1WEE.",
+    "name": ""
   },
   {
     "id": 72,
-    "lat": 53.915389,
-    "lng": 27.603722,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREd1cnlVTGc."
+    "lat": 53.91549548282764,
+    "lng": 27.60329702581278,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREd1cnlVTGc.",
+    "name": ""
   },
   {
     "id": 73,
-    "lat": 53.906895,
-    "lng": 27.623807,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV3ckNSSmc."
+    "lat": 53.94862977219299,
+    "lng": 27.595999599710805,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFxOXk3Qmc.",
+    "name": ""
   },
   {
     "id": 74,
-    "lat": 53.94874,
-    "lng": 27.597027,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFxOXk3Qmc."
+    "lat": 53.907449802417815,
+    "lng": 27.623731923072423,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV3ckNSSmc.",
+    "name": ""
   },
   {
     "id": 75,
-    "lat": 53.919389,
-    "lng": 27.576011,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV0UDdzTUE."
+    "lat": 53.926527776547154,
+    "lng": 27.591885878735248,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR6S0RwdUFF",
+    "name": ""
   },
   {
     "id": 76,
-    "lat": 53.926465,
-    "lng": 27.591976,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR6S0RwdUFF"
+    "lat": 53.91951416192264,
+    "lng": 27.576134032500708,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV0UDdzTUE.",
+    "name": ""
   },
   {
     "id": 77,
-    "lat": 53.900124,
-    "lng": 27.57275,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTGEwdEFF"
+    "lat": 53.9002680488172,
+    "lng": 27.5727728043072,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTGEwdEFF",
+    "name": ""
   },
   {
     "id": 78,
-    "lat": 53.871794,
-    "lng": 27.559753,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1NzNpYnc."
+    "lat": 53.87151535513672,
+    "lng": 27.559731876202452,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1NzNpYnc.",
+    "name": ""
   },
   {
     "id": 79,
-    "lat": 53.895875,
-    "lng": 27.537265,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzYxb1RhSkE."
+    "lat": 53.96387251964192,
+    "lng": 27.591471187780638,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2UyNWVqRHc.",
+    "name": ""
   },
   {
     "id": 80,
-    "lat": 53.96359,
-    "lng": 27.591491,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2UyNWVqRHc."
+    "lat": 53.895802755474946,
+    "lng": 27.538345821286363,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzYxb1RhSkE.",
+    "name": ""
   },
   {
     "id": 81,
-    "lat": 53.931969,
-    "lng": 27.516964,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gyTl92elFF"
+    "lat": 53.93247563727026,
+    "lng": 27.51654518970805,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gyTl92elFF",
+    "name": ""
   },
   {
     "id": 82,
-    "lat": 53.916503,
-    "lng": 27.538765,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0htTnJRYXc."
+    "lat": 53.91647960560436,
+    "lng": 27.538817568878887,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0htTnJRYXc.",
+    "name": ""
   },
   {
     "id": 83,
-    "lat": 53.887595,
-    "lng": 27.545347,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzQ3WldfVkE."
+    "lat": 53.88501274148868,
+    "lng": 27.565095299487748,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDQyN21FQ3c.",
+    "name": ""
   },
   {
     "id": 84,
-    "lat": 53.885571,
-    "lng": 27.566462,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDQyN21FQ3c."
+    "lat": 53.887613314870826,
+    "lng": 27.545540652095497,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzQ3WldfVkE.",
+    "name": ""
   },
   {
     "id": 85,
-    "lat": 53.891439,
-    "lng": 27.554617,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzhpcWpabXdF"
+    "lat": 53.89062900779662,
+    "lng": 27.554765936982136,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzhpcWpabXdF",
+    "name": ""
   },
   {
     "id": 86,
-    "lat": 53.895688,
-    "lng": 27.549811,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREU0b2Zsd0FF"
+    "lat": 53.877840578234114,
+    "lng": 27.56980480845281,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREUyTXp4bXdF",
+    "name": ""
   },
   {
     "id": 87,
-    "lat": 53.877982,
-    "lng": 27.569552,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREUyTXp4bXdF"
+    "lat": 53.895834506653614,
+    "lng": 27.549462639193926,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREU0b2Zsd0FF",
+    "name": ""
   },
   {
     "id": 88,
-    "lat": 53.889965,
-    "lng": 27.540002,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFVrZVBuT0E."
+    "lat": 53.88955346081389,
+    "lng": 27.539499988826087,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFVrZVBuT0E.",
+    "name": ""
   },
   {
     "id": 89,
-    "lat": 53.893405,
-    "lng": 27.570472,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1U0TFBqYUE."
+    "lat": 53.89365022105966,
+    "lng": 27.57068128527754,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1U0TFBqYUE.",
+    "name": ""
   },
   {
     "id": 90,
-    "lat": 53.89125,
-    "lng": 27.582434,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTEdYMkFF"
+    "lat": 53.89153631718084,
+    "lng": 27.581812797449032,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTEdYMkFF",
+    "name": ""
   },
   {
     "id": 91,
-    "lat": 53.886646,
-    "lng": 27.581576,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzQ5Y3pZX0FF"
+    "lat": 53.88610939323587,
+    "lng": 27.581584462074556,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzQ5Y3pZX0FF",
+    "name": ""
   },
   {
     "id": 92,
-    "lat": 53.878754,
-    "lng": 27.598313,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR5LWIwNFFF"
+    "lat": 53.878774153681974,
+    "lng": 27.597370678691195,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR5LWIwNFFF",
+    "name": ""
   },
   {
     "id": 93,
-    "lat": 53.869648,
-    "lng": 27.599768,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR2NE9Sd2dF"
+    "lat": 53.86924138516519,
+    "lng": 27.599651186808767,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR2NE9Sd2dF",
+    "name": ""
   },
   {
     "id": 94,
-    "lat": 53.853127,
-    "lng": 27.615706,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRuNWZtb1FF"
+    "lat": 53.85261361211857,
+    "lng": 27.64404239949379,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0Vockw1dUFF",
+    "name": ""
   },
   {
     "id": 95,
-    "lat": 53.851842,
-    "lng": 27.643551,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0Vockw1dUFF"
+    "lat": 53.8525510573576,
+    "lng": 27.616884894903865,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRuNWZtb1FF",
+    "name": ""
   },
   {
     "id": 96,
-    "lat": 53.858127,
-    "lng": 27.591172,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqZFM3ZHc."
+    "lat": 53.86978751140135,
+    "lng": 27.579849679547426,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHF2WkM0UEE.",
+    "name": ""
   },
   {
     "id": 97,
-    "lat": 53.869909,
-    "lng": 27.580449,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHF2WkM0UEE."
+    "lat": 53.85799796399962,
+    "lng": 27.59068220875274,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqZFM3ZHc.",
+    "name": ""
   },
   {
     "id": 98,
-    "lat": 53.873929,
-    "lng": 27.576758,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1c1S1B6Q0E."
+    "lat": 53.904410283012304,
+    "lng": 27.55790169557838,
+    "panoId": "yf4UsIgT8BdqonXLAEuILg",
+    "name": ""
   },
   {
     "id": 99,
-    "lat": 53.956899,
-    "lng": 27.58593,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDg3NENDZUE."
+    "lat": 53.87419022533901,
+    "lng": 27.575633270478146,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1c1S1B6Q0E.",
+    "name": ""
   },
   {
     "id": 100,
-    "lat": 53.898423,
-    "lng": 27.54351,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFzNl9pUFE."
+    "lat": 53.89811928414858,
+    "lng": 27.543930160756243,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFzNl9pUFE.",
+    "name": ""
   },
   {
     "id": 101,
-    "lat": 53.904433,
-    "lng": 27.557905,
-    "panoId": "yf4UsIgT8BdqonXLAEuILg"
+    "lat": 53.95679567261432,
+    "lng": 27.58573108418424,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDg3NENDZUE.",
+    "name": ""
   },
   {
     "id": 102,
-    "lat": 53.928467,
-    "lng": 27.593872,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHF4WnV0X1FF"
+    "lat": 53.92847314637887,
+    "lng": 27.594508073545075,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHF4WnV0X1FF",
+    "name": ""
   },
   {
     "id": 103,
-    "lat": 53.840573,
-    "lng": 27.490931,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2IwZE8xVUE."
+    "lat": 53.825406941809014,
+    "lng": 27.57934967777216,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGM1WWlBVUE.",
+    "name": ""
   },
   {
     "id": 104,
-    "lat": 53.825773,
-    "lng": 27.579511,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGM1WWlBVUE."
+    "lat": 53.84054101864,
+    "lng": 27.490859084288456,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2IwZE8xVUE.",
+    "name": ""
   },
   {
     "id": 105,
-    "lat": 53.910052,
-    "lng": 27.424982,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1g2ZTZ5NVFF"
+    "lat": 53.90989081236824,
+    "lng": 27.42592419121703,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1g2ZTZ5NVFF",
+    "name": ""
   },
   {
     "id": 106,
-    "lat": 53.844583,
-    "lng": 27.482986,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JzZFdaaXdF"
+    "lat": 53.844233529058094,
+    "lng": 27.483661088747315,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JzZFdaaXdF",
+    "name": ""
   },
   {
     "id": 107,
-    "lat": 53.924924,
-    "lng": 27.591308,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR6TmlodFFF"
+    "lat": 53.88635276890129,
+    "lng": 27.427692406670243,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR5X3F0a3dF",
+    "name": ""
   },
   {
     "id": 108,
-    "lat": 53.886278,
-    "lng": 27.426323,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0V4b1A3ZkE."
+    "lat": 53.924579595846375,
+    "lng": 27.592189160397066,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR6TmlodFFF",
+    "name": ""
   },
   {
     "id": 109,
-    "lat": 53.89316,
-    "lng": 27.57611,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2MyWnJ1Unc."
+    "lat": 53.892870667883656,
+    "lng": 27.57540266925962,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2MyWnJ1Unc.",
+    "name": ""
   },
   {
     "id": 110,
-    "lat": 53.958514,
-    "lng": 27.507949,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2J4WXVWaWdF"
+    "lat": 53.958423864837656,
+    "lng": 27.507697699811935,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2J4WXVWaWdF",
+    "name": ""
   },
   {
     "id": 111,
-    "lat": 53.958083,
-    "lng": 27.627441,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2J5NnpOWHc."
+    "lat": 53.95819598608771,
+    "lng": 27.62740345965014,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2J5NnpOWHc.",
+    "name": ""
   },
   {
     "id": 112,
-    "lat": 53.907015,
-    "lng": 27.443827,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2IwZjZlM3dF"
+    "lat": 53.90633784144095,
+    "lng": 27.44367472550646,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2IwZjZlM3dF",
+    "name": ""
   },
   {
     "id": 113,
-    "lat": 53.913605,
-    "lng": 27.497418,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREs5X3VlU0E."
+    "lat": 53.91365457532979,
+    "lng": 27.496801171866824,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREs5X3VlU0E.",
+    "name": ""
   },
   {
     "id": 114,
-    "lat": 53.901267,
-    "lng": 27.518407,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR4Y09Rc1FF"
+    "lat": 53.90547602786497,
+    "lng": 27.55799004664924,
+    "panoId": "AeoC3bbR-tb_RWTxS1GzqQ",
+    "name": ""
   },
   {
     "id": 115,
-    "lat": 53.905491,
-    "lng": 27.558214,
-    "panoId": "AeoC3bbR-tb_RWTxS1GzqQ"
+    "lat": 53.901633171237556,
+    "lng": 27.517678570228224,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR4Y09Rc1FF",
+    "name": ""
   },
   {
     "id": 116,
-    "lat": 53.949618,
-    "lng": 27.547051,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGF2X2ZPa0FF"
+    "lat": 53.90915347013012,
+    "lng": 27.557605501590185,
+    "panoId": "4p1jIJSkGZFeKlJB1Bl92g",
+    "name": ""
   },
   {
     "id": 117,
-    "lat": 53.916269,
-    "lng": 27.451976,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR3T2p0ZUE."
+    "lat": 53.9489936659151,
+    "lng": 27.547603586189076,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGF2X2ZPa0FF",
+    "name": ""
   },
   {
     "id": 118,
-    "lat": 53.908894,
-    "lng": 27.558709,
-    "panoId": "4p1jIJSkGZFeKlJB1Bl92g"
+    "lat": 53.90581279074986,
+    "lng": 27.56224715977041,
+    "panoId": "g90IOlyaro6hjb0br57u5g",
+    "name": ""
   },
   {
     "id": 119,
-    "lat": 53.90641,
-    "lng": 27.561889,
-    "panoId": "g90IOlyaro6hjb0br57u5g"
+    "lat": 53.91650182179302,
+    "lng": 27.45171160238904,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR3T2p0ZUE.",
+    "name": ""
   },
   {
     "id": 120,
-    "lat": 53.913524,
-    "lng": 27.631526,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzZUhyb3dF"
+    "lat": 53.84982916993597,
+    "lng": 27.586624261784724,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFp5STZ1ZWc.",
+    "name": ""
   },
   {
     "id": 121,
-    "lat": 53.849914,
-    "lng": 27.585417,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFp5STZ1ZWc."
+    "lat": 53.91357791746613,
+    "lng": 27.631352722380203,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzZUhyb3dF",
+    "name": ""
   },
   {
     "id": 122,
-    "lat": 53.901605,
-    "lng": 27.577952,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzZEtJcndF"
+    "lat": 53.901587698994476,
+    "lng": 27.578015836423532,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzZEtJcndF",
+    "name": ""
   },
   {
     "id": 123,
-    "lat": 53.871171,
-    "lng": 27.528262,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3B0OFhyblFF"
+    "lat": 53.87057322941504,
+    "lng": 27.528305717087683,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3B0OFhyblFF",
+    "name": ""
   },
   {
     "id": 124,
-    "lat": 53.916237,
-    "lng": 27.430383,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1gtOERFTEE."
+    "lat": 53.91608760768973,
+    "lng": 27.430274610205494,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1gtOERFTEE.",
+    "name": ""
   },
   {
     "id": 125,
-    "lat": 53.943132,
-    "lng": 27.440675,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDdsdENvcmdF"
+    "lat": 53.94309879367492,
+    "lng": 27.44042481271856,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDdsdENvcmdF",
+    "name": ""
   },
   {
     "id": 126,
-    "lat": 53.904263,
-    "lng": 27.607557,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzZvdTdkM2dF"
+    "lat": 53.89166203838201,
+    "lng": 27.647637964754207,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHkwS2ZqZ3dF",
+    "name": ""
   },
   {
     "id": 127,
-    "lat": 53.891967,
-    "lng": 27.6485,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHkwS2ZqZ3dF"
+    "lat": 53.90419135175539,
+    "lng": 27.607676950261954,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzZvdTdkM2dF",
+    "name": ""
   },
   {
     "id": 128,
-    "lat": 53.96961,
-    "lng": 27.583131,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFxN3ptNGdF"
+    "lat": 53.969237330892135,
+    "lng": 27.58228505687307,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFxN3ptNGdF",
+    "name": ""
   },
   {
     "id": 129,
-    "lat": 53.952358,
-    "lng": 27.429439,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREgwUEtZQXc."
+    "lat": 53.904703615837825,
+    "lng": 27.555731455999446,
+    "panoId": "iORasSmyBoeklus24eiumw",
+    "name": ""
   },
   {
     "id": 130,
-    "lat": 53.907784,
-    "lng": 27.421939,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREhob2JrT3c."
+    "lat": 53.90803233481815,
+    "lng": 27.42210061768208,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREhob2JrT3c.",
+    "name": ""
   },
   {
     "id": 131,
-    "lat": 53.868242,
-    "lng": 27.589562,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDd6OHotYWc."
+    "lat": 53.95225105741301,
+    "lng": 27.42975273188306,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREgwUEtZQXc.",
+    "name": ""
   },
   {
     "id": 132,
-    "lat": 53.904579,
-    "lng": 27.555992,
-    "panoId": "iORasSmyBoeklus24eiumw"
+    "lat": 53.86802874102311,
+    "lng": 27.58991788574372,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDd6OHotYWc.",
+    "name": ""
   },
   {
     "id": 133,
-    "lat": 53.881591,
-    "lng": 27.600728,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h1N2l3N2dF"
+    "lat": 53.88147650755951,
+    "lng": 27.60046876638496,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h1N2l3N2dF",
+    "name": ""
   },
   {
     "id": 134,
-    "lat": 53.931198,
-    "lng": 27.587727,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2tvcXVCandF"
+    "lat": 53.92139816807449,
+    "lng": 27.682319584666775,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2EtZEtsNWdF",
+    "name": ""
   },
   {
     "id": 135,
-    "lat": 53.920954,
-    "lng": 27.681594,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2EtZEtsNWdF"
+    "lat": 53.95275215596838,
+    "lng": 27.683351501720757,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREQxYXloZmc.",
+    "name": ""
   },
   {
     "id": 136,
-    "lat": 53.952154,
-    "lng": 27.682842,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREQxYXloZmc."
+    "lat": 53.930671060118435,
+    "lng": 27.588415133992644,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2tvcXVCandF",
+    "name": ""
   },
   {
     "id": 137,
-    "lat": 53.973678,
-    "lng": 27.416296,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1gtN3lpWEE."
+    "lat": 53.947553009610246,
+    "lng": 27.68619003055107,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3EyX3lJZXc.",
+    "name": ""
   },
   {
     "id": 138,
-    "lat": 53.947237,
-    "lng": 27.686298,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3EyX3lJZXc."
+    "lat": 53.97366236239997,
+    "lng": 27.416435879463908,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1gtN3lpWEE.",
+    "name": ""
   },
   {
     "id": 139,
-    "lat": 53.953176,
-    "lng": 27.490482,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDdwdWZrbWdF"
+    "lat": 53.90285928467112,
+    "lng": 27.610091569122424,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV5ZUdpV3c.",
+    "name": ""
   },
   {
     "id": 140,
-    "lat": 53.900489,
-    "lng": 27.609797,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV5ZUdpV3c."
+    "lat": 53.95308141615157,
+    "lng": 27.490413006034277,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDdwdWZrbWdF",
+    "name": ""
   },
   {
     "id": 141,
-    "lat": 53.953607,
-    "lng": 27.669261,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZ6dG52UlE."
+    "lat": 53.84397524375348,
+    "lng": 27.526628585727547,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsZl9lWnc.",
+    "name": ""
   },
   {
     "id": 142,
-    "lat": 53.843732,
-    "lng": 27.52733,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsZl9lWnc."
+    "lat": 53.953361602943055,
+    "lng": 27.66891576957239,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZ6dG52UlE.",
+    "name": ""
   },
   {
     "id": 143,
-    "lat": 53.96493,
-    "lng": 27.659269,
-    "panoId": "CAoSHENJQUJJaENnTjZ5ZHR4ck0xVDM5UVdfMUdrbEM."
+    "lat": 53.96431732347536,
+    "lng": 27.65908805258709,
+    "panoId": "CAoSHENJQUJJaENnTjZ5ZHR4ck0xVDM5UVdfMUdrbEM.",
+    "name": ""
   },
   {
     "id": 144,
-    "lat": 53.96011,
-    "lng": 27.583914,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRtS0hLOWdF"
+    "lat": 53.960054402756874,
+    "lng": 27.58305461743809,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRtS0hLOWdF",
+    "name": ""
   },
   {
     "id": 145,
-    "lat": 53.958716,
-    "lng": 27.606917,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3BtZmJOSFE."
+    "lat": 53.84420302410295,
+    "lng": 27.58621407811621,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzh5cTNxbEFF",
+    "name": ""
   },
   {
     "id": 146,
-    "lat": 53.922014,
-    "lng": 27.59383,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREV3ckNSaGdF"
+    "lat": 53.95878282906353,
+    "lng": 27.607773982341836,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3BtZmJOSFE.",
+    "name": ""
   },
   {
     "id": 147,
-    "lat": 53.963106,
-    "lng": 27.62289,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0MxOW45aWdF"
+    "lat": 53.96471437205483,
+    "lng": 27.622804601620878,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2NoY3o0Qmc.",
+    "name": ""
   },
   {
     "id": 148,
-    "lat": 53.844139,
-    "lng": 27.585504,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzh5cTNxbEFF"
+    "lat": 53.921928004861584,
+    "lng": 27.594286730914718,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREV3ckNSaGdF",
+    "name": ""
   },
   {
     "id": 149,
-    "lat": 53.848772,
-    "lng": 27.449862,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREt6LTdUUFE."
+    "lat": 53.87552623155389,
+    "lng": 27.497397875155254,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRuNWVrckFF",
+    "name": ""
   },
   {
     "id": 150,
-    "lat": 53.918294,
-    "lng": 27.501596,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRuNWVrckFF"
+    "lat": 53.84890429264138,
+    "lng": 27.450355776724113,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREt6LTdUUFE.",
+    "name": ""
   },
   {
     "id": 151,
-    "lat": 53.879357,
-    "lng": 27.612379,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREU4YmVUcmdF"
+    "lat": 53.87946304313797,
+    "lng": 27.612834790192526,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREU4YmVUcmdF",
+    "name": ""
   },
   {
     "id": 152,
-    "lat": 53.928632,
-    "lng": 27.578508,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRC0wN1B3b2dF"
+    "lat": 53.92860150270862,
+    "lng": 27.57744742935437,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRC0wN1B3b2dF",
+    "name": ""
   },
   {
     "id": 153,
-    "lat": 53.901392,
-    "lng": 27.553574,
-    "panoId": "22uaeywn3RPLavXSAmnTRw"
+    "lat": 53.905209233099306,
+    "lng": 27.56186551948042,
+    "panoId": "981ZmXnQ64BVURlG-Wkw9g",
+    "name": ""
   },
   {
     "id": 154,
-    "lat": 53.917093,
-    "lng": 27.626988,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1pqZjd6NXdF"
+    "lat": 53.89013666803406,
+    "lng": 27.607366589687437,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR5N3J2Q2c.",
+    "name": ""
   },
   {
     "id": 155,
-    "lat": 53.905223,
-    "lng": 27.561916,
-    "panoId": "981ZmXnQ64BVURlG-Wkw9g"
+    "lat": 53.917497398545095,
+    "lng": 27.627879404938643,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1pqZjd6NXdF",
+    "name": ""
   },
   {
     "id": 156,
-    "lat": 53.890122,
-    "lng": 27.608009,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR5N3J2Q2c."
+    "lat": 53.89614199358698,
+    "lng": 27.56189703183101,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzY2UHpQc1FF",
+    "name": ""
   },
   {
     "id": 157,
-    "lat": 53.895974,
-    "lng": 27.561853,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzY2UHpQc1FF"
+    "lat": 53.839149161731385,
+    "lng": 27.5960224267668,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h0T2ZtNEFF",
+    "name": ""
   },
   {
     "id": 158,
-    "lat": 53.838829,
-    "lng": 27.595377,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h0T2ZtNEFF"
+    "lat": 53.888869104799156,
+    "lng": 27.58023032465979,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsZl9IYnc.",
+    "name": ""
   },
   {
     "id": 159,
-    "lat": 53.888455,
-    "lng": 27.579902,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsZl9IYnc."
+    "lat": 53.900241923884984,
+    "lng": 27.435502442673982,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JpLWVVc0FF",
+    "name": ""
   },
   {
     "id": 160,
-    "lat": 53.900176,
-    "lng": 27.436574,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JpLWVVc0FF"
+    "lat": 53.9077579740335,
+    "lng": 27.55634395885287,
+    "panoId": "XnrBIftN4E056lwyaYMPwQ",
+    "name": ""
   },
   {
     "id": 161,
-    "lat": 53.922381,
-    "lng": 27.440214,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDd6WVNWMGdF"
+    "lat": 53.838640724054414,
+    "lng": 27.457283281570618,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGFuc2JqRmc.",
+    "name": ""
   },
   {
     "id": 162,
-    "lat": 53.839864,
-    "lng": 27.455547,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzg3c2JEeVFF"
+    "lat": 53.922525220066724,
+    "lng": 27.439577147108153,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDd6WVNWMGdF",
+    "name": ""
   },
   {
     "id": 163,
-    "lat": 53.908179,
-    "lng": 27.556918,
-    "panoId": "XnrBIftN4E056lwyaYMPwQ"
+    "lat": 53.83859591193081,
+    "lng": 27.508883601895445,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2IwY2F4QkE.",
+    "name": ""
   },
   {
     "id": 164,
-    "lat": 53.904802,
-    "lng": 27.492637,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE1YURBc0FF"
+    "lat": 53.90529632027455,
+    "lng": 27.491928170847544,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE1YURBc0FF",
+    "name": ""
   },
   {
     "id": 165,
-    "lat": 53.838214,
-    "lng": 27.508737,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2IwY2F4QkE."
+    "lat": 53.9370486947052,
+    "lng": 27.654299131134344,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzSmJuNHdF",
+    "name": ""
   },
   {
     "id": 166,
-    "lat": 53.936701,
-    "lng": 27.65407,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzSmJuNHdF"
+    "lat": 53.93395665981133,
+    "lng": 27.592116499915875,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzA4TlRnaXdF",
+    "name": ""
   },
   {
     "id": 167,
-    "lat": 53.933686,
-    "lng": 27.592254,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzA4TlRnaXdF"
+    "lat": 53.92428181184555,
+    "lng": 27.428421287788197,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ01pdjZsS0E.",
+    "name": ""
   },
   {
     "id": 168,
-    "lat": 53.924571,
-    "lng": 27.428349,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ01pdjZsS0E."
+    "lat": 53.8800575123412,
+    "lng": 27.575262070673283,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h5TXFJcmdF",
+    "name": ""
   },
   {
     "id": 169,
-    "lat": 53.880087,
-    "lng": 27.575234,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h5TXFJcmdF"
+    "lat": 53.904058581172244,
+    "lng": 27.559375964380123,
+    "panoId": "DQgwG56e9HkOUXV9aRbStA",
+    "name": ""
   },
   {
     "id": 170,
-    "lat": 53.902153,
-    "lng": 27.600104,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFqY2Yza0FF"
+    "lat": 53.90180588168955,
+    "lng": 27.599678008053903,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFqY2Yza0FF",
+    "name": ""
   },
   {
     "id": 171,
-    "lat": 53.947359,
-    "lng": 27.679555,
-    "panoId": "CAoSHENJQUJJaENvNmxfR09yeGdaNmplMF9PS3I0ODc."
+    "lat": 53.94744870110148,
+    "lng": 27.679208773826062,
+    "panoId": "CAoSHENJQUJJaENvNmxfR09yeGdaNmplMF9PS3I0ODc.",
+    "name": ""
   },
   {
     "id": 172,
-    "lat": 53.904248,
-    "lng": 27.560119,
-    "panoId": "DQgwG56e9HkOUXV9aRbStA"
+    "lat": 53.915916880507744,
+    "lng": 27.459955529257964,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VvT2UtR0E.",
+    "name": ""
   },
   {
     "id": 173,
-    "lat": 53.929754,
-    "lng": 27.584155,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1p2UHJtSkE."
+    "lat": 53.92990649917902,
+    "lng": 27.583459613379397,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1p2UHJtSkE.",
+    "name": ""
   },
   {
     "id": 174,
-    "lat": 53.916124,
-    "lng": 27.459008,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VvT2UtR0E."
+    "lat": 53.860115662533715,
+    "lng": 27.617827348724607,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1hwYVB0eWdF",
+    "name": ""
   },
   {
     "id": 175,
-    "lat": 53.8743,
-    "lng": 27.542141,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDQ3T202bFFF"
+    "lat": 53.87394132669141,
+    "lng": 27.54271455903851,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDQ3T202bFFF",
+    "name": ""
   },
   {
     "id": 176,
-    "lat": 53.859906,
-    "lng": 27.61726,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1hwYVB0eWdF"
+    "lat": 53.90749714830104,
+    "lng": 27.55587177165475,
+    "panoId": "DV5Pqeqdy5-NO3rSK-_DzQ",
+    "name": ""
   },
   {
     "id": 177,
-    "lat": 53.919081,
-    "lng": 27.697571,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFoYW5tY3c."
+    "lat": 53.91974855962299,
+    "lng": 27.697941609814567,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFoYW5tY3c.",
+    "name": ""
   },
   {
     "id": 178,
-    "lat": 53.907337,
-    "lng": 27.554878,
-    "panoId": "DV5Pqeqdy5-NO3rSK-_DzQ"
+    "lat": 53.86160743125907,
+    "lng": 27.67978020153836,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGJuUGk5U3c.",
+    "name": ""
   },
   {
     "id": 179,
-    "lat": 53.861547,
-    "lng": 27.679812,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGJuUGk5U3c."
+    "lat": 53.92870990977901,
+    "lng": 27.54136454851292,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEtZTNBREE.",
+    "name": ""
   },
   {
     "id": 180,
-    "lat": 53.886838,
-    "lng": 27.59933,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h1OV9XX1FF"
+    "lat": 53.8868362527423,
+    "lng": 27.600092074399672,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h1OV9XX1FF",
+    "name": ""
   },
   {
     "id": 181,
-    "lat": 53.928177,
-    "lng": 27.541033,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEtZTNBREE."
+    "lat": 53.9096039798662,
+    "lng": 27.556019327511628,
+    "panoId": "_6Uvh3VLZYZD2GmzgDLG_w",
+    "name": ""
   },
   {
     "id": 182,
-    "lat": 53.891517,
-    "lng": 27.584525,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VfY2VLN2dF"
+    "lat": 53.89201088540455,
+    "lng": 27.58517052966562,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VfY2VLN2dF",
+    "name": ""
   },
   {
     "id": 183,
-    "lat": 53.911335,
-    "lng": 27.5554,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHlqWUd5Vmc."
+    "lat": 53.85241798479028,
+    "lng": 27.49860193807818,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE3ZnJjc2dF",
+    "name": ""
   },
   {
     "id": 184,
-    "lat": 53.907109,
-    "lng": 27.564445,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h2TmpsOFFF"
+    "lat": 53.906961132307686,
+    "lng": 27.56479413395473,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h2TmpsOFFF",
+    "name": ""
   },
   {
     "id": 185,
-    "lat": 53.851713,
-    "lng": 27.498395,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE3ZnJjc2dF"
+    "lat": 53.89275740114936,
+    "lng": 27.563724486329868,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFpNXkyNUFF",
+    "name": ""
   },
   {
     "id": 186,
-    "lat": 53.892649,
-    "lng": 27.56417,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFpNXkyNUFF"
+    "lat": 53.90538779066814,
+    "lng": 27.56224023832096,
+    "panoId": "rmPkqLRAiczqVw66Q4RtEA",
+    "name": ""
   },
   {
     "id": 187,
-    "lat": 53.902094,
-    "lng": 27.423861,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREgtdjd0c0FF"
+    "lat": 53.90208620591598,
+    "lng": 27.424147805409866,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREgtdjd0c0FF",
+    "name": ""
   },
   {
     "id": 188,
-    "lat": 53.904837,
-    "lng": 27.563061,
-    "panoId": "rmPkqLRAiczqVw66Q4RtEA"
+    "lat": 53.90819069367631,
+    "lng": 27.46635216453994,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREtvc3pEV1E.",
+    "name": ""
   },
   {
     "id": 189,
-    "lat": 53.907666,
-    "lng": 27.464198,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0Vodi01NlFF"
+    "lat": 53.84777255800197,
+    "lng": 27.612198102895043,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFgzTU9INWdF",
+    "name": ""
   },
   {
     "id": 190,
-    "lat": 53.847485,
-    "lng": 27.612292,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFgzTU9INWdF"
+    "lat": 53.941990499871544,
+    "lng": 27.662502377651236,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGJydnlrbndF",
+    "name": ""
   },
   {
     "id": 191,
-    "lat": 53.941776,
-    "lng": 27.661957,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGJydnlrbndF"
+    "lat": 53.96731348365697,
+    "lng": 27.514313314797423,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0U4dTJRaGdF",
+    "name": ""
   },
   {
     "id": 192,
-    "lat": 53.967369,
-    "lng": 27.515084,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0U4dTJRaGdF"
+    "lat": 53.963129309503145,
+    "lng": 27.535837855298396,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2JxWWVwUVE.",
+    "name": ""
   },
   {
     "id": 193,
-    "lat": 53.962506,
-    "lng": 27.535869,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2JxWWVwUVE."
+    "lat": 53.95408031311644,
+    "lng": 27.42922538605192,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREhzZGl0c0FF",
+    "name": ""
   },
   {
     "id": 194,
-    "lat": 53.954119,
-    "lng": 27.429465,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREhzZGl0c0FF"
+    "lat": 53.924778034336526,
+    "lng": 27.694074629403566,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREU2TVR2UWc.",
+    "name": ""
   },
   {
     "id": 195,
-    "lat": 53.964413,
-    "lng": 27.537368,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JxWWZxNGdF"
+    "lat": 53.96438988294481,
+    "lng": 27.53771325237237,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JxWWZxNGdF",
+    "name": ""
   },
   {
     "id": 196,
-    "lat": 53.924776,
-    "lng": 27.694988,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREU2TVR2UWc."
+    "lat": 53.96166492958646,
+    "lng": 27.484409366289665,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2Jxb1M5ZWc.",
+    "name": ""
   },
   {
     "id": 197,
-    "lat": 53.96197,
-    "lng": 27.483387,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2Jxb1M5ZWc."
+    "lat": 53.895590652880394,
+    "lng": 27.411191980216095,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREh1SnpfcWdF",
+    "name": ""
   },
   {
     "id": 198,
-    "lat": 53.956172,
-    "lng": 27.684965,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzZ3SkR6OVFF"
+    "lat": 53.956558184103876,
+    "lng": 27.68568607476262,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzZ3SkR6OVFF",
+    "name": ""
   },
   {
     "id": 199,
-    "lat": 53.895931,
-    "lng": 27.41126,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREh1SnpfcWdF"
+    "lat": 53.90575249658012,
+    "lng": 27.55701345063932,
+    "panoId": "jk5Yhf5FZ4Z8Y67864NiTQ",
+    "name": ""
   },
   {
     "id": 200,
-    "lat": 53.916159,
-    "lng": 27.44949,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2IwYlRLOGdF"
+    "lat": 53.916123673570006,
+    "lng": 27.449404092862885,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2IwYlRLOGdF",
+    "name": ""
   },
   {
     "id": 201,
-    "lat": 53.905802,
-    "lng": 27.556731,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREUyX0tHVUE."
+    "lat": 53.848013974837535,
+    "lng": 27.6420083746952,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDZ1NUxwNGdF",
+    "name": ""
   },
   {
     "id": 202,
-    "lat": 53.847991,
-    "lng": 27.642677,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDZ1NUxwNGdF"
+    "lat": 53.90551090863343,
+    "lng": 27.562504364315792,
+    "panoId": "-GFeNRLWE-m7zlgB64GfuA",
+    "name": ""
   },
   {
     "id": 203,
-    "lat": 53.91545,
-    "lng": 27.534439,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzSXIzamdF"
+    "lat": 53.90009180863474,
+    "lng": 27.53720165326669,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VuZnEtT3c.",
+    "name": ""
   },
   {
     "id": 204,
-    "lat": 53.900727,
-    "lng": 27.538612,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VuZnEtT3c."
+    "lat": 53.91558124439172,
+    "lng": 27.535391434555336,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzSXIzamdF",
+    "name": ""
   },
   {
     "id": 205,
-    "lat": 53.905684,
-    "lng": 27.563509,
-    "panoId": "-GFeNRLWE-m7zlgB64GfuA"
+    "lat": 53.950080525912405,
+    "lng": 27.469837614647414,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDdwdWFXX0FF",
+    "name": ""
   },
   {
     "id": 206,
-    "lat": 53.949532,
-    "lng": 27.469637,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDdwdWFXX0FF"
+    "lat": 53.898189489202636,
+    "lng": 27.53868676214006,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzZHk4T0E.",
+    "name": ""
   },
   {
     "id": 207,
-    "lat": 53.898162,
-    "lng": 27.538512,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzZHk4T0E."
+    "lat": 53.89809798774592,
+    "lng": 27.66436390588599,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqY2FzT1E.",
+    "name": ""
   },
   {
     "id": 208,
-    "lat": 53.850092,
-    "lng": 27.66894,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0U4dTJkeUFF"
+    "lat": 53.85011687896891,
+    "lng": 27.669381130975413,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0U4dTJkeUFF",
+    "name": ""
   },
   {
     "id": 209,
-    "lat": 53.898359,
-    "lng": 27.66507,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqY2FzT1E."
+    "lat": 53.924668881639846,
+    "lng": 27.443751021155606,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsYy1uMEFF",
+    "name": ""
   },
   {
     "id": 210,
-    "lat": 53.92485,
-    "lng": 27.444471,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsYy1uMEFF"
+    "lat": 53.91312330631097,
+    "lng": 27.487278818614737,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VvZTdoVHc.",
+    "name": ""
   },
   {
     "id": 211,
-    "lat": 53.974594,
-    "lng": 27.447518,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFgwcC1ldHdF"
+    "lat": 53.90177097792043,
+    "lng": 27.435696490530653,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JpX0xpa0FF",
+    "name": ""
   },
   {
     "id": 212,
-    "lat": 53.91265,
-    "lng": 27.487484,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VvZTdoVHc."
+    "lat": 53.97464911735273,
+    "lng": 27.4474555354356,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFgwcC1ldHdF",
+    "name": ""
   },
   {
     "id": 213,
-    "lat": 53.901748,
-    "lng": 27.435845,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JpX0xpa0FF"
+    "lat": 53.85507180541198,
+    "lng": 27.59731614792572,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE3WnVwdkFF",
+    "name": ""
   },
   {
     "id": 214,
-    "lat": 53.909686,
-    "lng": 27.555576,
-    "panoId": "_6Uvh3VLZYZD2GmzgDLG_w"
+    "lat": 53.92319329035695,
+    "lng": 27.608182836779502,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzWXpfOWdF",
+    "name": ""
   },
   {
     "id": 215,
-    "lat": 53.923199,
-    "lng": 27.608224,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzWXpfOWdF"
+    "lat": 53.938083901543955,
+    "lng": 27.543522195257406,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ01yczZHc2dF",
+    "name": ""
   },
   {
     "id": 216,
-    "lat": 53.855308,
-    "lng": 27.596693,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE3WnVwdkFF"
+    "lat": 53.90112422162507,
+    "lng": 27.432612506216405,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ255T1h3OEFF",
+    "name": ""
   },
   {
     "id": 217,
-    "lat": 53.93753,
-    "lng": 27.54283,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ01yczZHc2dF"
+    "lat": 53.90343903537799,
+    "lng": 27.558569526284817,
+    "panoId": "RwglYjpVEzDEW0WtTLf3yw",
+    "name": ""
   },
   {
     "id": 218,
-    "lat": 53.900993,
-    "lng": 27.432593,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ255T1h3OEFF"
+    "lat": 53.893644090623674,
+    "lng": 27.65417640565912,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2FrdTM3Vmc.",
+    "name": ""
   },
   {
     "id": 219,
-    "lat": 53.8934,
-    "lng": 27.653306,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2FrdTM3Vmc."
+    "lat": 53.95371479271834,
+    "lng": 27.69095855879966,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGFfOEMwMXdF",
+    "name": ""
   },
   {
     "id": 220,
-    "lat": 53.954155,
-    "lng": 27.690808,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGFfOEMwMXdF"
+    "lat": 53.90547606843589,
+    "lng": 27.55556007141572,
+    "panoId": "pNOE8JfRiT5l56YDwKNMzQ",
+    "name": ""
   },
   {
     "id": 221,
-    "lat": 53.903167,
-    "lng": 27.558048,
-    "panoId": "RwglYjpVEzDEW0WtTLf3yw"
+    "lat": 53.87047912263571,
+    "lng": 27.553991300366338,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3B0NjYxdkFF",
+    "name": ""
   },
   {
     "id": 222,
-    "lat": 53.871122,
-    "lng": 27.553967,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3B0NjYxdkFF"
+    "lat": 53.90805355749731,
+    "lng": 27.633514793799712,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZvcXI5TEE.",
+    "name": ""
   },
   {
     "id": 223,
-    "lat": 53.907519,
-    "lng": 27.633716,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZvcXI5TEE."
+    "lat": 53.91664439918917,
+    "lng": 27.585003798405253,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFvNXVQaEFF",
+    "name": ""
   },
   {
     "id": 224,
-    "lat": 53.916606,
-    "lng": 27.584951,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFvNXVQaEFF"
+    "lat": 53.8226938794841,
+    "lng": 27.537919904707767,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGMwUDJsUXc.",
+    "name": ""
   },
   {
     "id": 225,
-    "lat": 53.905605,
-    "lng": 27.555664,
-    "panoId": "pNOE8JfRiT5l56YDwKNMzQ"
+    "lat": 53.952840515349855,
+    "lng": 27.452532632881415,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNoYm5lZFE.",
+    "name": ""
   },
   {
     "id": 226,
-    "lat": 53.952219,
-    "lng": 27.451696,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNoYm5lZFE."
+    "lat": 53.93659086614369,
+    "lng": 27.44663953945662,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRyZEszUWc.",
+    "name": ""
   },
   {
     "id": 227,
-    "lat": 53.823049,
-    "lng": 27.537532,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGMwUDJsUXc."
+    "lat": 53.917962771832485,
+    "lng": 27.590664819139153,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEtZnV5b3dF",
+    "name": ""
   },
   {
     "id": 228,
-    "lat": 53.936787,
-    "lng": 27.446175,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRyZEszUWc."
+    "lat": 53.85824126270913,
+    "lng": 27.55708806901256,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3B1NVhwd1FF",
+    "name": ""
   },
   {
     "id": 229,
-    "lat": 53.917622,
-    "lng": 27.590781,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEtZnV5b3dF"
+    "lat": 53.84956987021759,
+    "lng": 27.466262272791635,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDQxWURJRnc.",
+    "name": ""
   },
   {
     "id": 230,
-    "lat": 53.858205,
-    "lng": 27.557145,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3B1NVhwd1FF"
+    "lat": 53.92586723527348,
+    "lng": 27.520271769854812,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREVzZlhiYUE.",
+    "name": ""
   },
   {
     "id": 231,
-    "lat": 53.849133,
-    "lng": 27.467085,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDQxWURJRnc."
+    "lat": 53.84417637165977,
+    "lng": 27.603786860023906,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFhfSVAzWWc.",
+    "name": ""
   },
   {
     "id": 232,
-    "lat": 53.844367,
-    "lng": 27.603337,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFhfSVAzWWc."
+    "lat": 53.917929133194065,
+    "lng": 27.636297901032002,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZvdnFDZGc.",
+    "name": ""
   },
   {
     "id": 233,
-    "lat": 53.92534,
-    "lng": 27.520193,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREVzZlhiYUE."
+    "lat": 53.861995188259726,
+    "lng": 27.5663981428766,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsZi1pM0FF",
+    "name": ""
   },
   {
     "id": 234,
-    "lat": 53.917954,
-    "lng": 27.635776,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZvdnFDZGc."
+    "lat": 53.88831693310985,
+    "lng": 27.56734689833932,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDQyN25vY3c.",
+    "name": ""
   },
   {
     "id": 235,
-    "lat": 53.888308,
-    "lng": 27.567039,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDQyN25vY3c."
+    "lat": 53.86427847128549,
+    "lng": 27.4816560477549,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ002SUxXLWdF",
+    "name": ""
   },
   {
     "id": 236,
-    "lat": 53.864314,
-    "lng": 27.481688,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ002SUxXLWdF"
+    "lat": 53.918444624053535,
+    "lng": 27.412668697562363,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFpN3JEN2dF",
+    "name": ""
   },
   {
     "id": 237,
-    "lat": 53.862036,
-    "lng": 27.568228,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsZi1pM0FF"
+    "lat": 53.894476617883335,
+    "lng": 27.48510150152232,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHluZS0xU3c.",
+    "name": ""
   },
   {
     "id": 238,
-    "lat": 53.918345,
-    "lng": 27.412531,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFpN3JEN2dF"
+    "lat": 53.90975058107109,
+    "lng": 27.609541516634128,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzA4TWE0SlE.",
+    "name": ""
   },
   {
     "id": 239,
-    "lat": 53.909255,
-    "lng": 27.610603,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzA4TWE0SlE."
+    "lat": 53.8602502316168,
+    "lng": 27.538521466836183,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0huTTc5WkE.",
+    "name": ""
   },
   {
     "id": 240,
-    "lat": 53.860383,
-    "lng": 27.538115,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0huTTc5WkE."
+    "lat": 53.905725420397594,
+    "lng": 27.559245861069186,
+    "panoId": "I7RB8HfgOncG6PK5JK9ATQ",
+    "name": ""
   },
   {
     "id": 241,
-    "lat": 53.893925,
-    "lng": 27.483609,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHluZS0xU3c."
+    "lat": 53.92617531613428,
+    "lng": 27.651071098357207,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR4WUR0UkE.",
+    "name": ""
   },
   {
     "id": 242,
-    "lat": 53.925559,
-    "lng": 27.651231,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR4WUR0UkE."
+    "lat": 53.845585439640196,
+    "lng": 27.413218311751702,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsYS10bXdF",
+    "name": ""
   },
   {
     "id": 243,
-    "lat": 53.962908,
-    "lng": 27.617746,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2JtNUhmUUE."
+    "lat": 53.96275853921108,
+    "lng": 27.61690087127835,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2JtNUhmUUE.",
+    "name": ""
   },
   {
     "id": 244,
-    "lat": 53.845541,
-    "lng": 27.412956,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsYS10bXdF"
+    "lat": 53.90421081655075,
+    "lng": 27.559061504572917,
+    "panoId": "JQMFhWmpBHTxN6do7ncVzA",
+    "name": ""
   },
   {
     "id": 245,
-    "lat": 53.905692,
-    "lng": 27.559672,
-    "panoId": "I7RB8HfgOncG6PK5JK9ATQ"
+    "lat": 53.907959805348106,
+    "lng": 27.51697256037424,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFduWlRGd2dF",
+    "name": ""
   },
   {
     "id": 246,
-    "lat": 53.907108,
-    "lng": 27.516545,
-    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0V5OURHSFE."
+    "lat": 53.86463931685203,
+    "lng": 27.58459959428639,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDd6OHlJM2dF",
+    "name": ""
   },
   {
     "id": 247,
-    "lat": 53.864348,
-    "lng": 27.583638,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDd6OHlJM2dF"
+    "lat": 53.90893895657192,
+    "lng": 27.504918807406494,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2Npc193aXdF",
+    "name": ""
   },
   {
     "id": 248,
-    "lat": 53.904494,
-    "lng": 27.559238,
-    "panoId": "JQMFhWmpBHTxN6do7ncVzA"
+    "lat": 53.90086808200354,
+    "lng": 27.558914943296177,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VuZFh3N3dF",
+    "name": "Площадь Независимости"
   },
   {
     "id": 249,
-    "lat": 53.908804,
-    "lng": 27.504371,
-    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2Npc193aXdF"
+    "lat": 53.90262636681855,
+    "lng": 27.561369010033633,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR3SkRrM1FF",
+    "name": "Дом правительства"
   },
   {
-    "lat": 53.9006,
-    "lng": 27.559,
-    "name": "Площадь Независимости",
-    "id": 250
+    "id": 250,
+    "lat": 53.89822521462651,
+    "lng": 27.548195657441813,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFzOC1kR0E.",
+    "name": "Площадь Победы"
   },
   {
-    "lat": 53.9027,
-    "lng": 27.5615,
-    "name": "Дом правительства",
-    "id": 251
+    "id": 251,
+    "lat": 53.90375979102455,
+    "lng": 27.566749863160098,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsZV94TGc.",
+    "name": "Площадь Октябрьская"
   },
   {
-    "lat": 53.8989,
-    "lng": 27.5487,
-    "name": "Площадь Победы",
-    "id": 252
+    "id": 252,
+    "lat": 53.90441130498843,
+    "lng": 27.565952318202648,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3E5ZEh3c3dF",
+    "name": "Дворец Республики"
   },
   {
-    "lat": 53.9038,
-    "lng": 27.5667,
-    "name": "Площадь Октябрьская",
-    "id": 253
+    "id": 253,
+    "lat": 53.91054430156549,
+    "lng": 27.586574025919383,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGstN3VHYVE.",
+    "name": "Площадь Победителей (Уручье)"
   },
   {
-    "lat": 53.9042,
-    "lng": 27.5648,
-    "name": "Дворец Республики",
-    "id": 254
+    "id": 254,
+    "lat": 53.907810426236885,
+    "lng": 27.561145336815162,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VyWVQtbndF",
+    "name": "Площадь Якуба Коласа"
   },
   {
-    "lat": 53.901,
-    "lng": 27.5558,
-    "name": "Площадь Независимости, северная часть",
-    "id": 255
+    "id": 255,
+    "lat": 53.900012638338424,
+    "lng": 27.55791600214867,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3FoYVBodXdF",
+    "name": "Проспект Независимости у ЦУМа"
   },
   {
-    "lat": 53.9079,
-    "lng": 27.562,
-    "name": "Площадь Якуба Коласа",
-    "id": 256
+    "id": 256,
+    "lat": 53.90576940493622,
+    "lng": 27.566355277803908,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0h2TmppYWc.",
+    "name": "Проспект Независимости, пересечение с Богдановича"
   },
   {
-    "lat": 53.9112,
-    "lng": 27.5867,
-    "name": "Площадь Победителей (Уручье)",
-    "id": 257
+    "id": 257,
+    "lat": 53.907946940040915,
+    "lng": 27.538154909173812,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzhuSm1BOEFF",
+    "name": "Проспект Машерова"
   },
   {
-    "lat": 53.9,
-    "lng": 27.558,
-    "name": "Проспект Независимости у ЦУМа",
-    "id": 258
+    "id": 258,
+    "lat": 53.9220461201808,
+    "lng": 27.544881482791695,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ01yczZHcWdF",
+    "name": "Проспект Независимости, район Серебрянки"
   },
   {
-    "lat": 53.9058,
-    "lng": 27.5663,
-    "name": "Проспект Независимости, пересечение с Богдановича",
-    "id": 259
+    "id": 259,
+    "lat": 53.8921811857511,
+    "lng": 27.5634661275307,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDd6OHp4WWc.",
+    "name": "Улица Немига"
   },
   {
-    "lat": 53.922,
-    "lng": 27.545,
-    "name": "Проспект Независимости, район Серебрянки",
-    "id": 260
+    "id": 260,
+    "lat": 53.90537293070526,
+    "lng": 27.53384504154277,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE1Y2pGekFF",
+    "name": "Проспект Машерова, парк Победы"
   },
   {
-    "lat": 53.908,
-    "lng": 27.539,
-    "name": "Проспект Машерова",
-    "id": 261
+    "id": 261,
+    "lat": 53.887079367930475,
+    "lng": 27.557514687018983,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzgxSWZFb3dF",
+    "name": "Улица Интернациональная"
   },
   {
-    "lat": 53.905,
-    "lng": 27.535,
-    "name": "Проспект Машерова, парк Победы",
-    "id": 262
+    "id": 262,
+    "lat": 53.895713820019225,
+    "lng": 27.5414809994822,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFzOS0wN1FF",
+    "name": "Проспект Победителей у стадиона Динамо"
   },
   {
-    "lat": 53.892,
-    "lng": 27.563,
-    "name": "Улица Немига",
-    "id": 263
+    "id": 263,
+    "lat": 53.885213989100805,
+    "lng": 27.553734570003723,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFpNUtfSkE.",
+    "name": "Улица Ленина"
   },
   {
-    "lat": 53.8958,
-    "lng": 27.5428,
-    "name": "Проспект Победителей у стадиона Динамо",
-    "id": 264
+    "id": 264,
+    "lat": 53.88681312569793,
+    "lng": 27.541994547330226,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGE4TFNfTkE.",
+    "name": "Улица Комсомольская"
   },
   {
-    "lat": 53.888,
-    "lng": 27.558,
-    "name": "Улица Интернациональная",
-    "id": 265
+    "id": 265,
+    "lat": 53.893898819575334,
+    "lng": 27.546060870726233,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREU2dUREX3dF",
+    "name": "Улица Карла Маркса"
   },
   {
-    "lat": 53.885,
-    "lng": 27.555,
-    "name": "Улица Ленина",
-    "id": 266
+    "id": 266,
+    "lat": 53.889686352623876,
+    "lng": 27.56242175140348,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHB6N3FCd2dF",
+    "name": "Улица Революционная"
   },
   {
-    "lat": 53.887,
-    "lng": 27.542,
-    "name": "Улица Комсомольская",
-    "id": 267
+    "id": 267,
+    "lat": 53.88582307546453,
+    "lng": 27.57074894148981,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0hpS09RREE.",
+    "name": "Улица Максима Богдановича"
   },
   {
-    "lat": 53.894,
-    "lng": 27.546,
-    "name": "Улица Карла Маркса",
-    "id": 268
+    "id": 268,
+    "lat": 53.90348526493815,
+    "lng": 27.549899131788134,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREVoT3k4dHdF",
+    "name": "Улица Козлова"
   },
   {
-    "lat": 53.89,
-    "lng": 27.564,
-    "name": "Улица Революционная",
-    "id": 269
+    "id": 269,
+    "lat": 53.90645340654577,
+    "lng": 27.569928744265667,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VvZDdlb1FF",
+    "name": "Улица Куйбышева"
   },
   {
-    "lat": 53.886,
-    "lng": 27.568,
-    "name": "Улица Максима Богдановича",
-    "id": 270
+    "id": 270,
+    "lat": 53.899626793919914,
+    "lng": 27.542718589852228,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREM2NDNuWVE.",
+    "name": "Улица Янки Купалы"
   },
   {
-    "lat": 53.904,
-    "lng": 27.55,
-    "name": "Улица Козлова",
-    "id": 271
+    "id": 271,
+    "lat": 53.914628570514296,
+    "lng": 27.554126316983638,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzJxSmJBcVFF",
+    "name": "Проспект Независимости у БНТУ"
   },
   {
-    "lat": 53.91,
-    "lng": 27.554,
-    "name": "Улица Якубовского",
-    "id": 272
+    "id": 272,
+    "lat": 53.91554468848627,
+    "lng": 27.56010229113818,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRC0wNU92UkE.",
+    "name": "Площадь Бангалор"
   },
   {
-    "lat": 53.906,
-    "lng": 27.57,
-    "name": "Улица Куйбышева",
-    "id": 273
+    "id": 273,
+    "lat": 53.896847987127494,
+    "lng": 27.54940667044022,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ001TTdqTFE.",
+    "name": "Стадион Динамо"
   },
   {
-    "lat": 53.8996,
-    "lng": 27.542,
-    "name": "Улица Янки Купалы",
-    "id": 274
+    "id": 274,
+    "lat": 53.906138888215416,
+    "lng": 27.550555609948706,
+    "panoId": "CAoSHENJQUJJaEFHRHZhTlEtYW9qV0RFU2tQTkExdF8.",
+    "name": "Парк Победы"
   },
   {
-    "lat": 53.915,
-    "lng": 27.553,
-    "name": "Проспект Независимости у БНТУ",
-    "id": 275
+    "id": 275,
+    "lat": 53.904325616147474,
+    "lng": 27.546147102873938,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREtqdi1FWnc.",
+    "name": "Площадь у парка Победы"
   },
   {
-    "lat": 53.916,
-    "lng": 27.56,
-    "name": "Площадь Бангалор",
-    "id": 276
+    "id": 276,
+    "lat": 53.88933496333856,
+    "lng": 27.548147306046257,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzWXpfX2dF",
+    "name": "Троицкое предместье"
   },
   {
-    "lat": 53.8968,
-    "lng": 27.5493,
-    "name": "Стадион Динамо",
-    "id": 277
+    "id": 277,
+    "lat": 53.88679888083224,
+    "lng": 27.55097770771015,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHk0S0tYVlE.",
+    "name": "Остров Слёз"
   },
   {
-    "lat": 53.9061,
-    "lng": 27.5495,
-    "name": "Парк Победы",
-    "id": 278
+    "id": 278,
+    "lat": 53.8828621371004,
+    "lng": 27.54957962791021,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHk0SUwzTVE.",
+    "name": "Театр Янки Купалы"
   },
   {
-    "lat": 53.9045,
-    "lng": 27.546,
-    "name": "Площадь у парка Победы",
-    "id": 279
+    "id": 279,
+    "lat": 53.88837291860672,
+    "lng": 27.547070545127095,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREV4LXJocHdF",
+    "name": "Набережная Свислочи у Немиги"
   },
   {
-    "lat": 53.8893,
-    "lng": 27.5485,
-    "name": "Троицкое предместье",
-    "id": 280
+    "id": 280,
+    "lat": 53.90106440372905,
+    "lng": 27.56332224703506,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREVrZmZLNkFF",
+    "name": "Минская городская ратуша"
   },
   {
-    "lat": 53.887,
-    "lng": 27.55,
-    "name": "Набережная реки Свислочь, Троицкое",
-    "id": 281
+    "id": 281,
+    "lat": 53.9008087279148,
+    "lng": 27.564454889985956,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFzNV9qWGc.",
+    "name": "Верхний город"
   },
   {
-    "lat": 53.886,
-    "lng": 27.552,
-    "name": "Остров Слёз",
-    "id": 282
+    "id": 282,
+    "lat": 53.898006720650855,
+    "lng": 27.560580970365415,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREd0czNBa3dF",
+    "name": "Церковь Святого Петра и Павла"
   },
   {
-    "lat": 53.884,
-    "lng": 27.551,
-    "name": "Театр Янки Купалы",
-    "id": 283
+    "id": 283,
+    "lat": 53.90144631435488,
+    "lng": 27.565697838884237,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGFtdEdvRkE.",
+    "name": "Собор Сошествия Святого Духа"
   },
   {
-    "lat": 53.888,
-    "lng": 27.549,
-    "name": "Набережная Свислочи у Немиги",
-    "id": 284
+    "id": 284,
+    "lat": 53.8993137000084,
+    "lng": 27.55680236588494,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3FoYU9CRXc.",
+    "name": "Костёл Святого Иосифа"
   },
   {
-    "lat": 53.898,
-    "lng": 27.561,
-    "name": "Церковь Святого Петра и Павла",
-    "id": 285
+    "id": 285,
+    "lat": 53.90721691924474,
+    "lng": 27.5681988701121,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h2TmpNelFF",
+    "name": "Академия наук Беларуси"
   },
   {
-    "lat": 53.901,
-    "lng": 27.563,
-    "name": "Минская городская ратуша",
-    "id": 286
+    "id": 286,
+    "lat": 53.905565907304876,
+    "lng": 27.571752473720718,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0h2Tml2WkE.",
+    "name": "Ботанический сад"
   },
   {
-    "lat": 53.9008,
-    "lng": 27.5645,
-    "name": "Верхний город",
-    "id": 287
+    "id": 287,
+    "lat": 53.9085082609098,
+    "lng": 27.57495879909625,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0U0clhFbVFF",
+    "name": "Парк Челюскинцев"
   },
   {
-    "lat": 53.9015,
-    "lng": 27.566,
-    "name": "Собор Сошествия Святого Духа",
-    "id": 288
+    "id": 288,
+    "lat": 53.911063331062614,
+    "lng": 27.579086972227937,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGtuZVBxYnc.",
+    "name": "Парк Челюскинцев, северная часть"
   },
   {
-    "lat": 53.902,
-    "lng": 27.559,
-    "name": "Кафедральный собор Святого Духа",
-    "id": 289
+    "id": 289,
+    "lat": 53.900825501194014,
+    "lng": 27.54348957333945,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR3TWlzcGdF",
+    "name": "Набережная Свислочи, парк Горького"
   },
   {
-    "lat": 53.8995,
-    "lng": 27.557,
-    "name": "Костёл Святого Иосифа",
-    "id": 290
+    "id": 290,
+    "lat": 53.902017941790675,
+    "lng": 27.547022527964376,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRyZnFZWmc.",
+    "name": "Парк имени Горького, центральный вход"
   },
   {
-    "lat": 53.907,
-    "lng": 27.568,
-    "name": "Академия наук Беларуси",
-    "id": 291
+    "id": 291,
+    "lat": 53.89309560324988,
+    "lng": 27.540012914321,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZodk83S1E.",
+    "name": "Национальная библиотека Беларуси"
   },
   {
-    "lat": 53.9055,
-    "lng": 27.572,
-    "name": "Ботанический сад",
-    "id": 292
+    "id": 292,
+    "lat": 53.893510031721604,
+    "lng": 27.548053906251774,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzYxb1RhTkE.",
+    "name": "Площадь у Нацбиблиотеки"
   },
   {
-    "lat": 53.9085,
-    "lng": 27.575,
-    "name": "Парк Челюскинцев",
-    "id": 293
+    "id": 293,
+    "lat": 53.91498184066444,
+    "lng": 27.61834138453533,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR5NmI3b2dF",
+    "name": "Московский вокзал"
   },
   {
-    "lat": 53.911,
-    "lng": 27.579,
-    "name": "Парк Челюскинцев, северная часть",
-    "id": 294
+    "id": 294,
+    "lat": 53.91337592977036,
+    "lng": 27.618190856453918,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR5N3JCblFF",
+    "name": "Привокзальная площадь"
   },
   {
-    "lat": 53.902,
-    "lng": 27.546,
-    "name": "Парк имени Горького, центральный вход",
-    "id": 295
+    "id": 295,
+    "lat": 53.912147384852986,
+    "lng": 27.615736904282095,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzWXlYTEE.",
+    "name": "Площадь Привокзальная"
   },
   {
-    "lat": 53.901,
-    "lng": 27.544,
-    "name": "Набережная Свислочи, парк Горького",
-    "id": 296
+    "id": 296,
+    "lat": 53.90952915015762,
+    "lng": 27.605703003560254,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDY1THVYblFF",
+    "name": "Проспект Независимости у Немиги"
   },
   {
-    "lat": 53.893,
-    "lng": 27.54,
-    "name": "Национальная библиотека Беларуси",
-    "id": 297
+    "id": 297,
+    "lat": 53.92321011149719,
+    "lng": 27.611234388114873,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFyY1RzRlE.",
+    "name": "Площадь Якуба Коласа, дальняя"
   },
   {
-    "lat": 53.8935,
-    "lng": 27.548,
-    "name": "Площадь у Нацбиблиотеки",
-    "id": 298
+    "id": 298,
+    "lat": 53.93283160489101,
+    "lng": 27.649850635529578,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR6T0Q5ZHc.",
+    "name": "Район Уручье"
   },
   {
-    "lat": 53.9148,
-    "lng": 27.6218,
-    "name": "Московский вокзал",
-    "id": 299
+    "id": 299,
+    "lat": 53.94006486292947,
+    "lng": 27.64372959392155,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFgwS3JoLWdF",
+    "name": "Уручье, северная часть"
   },
   {
-    "lat": 53.9135,
-    "lng": 27.6195,
-    "name": "Привокзальная площадь",
-    "id": 300
+    "id": 300,
+    "lat": 53.94185374497294,
+    "lng": 27.662705594709326,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGJydnlSSHc.",
+    "name": "Уручье, район Степянки"
   },
   {
-    "lat": 53.912,
-    "lng": 27.615,
-    "name": "Площадь Привокзальная",
-    "id": 301
+    "id": 301,
+    "lat": 53.94545752499478,
+    "lng": 27.686483421090497,
+    "panoId": "CAoSHENJQUJJaEFBT0F0UmMwVm1VSWZlNEpxSHY4cXg.",
+    "name": "Степянка"
   },
   {
-    "lat": 53.9098,
-    "lng": 27.6072,
-    "name": "Проспект Независимости у Немиги",
-    "id": 302
+    "id": 302,
+    "lat": 53.93819368299517,
+    "lng": 27.69236354303817,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHF2YWVpY2c.",
+    "name": "Шабаны"
   },
   {
-    "lat": 53.9228,
-    "lng": 27.612,
-    "name": "Площадь Якуба Коласа, дальняя",
-    "id": 303
+    "id": 303,
+    "lat": 53.915185079928456,
+    "lng": 27.676119539350807,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREUyWTdqdUFF",
+    "name": "Район Восток, улица Тимирязева"
   },
   {
-    "lat": 53.933,
-    "lng": 27.65,
-    "name": "Район Уручье",
-    "id": 304
+    "id": 304,
+    "lat": 53.920029081322205,
+    "lng": 27.683238443467253,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR3TWY1cFFF",
+    "name": "Улица Рокоссовского"
   },
   {
-    "lat": 53.94,
-    "lng": 27.643,
-    "name": "Уручье, северная часть",
-    "id": 305
+    "id": 305,
+    "lat": 53.9121878386437,
+    "lng": 27.67593901645678,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFxOHVwb1FF",
+    "name": "Улица Тимирязева"
   },
   {
-    "lat": 53.942,
-    "lng": 27.663,
-    "name": "Уручье, район Степянки",
-    "id": 306
+    "id": 306,
+    "lat": 53.90136338068629,
+    "lng": 27.64858815329188,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2EtZHFQdHdF",
+    "name": "Серебрянка, центр"
   },
   {
-    "lat": 53.945,
-    "lng": 27.685,
-    "name": "Степянка",
-    "id": 307
+    "id": 307,
+    "lat": 53.899024022161825,
+    "lng": 27.63958303649915,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHkwT2ZnMmdF",
+    "name": "Серебрянка, парк"
   },
   {
-    "lat": 53.938,
-    "lng": 27.693,
-    "name": "Шабаны",
-    "id": 308
+    "id": 308,
+    "lat": 53.90733168137765,
+    "lng": 27.637278104540385,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHN2TEd4MUFF",
+    "name": "Серебрянка, улица Притыцкого"
   },
   {
-    "lat": 53.915,
-    "lng": 27.675,
-    "name": "Район Восток, улица Тимирязева",
-    "id": 309
+    "id": 309,
+    "lat": 53.899062688887085,
+    "lng": 27.64892484513577,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFwZlNyTlE.",
+    "name": "Серебрянка, южная часть"
   },
   {
-    "lat": 53.92,
-    "lng": 27.682,
-    "name": "Улица Рокоссовского",
-    "id": 310
+    "id": 310,
+    "lat": 53.89653779274928,
+    "lng": 27.663103119321402,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqZnFwZFE.",
+    "name": "Район Лошица"
   },
   {
-    "lat": 53.912,
-    "lng": 27.675,
-    "name": "Улица Тимирязева",
-    "id": 311
+    "id": 311,
+    "lat": 53.88067938999118,
+    "lng": 27.578826158660412,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ01yczZHaWdF",
+    "name": "Чижовка"
   },
   {
-    "lat": 53.905,
-    "lng": 27.646,
-    "name": "Серебрянка, центр",
-    "id": 312
+    "id": 312,
+    "lat": 53.883398406041955,
+    "lng": 27.67027616221925,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFqY2FzdVFF",
+    "name": "Лошица, ул. Лошицкая"
   },
   {
-    "lat": 53.908,
-    "lng": 27.638,
-    "name": "Серебрянка, улица Притыцкого",
-    "id": 313
+    "id": 313,
+    "lat": 53.871353083911174,
+    "lng": 27.599702796931407,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE1Y0RteWdF",
+    "name": "Чижовка, проспект Любимова"
   },
   {
-    "lat": 53.902,
-    "lng": 27.64,
-    "name": "Серебрянка, парк",
-    "id": 314
+    "id": 314,
+    "lat": 53.879134286485204,
+    "lng": 27.64781503021292,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREdyZjJ0SVE.",
+    "name": "Лошица, усадьба"
   },
   {
-    "lat": 53.899,
-    "lng": 27.65,
-    "name": "Серебрянка, южная часть",
-    "id": 315
+    "id": 315,
+    "lat": 53.87535103578179,
+    "lng": 27.62998007189427,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRvdS1iUGc.",
+    "name": "Лошица, парк"
   },
   {
-    "lat": 53.896,
-    "lng": 27.665,
-    "name": "Район Лошица",
-    "id": 316
+    "id": 316,
+    "lat": 53.86550579100425,
+    "lng": 27.669547801982564,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzYxdmlVTlE.",
+    "name": "Лошица, южная часть"
   },
   {
-    "lat": 53.893,
-    "lng": 27.648,
-    "name": "Серебрянка, ул. Налибокская",
-    "id": 317
+    "id": 317,
+    "lat": 53.84624498770147,
+    "lng": 27.449455290288974,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JfTFNVaWdF",
+    "name": "Малиновка"
   },
   {
-    "lat": 53.882,
-    "lng": 27.58,
-    "name": "Чижовка",
-    "id": 318
+    "id": 318,
+    "lat": 53.84888842449297,
+    "lng": 27.470007608734324,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2IwZWF6RVE.",
+    "name": "Малиновка, ул. Притыцкого"
   },
   {
-    "lat": 53.873,
-    "lng": 27.599,
-    "name": "Чижовка, проспект Любимова",
-    "id": 319
+    "id": 319,
+    "lat": 53.85334150893227,
+    "lng": 27.485800686777882,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0Vyc25BMEFF",
+    "name": "Малиновка, центр"
   },
   {
-    "lat": 53.885,
-    "lng": 27.667,
-    "name": "Лошица, ул. Лошицкая",
-    "id": 320
+    "id": 320,
+    "lat": 53.86730882290154,
+    "lng": 27.506841937553542,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR2WnVtLVFF",
+    "name": "Район Сухарево"
   },
   {
-    "lat": 53.88,
-    "lng": 27.648,
-    "name": "Лошица, усадьба",
-    "id": 321
+    "id": 321,
+    "lat": 53.85628340703774,
+    "lng": 27.494280517535795,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0drTnItU0E.",
+    "name": "Малиновка, ул. Грушевская"
   },
   {
-    "lat": 53.875,
-    "lng": 27.63,
-    "name": "Лошица, парк",
-    "id": 322
+    "id": 322,
+    "lat": 53.86979447122789,
+    "lng": 27.522215815461415,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B0NzZYU1E.",
+    "name": "Сухарево, улица Нарочанская"
   },
   {
-    "lat": 53.868,
-    "lng": 27.667,
-    "name": "Лошица, южная часть",
-    "id": 323
+    "id": 323,
+    "lat": 53.87143501694625,
+    "lng": 27.56048432844274,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1NzNLWFE.",
+    "name": "Сухарево, улица Лещинская"
   },
   {
-    "lat": 53.847,
-    "lng": 27.45,
-    "name": "Малиновка",
-    "id": 324
+    "id": 324,
+    "lat": 53.84431401736172,
+    "lng": 27.598991774767992,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h0T2Y4LWdF",
+    "name": "Район Лебяжий"
   },
   {
-    "lat": 53.849,
-    "lng": 27.47,
-    "name": "Малиновка, ул. Притыцкого",
-    "id": 325
+    "id": 325,
+    "lat": 53.859952177274856,
+    "lng": 27.55809176125938,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1NW1GVUE.",
+    "name": "Нижегородская улица"
   },
   {
-    "lat": 53.852,
-    "lng": 27.485,
-    "name": "Малиновка, центр",
-    "id": 326
+    "id": 326,
+    "lat": 53.87609060871492,
+    "lng": 27.575167827739108,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDd6N3Y1VXc.",
+    "name": "Набережная Свислочи, Чижовка"
   },
   {
-    "lat": 53.855,
-    "lng": 27.495,
-    "name": "Малиновка, ул. Грушевская",
-    "id": 327
+    "id": 327,
+    "lat": 53.87892437217977,
+    "lng": 27.527668365541878,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREs0cmZ3ZFE.",
+    "name": "Парк Первомайский"
   },
   {
-    "lat": 53.867,
-    "lng": 27.506,
-    "name": "Район Сухарево",
-    "id": 328
+    "id": 328,
+    "lat": 53.928001833984894,
+    "lng": 27.482734670190897,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VtYXZwOEFF",
+    "name": "Зелёный Луг"
   },
   {
-    "lat": 53.87,
-    "lng": 27.52,
-    "name": "Сухарево, улица Нарочанская",
-    "id": 329
+    "id": 329,
+    "lat": 53.9288293504395,
+    "lng": 27.563070156251527,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VqY2JYNkFF",
+    "name": "Зелёный Луг, центральная улица"
   },
   {
-    "lat": 53.872,
-    "lng": 27.561,
-    "name": "Сухарево, улица Лещинская",
-    "id": 330
+    "id": 330,
+    "lat": 53.93854221299825,
+    "lng": 27.614571577644323,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzBtc1g4NVFF",
+    "name": "Восток-1"
   },
   {
-    "lat": 53.844,
-    "lng": 27.598,
-    "name": "Район Лебяжий",
-    "id": 331
+    "id": 331,
+    "lat": 53.939836162197714,
+    "lng": 27.43940425406803,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDd2ZFNFNFFF",
+    "name": "Каменная горка, центр"
   },
   {
-    "lat": 53.86,
-    "lng": 27.558,
-    "name": "Нижегородская улица",
-    "id": 332
+    "id": 332,
+    "lat": 53.94997120447508,
+    "lng": 27.47057662692629,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDdwdWFXOUFF",
+    "name": "Каменная горка, северная часть"
   },
   {
-    "lat": 53.877,
-    "lng": 27.576,
-    "name": "Набережная Свислочи, Чижовка",
-    "id": 333
+    "id": 333,
+    "lat": 53.942848219127896,
+    "lng": 27.4566545452121,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREM5TUxhUXc.",
+    "name": "Каменная горка, ул. Матусевича"
   },
   {
-    "lat": 53.879,
-    "lng": 27.529,
-    "name": "Парк Первомайский",
-    "id": 334
+    "id": 334,
+    "lat": 53.94487842242865,
+    "lng": 27.42621079385523,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREgwYVc0a2dF",
+    "name": "Каменная горка, ул. Притыцкого"
   },
   {
-    "lat": 53.927,
-    "lng": 27.481,
-    "name": "Зелёный Луг",
-    "id": 335
+    "id": 335,
+    "lat": 53.95979991449658,
+    "lng": 27.509327349790265,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2J4WXVyX1FF",
+    "name": "Кунцевщина, ул. Кунцевщина"
   },
   {
-    "lat": 53.929,
-    "lng": 27.562,
-    "name": "Зелёный Луг, центральная улица",
-    "id": 336
+    "id": 336,
+    "lat": 53.97112501179302,
+    "lng": 27.414493543229558,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREVrUHVlZlE.",
+    "name": "Брилевичи"
   },
   {
-    "lat": 53.94,
-    "lng": 27.615,
-    "name": "Восток-1",
-    "id": 337
+    "id": 337,
+    "lat": 53.97291009017353,
+    "lng": 27.44816936268878,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1hsLXIyWmc.",
+    "name": "Брилевичи, ул. Брилевская"
   },
   {
-    "lat": 53.94,
-    "lng": 27.44,
-    "name": "Каменная горка, центр",
-    "id": 338
+    "id": 338,
+    "lat": 53.959435642112666,
+    "lng": 27.659023892148653,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2V6UHpHRWc.",
+    "name": "Боровая, центр"
   },
   {
-    "lat": 53.945,
-    "lng": 27.426,
-    "name": "Каменная горка, ул. Притыцкого",
-    "id": 339
+    "id": 339,
+    "lat": 53.96376130528472,
+    "lng": 27.659111069136944,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHlqWTNDTGc.",
+    "name": "Боровая, северная часть"
   },
   {
-    "lat": 53.943,
-    "lng": 27.456,
-    "name": "Каменная горка, ул. Матусевича",
-    "id": 340
+    "id": 340,
+    "lat": 53.948437301527875,
+    "lng": 27.55376649422285,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR3TWVxemdF",
+    "name": "Район Дражня"
   },
   {
-    "lat": 53.948,
-    "lng": 27.47,
-    "name": "Каменная горка, северная часть",
-    "id": 341
+    "id": 341,
+    "lat": 53.96498541214674,
+    "lng": 27.487111642662068,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2IwNEhBblFF",
+    "name": "Малиновка (север)"
   },
   {
-    "lat": 53.96,
-    "lng": 27.508,
-    "name": "Кунцевщина, ул. Кунцевщина",
-    "id": 342
+    "id": 342,
+    "lat": 53.95894067504543,
+    "lng": 27.506249650656798,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2J4WXZWekFF",
+    "name": "Район ул. Якубовского (север)"
   },
   {
-    "lat": 53.97,
-    "lng": 27.416,
-    "name": "Брилевичи",
-    "id": 343
+    "id": 343,
+    "lat": 53.90792772692157,
+    "lng": 27.424098146516315,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1g2ZTdZekFF",
+    "name": "Юго-запад, ул. Притыцкого"
   },
   {
-    "lat": 53.973,
-    "lng": 27.448,
-    "name": "Брилевичи, ул. Брилевская",
-    "id": 344
+    "id": 344,
+    "lat": 53.906361606618525,
+    "lng": 27.44299211632898,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2JpX0txdlFF",
+    "name": "Улица Долгиновский тракт"
   },
   {
-    "lat": 53.96,
-    "lng": 27.66,
-    "name": "Боровая, центр",
-    "id": 345
+    "id": 345,
+    "lat": 53.87238546839925,
+    "lng": 27.45052539901868,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0dfYmZ0Tnc.",
+    "name": "Юго-запад, ул. Воронянского"
   },
   {
-    "lat": 53.964,
-    "lng": 27.66,
-    "name": "Боровая, северная часть",
-    "id": 346
+    "id": 346,
+    "lat": 53.86041140955477,
+    "lng": 27.53864383013613,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0huTTYtOFFF",
+    "name": "Чижовка, ул. Плеханова"
   },
   {
-    "lat": 53.949,
-    "lng": 27.554,
-    "name": "Район Дражня",
-    "id": 347
+    "id": 347,
+    "lat": 53.85688990203836,
+    "lng": 27.513711405943404,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2NqZXVtMGdF",
+    "name": "Район ул. Аэродромная"
   },
   {
-    "lat": 53.96,
-    "lng": 27.507,
-    "name": "Район ул. Якубовского (север)",
-    "id": 348
+    "id": 348,
+    "lat": 53.84614185580909,
+    "lng": 27.573659164008216,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0h6S2ktRmc.",
+    "name": "Район Лебяжий (юг)"
   },
   {
-    "lat": 53.966,
-    "lng": 27.484,
-    "name": "Малиновка (север)",
-    "id": 349
+    "id": 349,
+    "lat": 53.84619951261697,
+    "lng": 27.414517417480713,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ001TmVsdVFF",
+    "name": "Дачный посёлок, юго-запад"
   },
   {
-    "lat": 53.908,
-    "lng": 27.424,
-    "name": "Юго-запад, ул. Притыцкого",
-    "id": 350
+    "id": 350,
+    "lat": 53.900642496594934,
+    "lng": 27.549607595124872,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3F4TEgtZ0FF",
+    "name": "Станция метро Площадь Победы"
   },
   {
-    "lat": 53.906,
-    "lng": 27.443,
-    "name": "Улица Долгиновский тракт",
-    "id": 351
+    "id": 351,
+    "lat": 53.90803317011056,
+    "lng": 27.548968206944373,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREVrdEdQRVE.",
+    "name": "Станция метро Парк Челюскинцев"
   },
   {
-    "lat": 53.872,
-    "lng": 27.452,
-    "name": "Юго-запад, ул. Воронянского",
-    "id": 352
+    "id": 352,
+    "lat": 53.93186220401532,
+    "lng": 27.64992715832504,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ001T21wdUFF",
+    "name": "Станция метро Уручье"
   },
   {
-    "lat": 53.86,
-    "lng": 27.542,
-    "name": "Чижовка, ул. Плеханова",
-    "id": 353
+    "id": 353,
+    "lat": 53.90536879962282,
+    "lng": 27.532789255649124,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR5LWJGUWc.",
+    "name": "Станция метро Молодёжная"
   },
   {
-    "lat": 53.858,
-    "lng": 27.517,
-    "name": "Район ул. Аэродромная",
-    "id": 354
+    "id": 354,
+    "lat": 53.896823883287254,
+    "lng": 27.546743457780227,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREVrYy1paGdF",
+    "name": "Станция метро Немига"
   },
   {
-    "lat": 53.847,
-    "lng": 27.575,
-    "name": "Район Лебяжий (юг)",
-    "id": 355
+    "id": 355,
+    "lat": 53.89346770774568,
+    "lng": 27.555331059183413,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzWXlYaUFF",
+    "name": "Станция метро Троицкое предместье"
   },
   {
-    "lat": 53.848,
-    "lng": 27.413,
-    "name": "Дачный посёлок, юго-запад",
-    "id": 356
+    "id": 356,
+    "lat": 53.90117989361611,
+    "lng": 27.534812020097124,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VuZnEtMndF",
+    "name": "Станция метро Институт культуры"
   },
   {
-    "lat": 53.9003,
-    "lng": 27.5491,
-    "name": "Станция метро Площадь Победы",
-    "id": 357
+    "id": 357,
+    "lat": 53.90596772856232,
+    "lng": 27.525880813659327,
+    "panoId": "CAoSHENJQUJJaENSaHpZRnI4aHFlZmRody1PUHhNUkg.",
+    "name": "Станция метро Грушевка"
   },
   {
-    "lat": 53.908,
-    "lng": 27.549,
-    "name": "Станция метро Парк Челюскинцев",
-    "id": 358
+    "id": 358,
+    "lat": 53.90958396812939,
+    "lng": 27.519432306465127,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGNoZDZ6NFFF",
+    "name": "Станция метро Михалово"
   },
   {
-    "lat": 53.9152,
-    "lng": 27.6199,
-    "name": "Станция метро Восток",
-    "id": 359
+    "id": 359,
+    "lat": 53.92018422677824,
+    "lng": 27.49808301493231,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzZXk3Wnc.",
+    "name": "Станция метро Малиновка"
   },
   {
-    "lat": 53.932,
-    "lng": 27.65,
-    "name": "Станция метро Уручье",
-    "id": 360
+    "id": 360,
+    "lat": 53.91572982042075,
+    "lng": 27.507550269974463,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsZmV1RWc.",
+    "name": "Станция метро Петровщина"
   },
   {
-    "lat": 53.905,
-    "lng": 27.531,
-    "name": "Станция метро Молодёжная",
-    "id": 361
+    "id": 361,
+    "lat": 53.905905885376114,
+    "lng": 27.555285696825067,
+    "panoId": "AV2LYdDrb9uJK55aa5CWog",
+    "name": "Национальный исторический музей"
   },
   {
-    "lat": 53.897,
-    "lng": 27.547,
-    "name": "Станция метро Немига",
-    "id": 362
+    "id": 362,
+    "lat": 53.94856108210614,
+    "lng": 27.536008737507522,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFudVdsa3dF",
+    "name": "Станция метро Ковальская слобода"
   },
   {
-    "lat": 53.893,
-    "lng": 27.555,
-    "name": "Станция метро Троицкое предместье",
-    "id": 363
+    "id": 363,
+    "lat": 53.885380928673996,
+    "lng": 27.553471083939936,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHF6ZTZFb1FF",
+    "name": "Станция метро Немига (ул. Немига)"
   },
   {
-    "lat": 53.901,
-    "lng": 27.536,
-    "name": "Станция метро Институт культуры",
-    "id": 364
+    "id": 364,
+    "lat": 53.894465515887845,
+    "lng": 27.544076742239813,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFzNl9CdmdF",
+    "name": "Станция метро Площадь Государственного флага"
   },
   {
-    "lat": 53.906,
-    "lng": 27.525,
-    "name": "Станция метро Грушевка",
-    "id": 365
+    "id": 365,
+    "lat": 53.910832990573454,
+    "lng": 27.57570330689367,
+    "panoId": "CAoSFENJSE0wb2dLRUlDQWdJRFU0T1ZN",
+    "name": "Белорусский государственный музей народной архитектуры"
   },
   {
-    "lat": 53.91,
-    "lng": 27.518,
-    "name": "Станция метро Михалово",
-    "id": 366
+    "id": 366,
+    "lat": 53.91173761759119,
+    "lng": 27.560474106934333,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3NwdDZ1Q0E.",
+    "name": "Музей природы и экологии"
   },
   {
-    "lat": 53.915,
-    "lng": 27.509,
-    "name": "Станция метро Петровщина",
-    "id": 367
+    "id": 367,
+    "lat": 53.895978927519785,
+    "lng": 27.548031954615734,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZtSWo0VXc.",
+    "name": "Театр музыкальной комедии"
   },
   {
-    "lat": 53.92,
-    "lng": 27.497,
-    "name": "Станция метро Малиновка",
-    "id": 368
+    "id": 368,
+    "lat": 53.90737319402603,
+    "lng": 27.5655603556973,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h2TmppbWdF",
+    "name": "Белорусский государственный цирк"
   },
   {
-    "lat": 53.945,
-    "lng": 27.548,
-    "name": "Станция метро Каменная горка",
-    "id": 369
+    "id": 369,
+    "lat": 53.91090581088584,
+    "lng": 27.567396176255475,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsY194Z0FF",
+    "name": "Белорусская государственная филармония"
   },
   {
-    "lat": 53.949,
-    "lng": 27.537,
-    "name": "Станция метро Ковальская слобода",
-    "id": 370
+    "id": 370,
+    "lat": 53.8866955326537,
+    "lng": 27.570770727375603,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR4SUNJd3dF",
+    "name": "Дворец спорта"
   },
   {
-    "lat": 53.885,
-    "lng": 27.553,
-    "name": "Станция метро Немига (ул. Немига)",
-    "id": 371
+    "id": 371,
+    "lat": 53.91477318650211,
+    "lng": 27.546758398976028,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRodlBOTFE.",
+    "name": "Ледовый дворец"
   },
   {
-    "lat": 53.894,
-    "lng": 27.544,
-    "name": "Станция метро Площадь Государственного флага",
-    "id": 372
+    "id": 372,
+    "lat": 53.933603614706755,
+    "lng": 27.588569573477542,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEtZXYyZkE.",
+    "name": "Минск-Арена"
   },
   {
-    "lat": 53.906,
-    "lng": 27.554,
-    "name": "Национальный исторический музей",
-    "id": 373
+    "id": 373,
+    "lat": 53.93200310815209,
+    "lng": 27.58272524312306,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ09oUFNiV3c.",
+    "name": "Площадь у Минск-Арены"
   },
   {
-    "lat": 53.911,
-    "lng": 27.5765,
-    "name": "Белорусский государственный музей народной архитектуры",
-    "id": 374
+    "id": 374,
+    "lat": 53.91727528807429,
+    "lng": 27.554579568122595,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VqZWFwSUE.",
+    "name": "Проспект у БНТУ"
   },
   {
-    "lat": 53.912,
-    "lng": 27.56,
-    "name": "Музей природы и экологии",
-    "id": 375
+    "id": 375,
+    "lat": 53.91494397280276,
+    "lng": 27.558408178903335,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VqZWJKVnc.",
+    "name": "БНТУ (Белорусский национальный технический университет)"
   },
   {
-    "lat": 53.896,
-    "lng": 27.548,
-    "name": "Театр музыкальной комедии",
-    "id": 376
+    "id": 376,
+    "lat": 53.922632706023656,
+    "lng": 27.54974129763654,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsZl8xdmdF",
+    "name": "Главный корпус БГУ"
   },
   {
-    "lat": 53.9075,
-    "lng": 27.5655,
-    "name": "Белорусский государственный цирк",
-    "id": 377
+    "id": 377,
+    "lat": 53.92050599266148,
+    "lng": 27.551167027051243,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREc5Y1AwcmdF",
+    "name": "БГУ (Белорусский государственный университет)"
   },
   {
-    "lat": 53.9105,
-    "lng": 27.566,
-    "name": "Белорусская государственная филармония",
-    "id": 378
+    "id": 378,
+    "lat": 53.905376684543285,
+    "lng": 27.580152450482757,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGM4X1RHZlE.",
+    "name": "Белорусский государственный медицинский университет"
   },
   {
-    "lat": 53.9028,
-    "lng": 27.56,
-    "name": "Театр им. Янки Купалы",
-    "id": 379
+    "id": 379,
+    "lat": 53.925214128934634,
+    "lng": 27.597694684378432,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHl5dWJBUEE.",
+    "name": "Белорусский государственный педагогический университет"
   },
   {
-    "lat": 53.887,
-    "lng": 27.57,
-    "name": "Дворец спорта",
-    "id": 380
+    "id": 380,
+    "lat": 53.899366571559575,
+    "lng": 27.569259669870206,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2t5b2lJLWdF",
+    "name": "Белорусская государственная академия искусств"
   },
   {
-    "lat": 53.9078,
-    "lng": 27.553,
-    "name": "Дворец спорта Раубичи (спортзал)",
-    "id": 381
+    "id": 381,
+    "lat": 53.910370073946524,
+    "lng": 27.544227065877003,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDZ0NmZtMkFF",
+    "name": "Белорусский государственный институт культуры"
   },
   {
-    "lat": 53.915,
-    "lng": 27.548,
-    "name": "Ледовый дворец",
-    "id": 382
+    "id": 382,
+    "lat": 53.90711009012766,
+    "lng": 27.541870742982123,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsZV9ULUFF",
+    "name": "Академия управления при Президенте РБ"
   },
   {
-    "lat": 53.9335,
-    "lng": 27.586,
-    "name": "Минск-Арена",
-    "id": 383
+    "id": 383,
+    "lat": 53.91382333698811,
+    "lng": 27.56296290695302,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0V1SnZqYUE.",
+    "name": "ТЦ Корона (пр. Независимости)"
   },
   {
-    "lat": 53.9325,
-    "lng": 27.585,
-    "name": "Площадь у Минск-Арены",
-    "id": 384
+    "id": 384,
+    "lat": 53.897198927598424,
+    "lng": 27.565615949632736,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHF3NUtERFE.",
+    "name": "Торговый дом На Немиге"
   },
   {
-    "lat": 53.914,
-    "lng": 27.5565,
-    "name": "БНТУ (Белорусский национальный технический университет)",
-    "id": 385
+    "id": 385,
+    "lat": 53.894644460520716,
+    "lng": 27.493793031750265,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzWXo3RUE.",
+    "name": "ТЦ Арена-Сити"
   },
   {
-    "lat": 53.9175,
-    "lng": 27.5545,
-    "name": "Проспект у БНТУ",
-    "id": 386
+    "id": 386,
+    "lat": 53.90777389960491,
+    "lng": 27.49680949120541,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRE1zcUx4RXc.",
+    "name": "ТЦ Тивали"
   },
   {
-    "lat": 53.92,
-    "lng": 27.55,
-    "name": "БГУ (Белорусский государственный университет)",
-    "id": 387
+    "id": 387,
+    "lat": 53.90159461273029,
+    "lng": 27.609363312501163,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNwODJvRXc.",
+    "name": "ТЦ Гиппо (пр. Независимости)"
   },
   {
-    "lat": 53.9225,
-    "lng": 27.551,
-    "name": "Главный корпус БГУ",
-    "id": 388
+    "id": 388,
+    "lat": 53.92522951212836,
+    "lng": 27.544594473332744,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRpdUQ3UVE.",
+    "name": "ТЦ Столица (Пушкинская)"
   },
   {
-    "lat": 53.906,
-    "lng": 27.579,
-    "name": "Белорусский государственный медицинский университет",
-    "id": 389
+    "id": 389,
+    "lat": 53.899685822045726,
+    "lng": 27.528655565585783,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFwWkRQNUFF",
+    "name": "ТРЦ Силуэт"
   },
   {
-    "lat": 53.903,
-    "lng": 27.553,
-    "name": "БГЭУ",
-    "id": 390
+    "id": 390,
+    "lat": 53.88982392310701,
+    "lng": 27.505434051189468,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2ExNVNKb2dF",
+    "name": "ТЦ Ekspobel"
   },
   {
-    "lat": 53.925,
-    "lng": 27.598,
-    "name": "Белорусский государственный педагогический университет",
-    "id": 391
+    "id": 391,
+    "lat": 53.90885448769888,
+    "lng": 27.579580459149355,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREVrZXFuY0E.",
+    "name": "Комаровский рынок"
   },
   {
-    "lat": 53.9,
-    "lng": 27.57,
-    "name": "Белорусская государственная академия искусств",
-    "id": 392
+    "id": 392,
+    "lat": 53.89032751250578,
+    "lng": 27.545932788477035,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFzNV9qQVE.",
+    "name": "Центральный рынок"
   },
   {
-    "lat": 53.9095,
-    "lng": 27.545,
-    "name": "Белорусский государственный институт культуры",
-    "id": 393
+    "id": 393,
+    "lat": 53.910140391075046,
+    "lng": 27.581738255092468,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ001TG5McXdF",
+    "name": "Площадь Комаровского рынка"
   },
   {
-    "lat": 53.907,
-    "lng": 27.542,
-    "name": "Академия управления при Президенте РБ",
-    "id": 394
+    "id": 394,
+    "lat": 53.90087891780137,
+    "lng": 27.496274934489243,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2ExNVR2MXdF",
+    "name": "Ждановичи (авторынок)"
   },
   {
-    "lat": 53.902,
-    "lng": 27.531,
-    "name": "Военная академия Республики Беларусь",
-    "id": 395
+    "id": 395,
+    "lat": 53.86504910425284,
+    "lng": 27.50654357834677,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRsYi1taVFF",
+    "name": "Ждановичи, ул. Товарная"
   },
   {
-    "lat": 53.897,
-    "lng": 27.566,
-    "name": "Торговый дом На Немиге",
-    "id": 396
+    "id": 396,
+    "lat": 53.91303987402425,
+    "lng": 27.6149524230683,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFoYVhjaUFF",
+    "name": "Автовокзал Восточный"
   },
   {
-    "lat": 53.914,
-    "lng": 27.564,
-    "name": "ТЦ Корона (пр. Независимости)",
-    "id": 397
+    "id": 397,
+    "lat": 53.918868494565814,
+    "lng": 27.625723956822508,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VtWXUtU2c.",
+    "name": "Площадь у Восточного автовокзала"
   },
   {
-    "lat": 53.895,
-    "lng": 27.495,
-    "name": "ТЦ Арена-Сити",
-    "id": 398
+    "id": 398,
+    "lat": 53.89161471484577,
+    "lng": 27.53886314783537,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREszX2FCblFF",
+    "name": "Автовокзал Центральный"
   },
   {
-    "lat": 53.908,
-    "lng": 27.498,
-    "name": "ТЦ Тивали",
-    "id": 399
+    "id": 399,
+    "lat": 53.899781936208214,
+    "lng": 27.555771573454596,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2EydF8weVFF",
+    "name": "Площадь Независимости, подземный переход"
   },
   {
-    "lat": 53.905,
-    "lng": 27.494,
-    "name": "Ледовый дворец, площадь",
-    "id": 400
+    "id": 400,
+    "lat": 53.913988787136674,
+    "lng": 27.55265406300658,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0sxdFBfandF",
+    "name": "Автобусная остановка БНТУ"
   },
   {
-    "lat": 53.903,
-    "lng": 27.61,
-    "name": "ТЦ Гиппо (пр. Независимости)",
-    "id": 401
+    "id": 401,
+    "lat": 53.90507087851954,
+    "lng": 27.452682139930932,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0V4NUhJakFF",
+    "name": "Стела-обелиск 'Минск — город-герой'"
   },
   {
-    "lat": 53.925,
-    "lng": 27.546,
-    "name": "ТЦ Столица (Пушкинская)",
-    "id": 402
+    "id": 402,
+    "lat": 53.89932681619371,
+    "lng": 27.449579850762863,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ25pTGpkU3c.",
+    "name": "Площадь у обелиска"
   },
   {
-    "lat": 53.9,
-    "lng": 27.528,
-    "name": "ТРЦ Силуэт",
-    "id": 403
+    "id": 403,
+    "lat": 53.88841281993079,
+    "lng": 27.56214142626625,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzWXpfUGc.",
+    "name": "Памятник Симону Боливару"
   },
   {
-    "lat": 53.89,
-    "lng": 27.505,
-    "name": "ТЦ Ekspobel",
-    "id": 404
+    "id": 404,
+    "lat": 53.90237762064485,
+    "lng": 27.563463731663,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0c2YlhTcWdF",
+    "name": "Памятник героям-пожарным"
   },
   {
-    "lat": 53.948,
-    "lng": 27.548,
-    "name": "ТЦ ProStore (Кунцевщина)",
-    "id": 405
+    "id": 405,
+    "lat": 53.91027813806926,
+    "lng": 27.58664886513123,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VqZGJqVGc.",
+    "name": "Монумент (площадь Победителей)"
   },
   {
-    "lat": 53.908,
-    "lng": 27.58,
-    "name": "Комаровский рынок",
-    "id": 406
+    "id": 406,
+    "lat": 53.889984016570075,
+    "lng": 27.542618451461816,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRoYi1YYmc.",
+    "name": "Набережная Свислочи"
   },
   {
-    "lat": 53.91,
-    "lng": 27.582,
-    "name": "Площадь Комаровского рынка",
-    "id": 407
+    "id": 407,
+    "lat": 53.9042815963099,
+    "lng": 27.543266258529247,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2ExN1RYa0FF",
+    "name": "Парк Победы, набережная"
   },
   {
-    "lat": 53.89,
-    "lng": 27.546,
-    "name": "Центральный рынок",
-    "id": 408
+    "id": 408,
+    "lat": 53.89986086068793,
+    "lng": 27.539899903024022,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDZyOEdfZXc.",
+    "name": "Парк Победы, восточный берег"
   },
   {
-    "lat": 53.901,
-    "lng": 27.494,
-    "name": "Ждановичи (авторынок)",
-    "id": 409
+    "id": 409,
+    "lat": 53.90601265566913,
+    "lng": 27.545859810688107,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHE4LUg5V1E.",
+    "name": "Парк Победы, Комсомольское озеро"
   },
   {
-    "lat": 53.864,
-    "lng": 27.507,
-    "name": "Ждановичи, ул. Товарная",
-    "id": 410
+    "id": 410,
+    "lat": 53.86491023221388,
+    "lng": 27.667408258562197,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFyYVBIVFE.",
+    "name": "Парк Лошицкий, главный вход"
   },
   {
-    "lat": 53.913,
-    "lng": 27.614,
-    "name": "Автовокзал Восточный",
-    "id": 411
+    "id": 411,
+    "lat": 53.90888298305047,
+    "lng": 27.576460944916917,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0U0clhFV1E.",
+    "name": "Парк Челюскинцев, вход"
   },
   {
-    "lat": 53.9195,
-    "lng": 27.625,
-    "name": "Площадь у Восточного автовокзала",
-    "id": 412
+    "id": 412,
+    "lat": 53.907897360913175,
+    "lng": 27.54829201057257,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREVrdEdQOWdF",
+    "name": "Озеро в парке Победы"
   },
   {
-    "lat": 53.892,
-    "lng": 27.539,
-    "name": "Автовокзал Центральный",
-    "id": 413
+    "id": 413,
+    "lat": 53.869472491466524,
+    "lng": 27.649378358354937,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHF6ZkxUa2dF",
+    "name": "Лошицкий парк, набережная"
   },
   {
-    "lat": 53.914,
-    "lng": 27.5525,
-    "name": "Автобусная остановка БНТУ",
-    "id": 414
+    "id": 414,
+    "lat": 53.87579731375288,
+    "lng": 27.638631866165877,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VvSmVzNHdF",
+    "name": "Лошицкий парк, центр"
   },
   {
-    "lat": 53.9,
-    "lng": 27.556,
-    "name": "Площадь Независимости, подземный переход",
-    "id": 415
+    "id": 415,
+    "lat": 53.878375779177404,
+    "lng": 27.494387220801766,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFpNWo1TXc.",
+    "name": "Парк Дружбы народов"
   },
   {
-    "lat": 53.905,
-    "lng": 27.453,
-    "name": "Стела-обелиск 'Минск — город-герой'",
-    "id": 416
+    "id": 416,
+    "lat": 53.91770331781103,
+    "lng": 27.548769985297778,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNzTjNKYkE.",
+    "name": "Парк Пушкина"
   },
   {
-    "lat": 53.9,
-    "lng": 27.45,
-    "name": "Площадь у обелиска",
-    "id": 417
+    "id": 417,
+    "lat": 53.92459990215775,
+    "lng": 27.58187000246576,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ203UE8wWUE.",
+    "name": "Парк 50-летия Октября"
   },
   {
-    "lat": 53.888,
-    "lng": 27.561,
-    "name": "Памятник Симону Боливару",
-    "id": 418
+    "id": 418,
+    "lat": 53.93201256790197,
+    "lng": 27.574908189705102,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREVqci1MQ2c.",
+    "name": "Парк Судьбы"
   },
   {
-    "lat": 53.9025,
-    "lng": 27.5635,
-    "name": "Памятник героям-пожарным",
-    "id": 419
+    "id": 419,
+    "lat": 53.857447375580584,
+    "lng": 27.5394394616168,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3F2YkxFX2dF",
+    "name": "Парк Московский"
   },
   {
-    "lat": 53.887,
-    "lng": 27.552,
-    "name": "Памятник Максиму Богдановичу",
-    "id": 420
+    "id": 420,
+    "lat": 53.9554214248802,
+    "lng": 27.582166650110022,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRyZXJIa2dF",
+    "name": "Цнянское водохранилище"
   },
   {
-    "lat": 53.9098,
-    "lng": 27.587,
-    "name": "Монумент (площадь Победителей)",
-    "id": 421
+    "id": 421,
+    "lat": 53.9595723695573,
+    "lng": 27.589974056295777,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1h0NTdXSXc.",
+    "name": "Цнянка, пляж"
   },
   {
-    "lat": 53.8835,
-    "lng": 27.552,
-    "name": "Площадь перед Купаловским театром",
-    "id": 422
+    "id": 422,
+    "lat": 53.961846940009956,
+    "lng": 27.585533749456673,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h0NTZFLUFF",
+    "name": "Цнянское водохранилище, набережная"
   },
   {
-    "lat": 53.89,
-    "lng": 27.543,
-    "name": "Набережная Свислочи",
-    "id": 423
+    "id": 423,
+    "lat": 53.84082790375788,
+    "lng": 27.58017544724478,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFvNHpINUFF",
+    "name": "Слепянская водная система"
   },
   {
-    "lat": 53.904,
-    "lng": 27.543,
-    "name": "Парк Победы, набережная",
-    "id": 424
+    "id": 424,
+    "lat": 53.844241081376275,
+    "lng": 27.5884435194181,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0h6TFNiV1E.",
+    "name": "Слепянка, канал"
   },
   {
-    "lat": 53.9,
-    "lng": 27.54,
-    "name": "Парк Победы, восточный берег",
-    "id": 425
+    "id": 425,
+    "lat": 53.91278343401407,
+    "lng": 27.53111870624289,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR2Yi1CVlE.",
+    "name": "Улица Кальварийская"
   },
   {
-    "lat": 53.906,
-    "lng": 27.546,
-    "name": "Парк Победы, Комсомольское озеро",
-    "id": 426
+    "id": 426,
+    "lat": 53.8945137845069,
+    "lng": 27.55182461458219,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0V4b09aMHdF",
+    "name": "Набережная у Троицкого предместья"
   },
   {
-    "lat": 53.9078,
-    "lng": 27.548,
-    "name": "Озеро в парке Победы",
-    "id": 427
+    "id": 427,
+    "lat": 53.907148981869646,
+    "lng": 27.537708867019912,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRE02c2J1QlE.",
+    "name": "Улица Максима Танка"
   },
   {
-    "lat": 53.909,
-    "lng": 27.576,
-    "name": "Парк Челюскинцев, вход",
-    "id": 428
+    "id": 428,
+    "lat": 53.911959152646155,
+    "lng": 27.544948111811554,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VycW03bEFF",
+    "name": "Улица Фрунзе"
   },
   {
-    "lat": 53.867,
-    "lng": 27.666,
-    "name": "Парк Лошицкий, главный вход",
-    "id": 429
+    "id": 429,
+    "lat": 53.900014491908365,
+    "lng": 27.52238085827494,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2F1THZBYXc.",
+    "name": "Улица Сурганова"
   },
   {
-    "lat": 53.87,
-    "lng": 27.65,
-    "name": "Лошицкий парк, набережная",
-    "id": 430
+    "id": 430,
+    "lat": 53.899112825226354,
+    "lng": 27.531427981325212,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHE1ZWJHR0E.",
+    "name": "Проспект Машерова, участок у МКАД"
   },
   {
-    "lat": 53.875,
-    "lng": 27.64,
-    "name": "Лошицкий парк, центр",
-    "id": 431
+    "id": 431,
+    "lat": 53.906600970711665,
+    "lng": 27.5253314371105,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2ExN1RzMGdF",
+    "name": "Проспект Победителей у Дворца спорта"
   },
   {
-    "lat": 53.88,
-    "lng": 27.495,
-    "name": "Парк Дружбы народов",
-    "id": 432
+    "id": 432,
+    "lat": 53.90473952520325,
+    "lng": 27.527201023325894,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRzN0xFSEE.",
+    "name": "Проспект Победителей, ТЦ"
   },
   {
-    "lat": 53.918,
-    "lng": 27.549,
-    "name": "Парк Пушкина",
-    "id": 433
+    "id": 433,
+    "lat": 53.91055348661543,
+    "lng": 27.520554181796115,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHF4YmpfOEFF",
+    "name": "Проспект Победителей, 110"
   },
   {
-    "lat": 53.925,
-    "lng": 27.582,
-    "name": "Парк 50-летия Октября",
-    "id": 434
+    "id": 434,
+    "lat": 53.90876410882212,
+    "lng": 27.52278100486416,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGNfOC1OamdF",
+    "name": "Проспект Победителей, 100"
   },
   {
-    "lat": 53.933,
-    "lng": 27.576,
-    "name": "Парк Судьбы",
-    "id": 435
+    "id": 435,
+    "lat": 53.91454592449898,
+    "lng": 27.515301280965094,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRpWm5zSmc.",
+    "name": "Проспект Победителей, 120"
   },
   {
-    "lat": 53.857,
-    "lng": 27.542,
-    "name": "Парк Московский",
-    "id": 436
+    "id": 436,
+    "lat": 53.91454001653982,
+    "lng": 27.513979276596846,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsWl93TWc.",
+    "name": "Проспект Победителей, 130"
   },
   {
-    "lat": 53.956,
-    "lng": 27.582,
-    "name": "Цнянское водохранилище",
-    "id": 437
+    "id": 437,
+    "lat": 53.92993629381694,
+    "lng": 27.500738512996598,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHluZV8xMEFF",
+    "name": "Проспект Победителей, 160"
   },
   {
-    "lat": 53.96,
-    "lng": 27.59,
-    "name": "Цнянка, пляж",
-    "id": 438
+    "id": 438,
+    "lat": 53.92189801841663,
+    "lng": 27.512409787344843,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0V0YTY3UHc.",
+    "name": "Проспект Победителей, 140"
   },
   {
-    "lat": 53.962,
-    "lng": 27.586,
-    "name": "Цнянское водохранилище, набережная",
-    "id": 439
+    "id": 439,
+    "lat": 53.8860586843176,
+    "lng": 27.56414538020296,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3E4YmpjdUFF",
+    "name": "Улица Пулихова"
   },
   {
-    "lat": 53.838,
-    "lng": 27.458,
-    "name": "Водохранилище Криница",
-    "id": 440
+    "id": 440,
+    "lat": 53.8920077581369,
+    "lng": 27.52903461850389,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VuT1hQM1FF",
+    "name": "Проспект Партизанский"
   },
   {
-    "lat": 53.842,
-    "lng": 27.58,
-    "name": "Слепянская водная система",
-    "id": 441
+    "id": 441,
+    "lat": 53.88033876765347,
+    "lng": 27.581076021334308,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2s0dDNjdFFF",
+    "name": "Улица Чижевских"
   },
   {
-    "lat": 53.846,
-    "lng": 27.59,
-    "name": "Слепянка, канал",
-    "id": 442
+    "id": 442,
+    "lat": 53.87484127151835,
+    "lng": 27.565430846237923,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFxOWFZdkFF",
+    "name": "Проспект Любимова"
   },
   {
-    "lat": 53.9,
-    "lng": 27.535,
-    "name": "Набережная Свислочи, западная",
-    "id": 443
+    "id": 443,
+    "lat": 53.877156513321054,
+    "lng": 27.51058308300773,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDdsLS1RZFE.",
+    "name": "Улица Аэродромная"
   },
   {
-    "lat": 53.895,
-    "lng": 27.552,
-    "name": "Набережная у Троицкого предместья",
-    "id": 444
+    "id": 444,
+    "lat": 53.86505891061964,
+    "lng": 27.559627624381,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1NW1kUmc.",
+    "name": "Улица Алибегова"
   },
   {
-    "lat": 53.913,
-    "lng": 27.53,
-    "name": "Улица Кальварийская",
-    "id": 445
+    "id": 445,
+    "lat": 53.90528492158618,
+    "lng": 27.509868690902852,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2ExOVNOQ0E.",
+    "name": "Улица Притыцкого, западная часть"
   },
   {
-    "lat": 53.912,
-    "lng": 27.545,
-    "name": "Улица Фрунзе",
-    "id": 446
+    "id": 446,
+    "lat": 53.88150461854221,
+    "lng": 27.521233061422762,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHE1Y0RtS2c.",
+    "name": "Улица Притыцкого (центр)"
   },
   {
-    "lat": 53.907,
-    "lng": 27.538,
-    "name": "Улица Максима Танка",
-    "id": 447
+    "id": 447,
+    "lat": 53.920017232620495,
+    "lng": 27.487205536312064,
+    "panoId": "CAoSFENJSE0wb2dLRUlDQWdJRDQzdFJ2",
+    "name": "Улица Скрипникова"
   },
   {
-    "lat": 53.899,
-    "lng": 27.53,
-    "name": "Проспект Машерова, участок у МКАД",
-    "id": 448
+    "id": 448,
+    "lat": 53.935374674675636,
+    "lng": 27.48176270822968,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEtZE9yb2dF",
+    "name": "Улица Одинцова"
   },
   {
-    "lat": 53.901,
-    "lng": 27.525,
-    "name": "Улица Сурганова",
-    "id": 449
+    "id": 449,
+    "lat": 53.93013977541585,
+    "lng": 27.444502389016527,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h4WmFKeHdF",
+    "name": "Улица Тимошенко"
   },
   {
-    "lat": 53.905,
-    "lng": 27.527,
-    "name": "Проспект Победителей, ТЦ",
-    "id": 450
+    "id": 450,
+    "lat": 53.936363892881126,
+    "lng": 27.462076527047472,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR0ZnlRRlE.",
+    "name": "Улица Краснослободская"
   },
   {
-    "lat": 53.9065,
-    "lng": 27.526,
-    "name": "Проспект Победителей у Дворца спорта",
-    "id": 451
+    "id": 451,
+    "lat": 53.9237439824497,
+    "lng": 27.436300820056214,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHlqZjY5T1E.",
+    "name": "Улица Лобанка"
   },
   {
-    "lat": 53.909,
-    "lng": 27.524,
-    "name": "Проспект Победителей, 100",
-    "id": 452
+    "id": 452,
+    "lat": 53.92007553361675,
+    "lng": 27.427650612670114,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1htZi1KaUFF",
+    "name": "Проспект Дзержинского"
   },
   {
-    "lat": 53.911,
-    "lng": 27.521,
-    "name": "Проспект Победителей, 110",
-    "id": 453
+    "id": 453,
+    "lat": 53.901111220096155,
+    "lng": 27.424900544287457,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ255T1dhalFF",
+    "name": "Юго-запад, ул. Игуменский тракт"
   },
   {
-    "lat": 53.914,
-    "lng": 27.518,
-    "name": "Проспект Победителей, 120",
-    "id": 454
+    "id": 454,
+    "lat": 53.915487567338126,
+    "lng": 27.42176097420611,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGMwTC1VUlE.",
+    "name": "Проспект Дзержинского, ул. Жилуновича"
   },
   {
-    "lat": 53.917,
-    "lng": 27.514,
-    "name": "Проспект Победителей, 130",
-    "id": 455
+    "id": 455,
+    "lat": 53.89540118865805,
+    "lng": 27.41938240838293,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2J3dWFCeUFF",
+    "name": "Улица Цнянская"
   },
   {
-    "lat": 53.92,
-    "lng": 27.51,
-    "name": "Проспект Победителей, 140",
-    "id": 456
+    "id": 456,
+    "lat": 53.889896018824814,
+    "lng": 27.444939868357785,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzdncXZGMkFF",
+    "name": "Улица Тимошенко (юг)"
   },
   {
-    "lat": 53.93,
-    "lng": 27.497,
-    "name": "Проспект Победителей, 160",
-    "id": 457
+    "id": 457,
+    "lat": 53.87624718918656,
+    "lng": 27.466169114359438,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGMwSzM3LXdF",
+    "name": "Улица Воронянского"
   },
   {
-    "lat": 53.892,
-    "lng": 27.529,
-    "name": "Проспект Партизанский",
-    "id": 458
+    "id": 458,
+    "lat": 53.87014668956573,
+    "lng": 27.482023330672067,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzZzcWJSemdF",
+    "name": "Улица Налибокская (юг)"
   },
   {
-    "lat": 53.886,
-    "lng": 27.564,
-    "name": "Улица Пулихова",
-    "id": 459
+    "id": 459,
+    "lat": 53.8653279070276,
+    "lng": 27.466158944732047,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGM4NVRNTFE.",
+    "name": "Улица Карбышева"
   },
   {
-    "lat": 53.8815,
-    "lng": 27.581,
-    "name": "Улица Чижевских",
-    "id": 460
+    "id": 460,
+    "lat": 53.84875919505123,
+    "lng": 27.459312381315776,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1d1dVNvOWdF",
+    "name": "Малиновка, ул. Жасминовая"
   },
   {
-    "lat": 53.875,
-    "lng": 27.565,
-    "name": "Проспект Любимова",
-    "id": 461
+    "id": 461,
+    "lat": 53.8456670725854,
+    "lng": 27.519956703675234,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE3ZnJja2dF",
+    "name": "Улица Чечота"
   },
   {
-    "lat": 53.865,
-    "lng": 27.56,
-    "name": "Улица Алибегова",
-    "id": 462
+    "id": 462,
+    "lat": 53.84194060755608,
+    "lng": 27.538638683428402,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGJvb0tlYVE.",
+    "name": "Улица Рудобельская"
   },
   {
-    "lat": 53.878,
-    "lng": 27.51,
-    "name": "Улица Аэродромная",
-    "id": 463
+    "id": 463,
+    "lat": 53.836561688056975,
+    "lng": 27.482879916476428,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRE8wTVhTVUE.",
+    "name": "Улица Партизанская (юг)"
   },
   {
-    "lat": 53.882,
-    "lng": 27.522,
-    "name": "Улица Притыцкого (центр)",
-    "id": 464
+    "id": 464,
+    "lat": 53.91273440245749,
+    "lng": 27.58115523226214,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEtZDNMS3c.",
+    "name": "Церковь Казанской иконы Божией Матери"
   },
   {
-    "lat": 53.905,
-    "lng": 27.51,
-    "name": "Улица Притыцкого, западная часть",
-    "id": 465
+    "id": 465,
+    "lat": 53.93283290295164,
+    "lng": 27.59712486758983,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsWS14VGc.",
+    "name": "Церковь в Серебрянке"
   },
   {
-    "lat": 53.92,
-    "lng": 27.487,
-    "name": "Улица Скрипникова",
-    "id": 466
+    "id": 466,
+    "lat": 53.917767762701885,
+    "lng": 27.609738232242076,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR5OXJUUFE.",
+    "name": "Церковь Воскресения (Пасхальная)"
   },
   {
-    "lat": 53.935,
-    "lng": 27.482,
-    "name": "Улица Одинцова",
-    "id": 467
+    "id": 467,
+    "lat": 53.896522514486065,
+    "lng": 27.55130515804007,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0t2c1dwNmdF",
+    "name": "Костёл Девы Марии"
   },
   {
-    "lat": 53.937,
-    "lng": 27.46,
-    "name": "Улица Краснослободская",
-    "id": 468
+    "id": 468,
+    "lat": 53.91991397538105,
+    "lng": 27.534899574486122,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h1SzcxdFFF",
+    "name": "Церковь Всех Святых"
   },
   {
-    "lat": 53.93,
-    "lng": 27.445,
-    "name": "Улица Тимошенко",
-    "id": 469
+    "id": 469,
+    "lat": 53.88569972534483,
+    "lng": 27.473155694327705,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRE94S1M2MndF",
+    "name": "Церковь Иоанна Кронштадтского"
   },
   {
-    "lat": 53.925,
-    "lng": 27.435,
-    "name": "Улица Лобанка",
-    "id": 470
+    "id": 470,
+    "lat": 53.935542092770675,
+    "lng": 27.450621233335802,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1hxWS1rYlE.",
+    "name": "Церковь в Каменной горке"
   },
   {
-    "lat": 53.92,
-    "lng": 27.428,
-    "name": "Проспект Дзержинского",
-    "id": 471
+    "id": 471,
+    "lat": 53.902712783206226,
+    "lng": 27.56889252003779,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3UtdDYtcFFF",
+    "name": "Замчище"
   },
   {
-    "lat": 53.915,
-    "lng": 27.42,
-    "name": "Проспект Дзержинского, ул. Жилуновича",
-    "id": 472
+    "id": 472,
+    "lat": 53.89801751368829,
+    "lng": 27.5440922509251,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFzN183dmdF",
+    "name": "Троицкая гора"
   },
   {
-    "lat": 53.9,
-    "lng": 27.425,
-    "name": "Юго-запад, ул. Игуменский тракт",
-    "id": 473
+    "id": 473,
+    "lat": 53.891757985239636,
+    "lng": 27.557582849375205,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDRuNDdDa3dF",
+    "name": "Улица Герцена"
   },
   {
-    "lat": 53.894,
-    "lng": 27.42,
-    "name": "Улица Цнянская",
-    "id": 474
+    "id": 474,
+    "lat": 53.885797656612404,
+    "lng": 27.557280951772768,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzh0Skw4YlE.",
+    "name": "Улица Мясникова"
   },
   {
-    "lat": 53.89,
-    "lng": 27.445,
-    "name": "Улица Тимошенко (юг)",
-    "id": 475
+    "id": 475,
+    "lat": 53.89605097670381,
+    "lng": 27.55812517263486,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ001UEd6TGc.",
+    "name": "Улица Октябрьская"
   },
   {
-    "lat": 53.876,
-    "lng": 27.47,
-    "name": "Улица Воронянского",
-    "id": 476
+    "id": 476,
+    "lat": 53.897655295080796,
+    "lng": 27.561838759711293,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREsxWm5mNUFF",
+    "name": "Улица Революционная"
   },
   {
-    "lat": 53.87,
-    "lng": 27.48,
-    "name": "Улица Налибокская (юг)",
-    "id": 477
+    "id": 477,
+    "lat": 53.89892481084186,
+    "lng": 27.5660709928667,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREUyT3p6UUE.",
+    "name": "Двор на Зибицкой"
   },
   {
-    "lat": 53.865,
-    "lng": 27.465,
-    "name": "Улица Карбышева",
-    "id": 478
+    "id": 478,
+    "lat": 53.889453400862884,
+    "lng": 27.562177302046937,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHB6N3JjY0E.",
+    "name": "Улица Торговая"
   },
   {
-    "lat": 53.862,
-    "lng": 27.505,
-    "name": "Улица Корженевского",
-    "id": 479
+    "id": 479,
+    "lat": 53.89128830979052,
+    "lng": 27.564970943654004,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDd6OHp4S2c.",
+    "name": "Улица Клары Цеткин"
   },
   {
-    "lat": 53.854,
-    "lng": 27.499,
-    "name": "Улица Одоевского",
-    "id": 480
+    "id": 480,
+    "lat": 53.886458662977546,
+    "lng": 27.55804973158996,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzh0S09qTHc.",
+    "name": "Улица Раковская"
   },
   {
-    "lat": 53.848,
-    "lng": 27.46,
-    "name": "Малиновка, ул. Жасминовая",
-    "id": 481
+    "id": 481,
+    "lat": 53.88596642955193,
+    "lng": 27.55677338191517,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzgxS1B3THc.",
+    "name": "Переулок Калинина"
   },
   {
-    "lat": 53.845,
-    "lng": 27.52,
-    "name": "Улица Чечота",
-    "id": 482
+    "id": 482,
+    "lat": 53.90254623464463,
+    "lng": 27.572346264546717,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h2TmpEeWdF",
+    "name": "Улица Берсона"
   },
   {
-    "lat": 53.842,
-    "lng": 27.54,
-    "name": "Улица Рудобельская",
-    "id": 483
+    "id": 483,
+    "lat": 53.902005878385104,
+    "lng": 27.570040393881204,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTGFoZ3dF",
+    "name": "Улица Ленинградская"
   },
   {
-    "lat": 53.838,
-    "lng": 27.48,
-    "name": "Улица Партизанская (юг)",
-    "id": 484
+    "id": 484,
+    "lat": 53.900075807690584,
+    "lng": 27.57412862370176,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0V1UHZ5T2c.",
+    "name": "Улица Фабрициуса"
   },
   {
-    "lat": 53.9125,
-    "lng": 27.581,
-    "name": "Церковь Казанской иконы Божией Матери",
-    "id": 485
+    "id": 485,
+    "lat": 53.89413857418812,
+    "lng": 27.56221044813701,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzY2UHl2Y1E.",
+    "name": "Улица Интернациональная (низ)"
   },
   {
-    "lat": 53.8965,
-    "lng": 27.5512,
-    "name": "Костёл Девы Марии",
-    "id": 486
+    "id": 486,
+    "lat": 53.89550492932822,
+    "lng": 27.55853920286855,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ001TG5MMVFF",
+    "name": "Площадь у Октябрьской площади"
   },
   {
-    "lat": 53.932,
-    "lng": 27.596,
-    "name": "Церковь в Серебрянке",
-    "id": 487
+    "id": 487,
+    "lat": 53.901638130706175,
+    "lng": 27.561185002715064,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR3TEQ1cVFF",
+    "name": "Проспект Независимости 8"
   },
   {
-    "lat": 53.918,
-    "lng": 27.61,
-    "name": "Церковь Воскресения (Пасхальная)",
-    "id": 488
+    "id": 488,
+    "lat": 53.904707690146296,
+    "lng": 27.567263769743864,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ202YTNhSEE.",
+    "name": "Проспект Независимости 18"
   },
   {
-    "lat": 53.92,
-    "lng": 27.535,
-    "name": "Церковь Всех Святых",
-    "id": 489
+    "id": 489,
+    "lat": 53.90200552159515,
+    "lng": 27.562155797320496,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR4WUNfNVFF",
+    "name": "Проспект Независимости 10"
   },
   {
-    "lat": 53.882,
-    "lng": 27.47,
-    "name": "Церковь Иоанна Кронштадтского",
-    "id": 490
+    "id": 490,
+    "lat": 53.906003443643215,
+    "lng": 27.56813092496324,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0h2TmlZZ0FF",
+    "name": "Проспект Независимости 20"
   },
   {
-    "lat": 53.935,
-    "lng": 27.452,
-    "name": "Церковь в Каменной горке",
-    "id": 491
+    "id": 491,
+    "lat": 53.90767293225299,
+    "lng": 27.572759646180554,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3F0ZTNxVWc.",
+    "name": "Проспект Независимости 26"
   },
   {
-    "lat": 53.9025,
-    "lng": 27.568,
-    "name": "Замчище",
-    "id": 492
+    "id": 492,
+    "lat": 53.91289023195957,
+    "lng": 27.583642396646784,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzg2cWpBNlFF",
+    "name": "Проспект Независимости 38"
   },
   {
-    "lat": 53.8975,
-    "lng": 27.544,
-    "name": "Троицкая гора",
-    "id": 493
+    "id": 493,
+    "lat": 53.91044201735763,
+    "lng": 27.577796775100758,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2tnTE9JLVFF",
+    "name": "Проспект Независимости 32"
   },
   {
-    "lat": 53.8915,
-    "lng": 27.56,
-    "name": "Улица Герцена",
-    "id": 494
+    "id": 494,
+    "lat": 53.91516707140995,
+    "lng": 27.58804263906032,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2FrdXJ0dWdF",
+    "name": "Проспект Независимости 42"
   },
   {
-    "lat": 53.885,
-    "lng": 27.558,
-    "name": "Улица Мясникова",
-    "id": 495
+    "id": 495,
+    "lat": 53.914389214303085,
+    "lng": 27.585538436222745,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFzLXVkV3c.",
+    "name": "Проспект Независимости 40"
   },
   {
-    "lat": 53.896,
-    "lng": 27.558,
-    "name": "Улица Октябрьская",
-    "id": 496
+    "id": 496,
+    "lat": 53.917528488283,
+    "lng": 27.591742021488102,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV0UDZzS3c.",
+    "name": "Проспект Независимости 46"
   },
   {
-    "lat": 53.8975,
-    "lng": 27.5625,
-    "name": "Улица Революционная",
-    "id": 497
+    "id": 497,
+    "lat": 53.9151242194818,
+    "lng": 27.58927895549003,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR4WURTZmc.",
+    "name": "Проспект Независимости 44"
   },
   {
-    "lat": 53.899,
-    "lng": 27.5665,
-    "name": "Двор на Зибицкой",
-    "id": 498
+    "id": 498,
+    "lat": 53.919381733034164,
+    "lng": 27.59827347772016,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFfZURmcVFF",
+    "name": "Проспект Независимости 50"
   },
   {
-    "lat": 53.891,
-    "lng": 27.5645,
-    "name": "Улица Клары Цеткин",
-    "id": 499
+    "id": 499,
+    "lat": 53.918207900778434,
+    "lng": 27.59513347903813,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREV3ckNndHdF",
+    "name": "Проспект Независимости 48"
   },
   {
-    "lat": 53.8895,
-    "lng": 27.561,
-    "name": "Улица Торговая",
-    "id": 500
+    "id": 500,
+    "lat": 53.9190319155709,
+    "lng": 27.6027832845522,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFMxYlM4SEE.",
+    "name": "Проспект Независимости 52"
   },
   {
-    "lat": 53.887,
-    "lng": 27.56,
-    "name": "Улица Раковская",
-    "id": 501
+    "id": 501,
+    "lat": 53.918947035584445,
+    "lng": 27.604607894953187,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqZFM3Vnc.",
+    "name": "Проспект Независимости 54"
   },
   {
-    "lat": 53.886,
-    "lng": 27.556,
-    "name": "Переулок Калинина",
-    "id": 502
+    "id": 502,
+    "lat": 53.91979334742965,
+    "lng": 27.607178487038603,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFnZTI3cWdF",
+    "name": "Проспект Независимости 56"
   },
   {
-    "lat": 53.902,
-    "lng": 27.57,
-    "name": "Улица Ленинградская",
-    "id": 503
+    "id": 503,
+    "lat": 53.92099934501521,
+    "lng": 27.610050897864564,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDQ4YW5DSkE.",
+    "name": "Проспект Независимости 58"
   },
   {
-    "lat": 53.9025,
-    "lng": 27.572,
-    "name": "Улица Берсона",
-    "id": 504
+    "id": 504,
+    "lat": 53.92192902880852,
+    "lng": 27.61213008968975,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFyY1RzdVFF",
+    "name": "Проспект Независимости 60"
   },
   {
-    "lat": 53.9,
-    "lng": 27.574,
-    "name": "Улица Фабрициуса",
-    "id": 505
+    "id": 505,
+    "lat": 53.92192623196798,
+    "lng": 27.616878621112022,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3FxY0tjTWc.",
+    "name": "Проспект Независимости 62"
   },
   {
-    "lat": 53.894,
-    "lng": 27.562,
-    "name": "Улица Интернациональная (низ)",
-    "id": 506
+    "id": 506,
+    "lat": 53.923595361415266,
+    "lng": 27.620527278434526,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1VfdmF2T1E.",
+    "name": "Проспект Независимости 64"
   },
   {
-    "lat": 53.8955,
-    "lng": 27.559,
-    "name": "Площадь у Октябрьской площади",
-    "id": 507
+    "id": 507,
+    "lat": 53.92373831084212,
+    "lng": 27.622396868219383,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3lzOW5GY0E.",
+    "name": "Проспект Независимости 66"
   },
   {
-    "lat": 53.9016,
-    "lng": 27.561,
-    "name": "Проспект Независимости 8",
-    "id": 508
+    "id": 508,
+    "lat": 53.92485291260863,
+    "lng": 27.623800372529256,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHE3N25QdWdF",
+    "name": "Проспект Независимости 68"
   },
   {
-    "lat": 53.9022,
-    "lng": 27.5625,
-    "name": "Проспект Независимости 10",
-    "id": 509
+    "id": 509,
+    "lat": 53.92545997650141,
+    "lng": 27.626682894398773,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3lzOW5vUlE.",
+    "name": "Проспект Независимости 70"
   },
   {
-    "lat": 53.905,
-    "lng": 27.5672,
-    "name": "Проспект Независимости 18",
-    "id": 510
+    "id": 510,
+    "lat": 53.929091871791336,
+    "lng": 27.632439897709464,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREV0UDZzOHdF",
+    "name": "Проспект Независимости 74"
   },
   {
-    "lat": 53.9058,
-    "lng": 27.5685,
-    "name": "Проспект Независимости 20",
-    "id": 511
+    "id": 511,
+    "lat": 53.92749146303442,
+    "lng": 27.62942778171904,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGE5cVhuTmc.",
+    "name": "Проспект Независимости 72"
   },
   {
-    "lat": 53.908,
-    "lng": 27.573,
-    "name": "Проспект Независимости 26",
-    "id": 512
+    "id": 512,
+    "lat": 53.928611086355765,
+    "lng": 27.637366365800368,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEtYS1TSGc.",
+    "name": "Проспект Независимости 76"
   },
   {
-    "lat": 53.9104,
-    "lng": 27.5775,
-    "name": "Проспект Независимости 32",
-    "id": 513
+    "id": 513,
+    "lat": 53.92848115999504,
+    "lng": 27.639361811819956,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZvb1dWRFE.",
+    "name": "Проспект Независимости 78"
   },
   {
-    "lat": 53.913,
-    "lng": 27.583,
-    "name": "Проспект Независимости 38",
-    "id": 514
+    "id": 514,
+    "lat": 53.929839281425465,
+    "lng": 27.64591720460764,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzSmJDOVFF",
+    "name": "Проспект Независимости 82"
   },
   {
-    "lat": 53.914,
-    "lng": 27.585,
-    "name": "Проспект Независимости 40",
-    "id": 515
+    "id": 515,
+    "lat": 53.92920676889326,
+    "lng": 27.642972851993655,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR3SWpRUGc.",
+    "name": "Проспект Независимости 80"
   },
   {
-    "lat": 53.915,
-    "lng": 27.587,
-    "name": "Проспект Независимости 42",
-    "id": 516
+    "id": 516,
+    "lat": 53.93149088991433,
+    "lng": 27.652048215633904,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFJ3NHlCYVE.",
+    "name": "Проспект Независимости 86"
   },
   {
-    "lat": 53.9158,
-    "lng": 27.5895,
-    "name": "Проспект Независимости 44",
-    "id": 517
+    "id": 517,
+    "lat": 53.93208310904904,
+    "lng": 27.655166540457408,
+    "panoId": "CAoSHENJQUJJaERvcVIxanVxZm8xNE9fXzZybXJTemM.",
+    "name": "Проспект Независимости 88"
   },
   {
-    "lat": 53.9165,
-    "lng": 27.592,
-    "name": "Проспект Независимости 46",
-    "id": 518
-  },
-  {
-    "lat": 53.9172,
-    "lng": 27.595,
-    "name": "Проспект Независимости 48",
-    "id": 519
-  },
-  {
-    "lat": 53.918,
-    "lng": 27.598,
-    "name": "Проспект Независимости 50",
-    "id": 520
-  },
-  {
-    "lat": 53.9188,
-    "lng": 27.601,
-    "name": "Проспект Независимости 52",
-    "id": 521
-  },
-  {
-    "lat": 53.9195,
-    "lng": 27.604,
-    "name": "Проспект Независимости 54",
-    "id": 522
-  },
-  {
-    "lat": 53.9202,
-    "lng": 27.607,
-    "name": "Проспект Независимости 56",
-    "id": 523
-  },
-  {
-    "lat": 53.921,
-    "lng": 27.61,
-    "name": "Проспект Независимости 58",
-    "id": 524
-  },
-  {
-    "lat": 53.9218,
-    "lng": 27.613,
-    "name": "Проспект Независимости 60",
-    "id": 525
-  },
-  {
-    "lat": 53.9225,
-    "lng": 27.616,
-    "name": "Проспект Независимости 62",
-    "id": 526
-  },
-  {
-    "lat": 53.9232,
-    "lng": 27.619,
-    "name": "Проспект Независимости 64",
-    "id": 527
-  },
-  {
-    "lat": 53.924,
-    "lng": 27.622,
-    "name": "Проспект Независимости 66",
-    "id": 528
-  },
-  {
-    "lat": 53.9248,
-    "lng": 27.625,
-    "name": "Проспект Независимости 68",
-    "id": 529
-  },
-  {
-    "lat": 53.9255,
-    "lng": 27.628,
-    "name": "Проспект Независимости 70",
-    "id": 530
-  },
-  {
-    "lat": 53.9262,
-    "lng": 27.631,
-    "name": "Проспект Независимости 72",
-    "id": 531
-  },
-  {
-    "lat": 53.927,
-    "lng": 27.634,
-    "name": "Проспект Независимости 74",
-    "id": 532
-  },
-  {
-    "lat": 53.9278,
-    "lng": 27.637,
-    "name": "Проспект Независимости 76",
-    "id": 533
-  },
-  {
-    "lat": 53.9285,
-    "lng": 27.64,
-    "name": "Проспект Независимости 78",
-    "id": 534
-  },
-  {
-    "lat": 53.9292,
-    "lng": 27.643,
-    "name": "Проспект Независимости 80",
-    "id": 535
-  },
-  {
-    "lat": 53.93,
-    "lng": 27.646,
-    "name": "Проспект Независимости 82",
-    "id": 536
-  },
-  {
-    "lat": 53.9315,
-    "lng": 27.652,
-    "name": "Проспект Независимости 86",
-    "id": 537
-  },
-  {
-    "lat": 53.9322,
-    "lng": 27.655,
-    "name": "Проспект Независимости 88",
-    "id": 538
-  },
-  {
-    "lat": 53.933,
-    "lng": 27.658,
-    "name": "Проспект Независимости 90",
-    "id": 539
+    "id": 518,
+    "lat": 53.93387219711817,
+    "lng": 27.658281335045366,
+    "panoId": "CAoSHENJQUJJaEM2MnFZdC1id0dfNHkyV05XdHhpVDU.",
+    "name": "Проспект Независимости 90"
   }
 ]
