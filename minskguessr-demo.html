@@ -282,6 +282,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
       <div class="score-big" id="round-score">0</div>
       <div class="score-label">очков за раунд</div>
       <div class="result-meta" id="result-meta"></div>
+      <button id="btn-blacklist" class="btn" style="width:100%;margin-bottom:8px;background:var(--surface2);color:var(--text-dim);border:1px solid var(--border);font-size:13px;" onclick="blacklistCurrent()">🚫 Плохая точка (помещение/двор)</button>
       <button class="btn btn-primary" style="width:100%" onclick="nextRound()">Следующий раунд →</button>
     </div>
   </div>
@@ -300,9 +301,35 @@ var state = {
   started:false
 };
 
+// Blacklist — плохие точки (помещения, тёмные дворы)
+var BLACKLIST = JSON.parse(localStorage.getItem('mguessr_blacklist')||'[]');
+function saveBlacklist(){localStorage.setItem('mguessr_blacklist',JSON.stringify(BLACKLIST));}
+function isBlacklisted(loc){
+  if(loc.panoId && BLACKLIST.indexOf(loc.panoId)!==-1) return true;
+  // также по координатам (точность 4 знака ~ 11м)
+  var key=loc.lat.toFixed(4)+'_'+loc.lng.toFixed(4);
+  return BLACKLIST.indexOf(key)!==-1;
+}
+function blacklistCurrent(){
+  var loc=state.gameLocations[state.currentRound];
+  if(!loc) return;
+  if(loc.panoId) BLACKLIST.push(loc.panoId);
+  else BLACKLIST.push(loc.lat.toFixed(4)+'_'+loc.lng.toFixed(4));
+  saveBlacklist();
+  document.getElementById('btn-blacklist').textContent='✓ Добавлено в стоп-лист';
+  document.getElementById('btn-blacklist').disabled=true;
+}
+function exportBlacklist(){
+  var blob=new Blob([JSON.stringify(BLACKLIST,null,2)],{type:'application/json'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='blacklist.json';
+  a.click();
+}
+
 fetch('locations.json')
   .then(function(r){return r.json();})
-  .then(function(d){LOCATIONS=d;})
+  .then(function(d){LOCATIONS=d.filter(function(l){return !isBlacklisted(l);});})
   .catch(function(){
     LOCATIONS=[
       {id:1,lat:53.9045,lng:27.5615,panoId:null},{id:2,lat:53.8994,lng:27.5589,panoId:null},
@@ -487,7 +514,8 @@ function showFinalScreen(){
     +'<div class="verdict-banner '+v.cls+'" style="margin-bottom:12px">'+v.text+'</div>'
     +'<div class="score-big great">'+total.toLocaleString('ru')+'</div>'
     +'<div class="score-label" style="margin-bottom:20px">из '+(ROUNDS*5000).toLocaleString('ru')+' возможных</div>'
-    +'<button class="btn btn-primary btn-lg" style="width:100%" onclick="location.reload()">🏳️‍🌈 Играть снова</button>';
+    +'<button class="btn btn-primary btn-lg" style="width:100%;margin-bottom:8px" onclick="location.reload()">🏳️‍🌈 Играть снова</button>'
+    +(BLACKLIST.length?'<button class="btn" style="width:100%;background:var(--surface2);color:var(--text-dim);border:1px solid var(--border);font-size:12px" onclick="exportBlacklist()">📤 Экспорт стоп-листа ('+BLACKLIST.length+' точек)</button>':'');
   document.getElementById('result-overlay').classList.add('visible');
 }
 
