@@ -360,7 +360,7 @@ function autoWorker() {
   });
   if (isDupe) { setTimeout(autoWorker, 0); return; }
 
-  svService.getPanorama({location:{lat:lat,lng:lng},radius:60,source:google.maps.StreetViewSource.DEFAULT}, function(data, status) {
+  svService.getPanorama({location:{lat:lat,lng:lng},radius:60,source:google.maps.StreetViewSource.OUTDOOR}, function(data, status) {
     if (!autoRunning) return;
     if (status === 'OK') {
       autoSave(lat, lng, data.location.pano);
