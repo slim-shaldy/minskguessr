@@ -54,7 +54,7 @@ function checkPoint(point){
   return new Promise(function(resolve){
     var latlng=new google.maps.LatLng(point.lat, point.lng);
     // сначала OUTDOOR radius 80м
-    svService.getPanorama({location:latlng, radius:80, source:google.maps.StreetViewSource.OUTDOOR}, function(data, status){
+    svService.getPanorama({location:latlng, radius:200, source:google.maps.StreetViewSource.OUTDOOR}, function(data, status){
       if(status===google.maps.StreetViewStatus.OK){
         var loc=data.location;
         resolve({
@@ -65,8 +65,8 @@ function checkPoint(point){
           name:point.name||''
         });
       } else {
-        // fallback OUTDOOR radius 150м
-        svService.getPanorama({location:latlng, radius:150, source:google.maps.StreetViewSource.OUTDOOR}, function(d2, s2){
+        // fallback — DEFAULT (любые панорамы, включая indoor) radius 500м
+        svService.getPanorama({location:latlng, radius:500, source:google.maps.StreetViewSource.DEFAULT}, function(d2, s2){
           if(s2===google.maps.StreetViewStatus.OK){
             var loc=d2.location;
             resolve({
