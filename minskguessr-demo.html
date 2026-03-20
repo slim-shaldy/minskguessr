@@ -313,9 +313,9 @@ fetch('locations.json')
     ];
   });
 
-function getMultiplier(sec){if(sec<15)return 1.0;if(sec<30)return 0.9;if(sec<45)return 0.8;return 0.7;}
-function getMultClass(sec){if(sec<15)return 'm1';if(sec<30)return 'm09';if(sec<45)return 'm08';return 'm07';}
-function getTimerClass(sec){if(sec<15)return 't1';if(sec<30)return 't2';if(sec<45)return 't3';return 't4';}
+function getMultiplier(sec){if(sec<=30)return 1.0;if(sec<=45)return 0.9;if(sec<=60)return 0.8;return 0.7;}
+function getMultClass(sec){if(sec<=30)return 'm1';if(sec<=45)return 'm09';if(sec<=60)return 'm08';return 'm07';}
+function getTimerClass(sec){if(sec<=30)return 't1';if(sec<=45)return 't2';if(sec<=60)return 't3';return 't4';}
 
 function startTimer(){
   stopTimer();timerSeconds=0;updateTimerUI();
@@ -413,9 +413,9 @@ function submitGuess(){
   stopTimer();
   var loc=state.gameLocations[state.currentRound];
   var dist=haversine(state.guessLatLng.lat(),state.guessLatLng.lng(),loc.lat,loc.lng);
-  var CUTOFF=4.5;
+  var CUTOFF=5.0;
   var baseScore=0;
-  if(dist<CUTOFF){var t=1-(dist/CUTOFF);baseScore=Math.round(5000*Math.pow(t,2.5));}
+  if(dist<CUTOFF){var t=1-(dist/CUTOFF);baseScore=Math.round(5000*Math.pow(t,1.8));}
 
   var mult=getMultiplier(timerSeconds);
   var finalScore=Math.round(baseScore*mult);

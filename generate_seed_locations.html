@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Minsk Seed Location Generator</title>
+<style>
+  body{font-family:monospace;background:#111;color:#eee;padding:20px;}
+  button{background:#6b21a8;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:14px;margin:8px 4px;}
+  button:hover{background:#7c3aed;}
+  #log{background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:16px;height:300px;overflow-y:auto;font-size:12px;margin:12px 0;}
+  #output{background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:16px;font-size:11px;max-height:200px;overflow-y:auto;}
+  .ok{color:#4ade80;} .err{color:#f87171;} .info{color:#60a5fa;}
+</style>
+</head>
+<body>
+<h2>🗺️ Minsk Seed Location Generator</h2>
+<p>Генерирует уличные панорамы по заданным seed-точкам Минска. Результат — добавить к существующему locations.json.</p>
+<button onclick="startGenerate()">▶ Запустить генерацию</button>
+<button onclick="exportResult()">💾 Скачать JSON</button>
+<button onclick="clearLog()">🗑 Очистить</button>
+<div id="log"></div>
+<div><strong>Найдено точек: <span id="count">0</span></strong></div>
+<div id="output"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLsKut8sS9VuTqFkLtmhmF7tz5_i7ZJlA&libraries=streetView"></script>
+<script>
+// Seed-точки — известные места и улицы Минска
+var SEEDS = [
+  // Проспект Независимости
+  {lat:53.9045,lng:27.5615,name:"пр. Независимости — центр"},
+  {lat:53.9089,lng:27.5485,name:"пр. Независимости — ГУМ"},
+  {lat:53.9132,lng:27.5367,name:"пр. Независимости — площадь Победы"},
+  {lat:53.9201,lng:27.5178,name:"пр. Независимости — Якуба Коласа"},
+  {lat:53.9268,lng:27.4998,name:"пр. Независимости — Академия наук"},
+  {lat:53.9350,lng:27.4789,name:"пр. Независимости — Восток"},
+  {lat:53.9012,lng:27.5748,name:"пр. Независимости — вокзал"},
+  // Верхний город / Троицкое
+  {lat:53.9078,lng:27.5548,name:"Верхний город"},
+  {lat:53.9095,lng:27.5512,name:"пл. Свободы"},
+  {lat:53.9110,lng:27.5490,name:"Троицкое предместье"},
+  {lat:53.9065,lng:27.5570,name:"Немига"},
+  {lat:53.9055,lng:27.5592,name:"пр. Победителей — начало"},
+  // Площади
+  {lat:53.9045,lng:27.5614,name:"Октябрьская площадь"},
+  {lat:53.9132,lng:27.5365,name:"Площадь Победы"},
+  {lat:53.8967,lng:27.5461,name:"Площадь Независимости"},
+  {lat:53.9098,lng:27.5488,name:"Площадь Свободы"},
+  // Проспект Победителей
+  {lat:53.9055,lng:27.5590,name:"пр. Победителей — Немига"},
+  {lat:53.9210,lng:27.4956,name:"пр. Победителей — Минск-Арена"},
+  {lat:53.9340,lng:27.4612,name:"пр. Победителей — Лошица"},
+  // Зыбицкая и центр
+  {lat:53.9068,lng:27.5535,name:"Зыбицкая"},
+  {lat:53.9075,lng:27.5525,name:"Революционная"},
+  {lat:53.9082,lng:27.5510,name:"Комсомольская"},
+  {lat:53.9060,lng:27.5555,name:"Интернациональная"},
+  // Улица Карла Маркса / Ленина
+  {lat:53.9040,lng:27.5620,name:"ул. Карла Маркса"},
+  {lat:53.9050,lng:27.5630,name:"ул. Ленина"},
+  {lat:53.9030,lng:27.5640,name:"ул. Энгельса"},
+  // Парки
+  {lat:53.9090,lng:27.5780,name:"Парк Горького"},
+  {lat:53.9145,lng:27.5820,name:"Парк Челюскинцев"},
+  {lat:53.8890,lng:27.5234,name:"Парк Победы"},
+  {lat:53.8756,lng:27.4890,name:"Парк Лошицкий"},
+  {lat:53.9210,lng:27.6234,name:"Парк Уручье"},
+  // Комаровка и рынки
+  {lat:53.9178,lng:27.5612,name:"Комаровский рынок"},
+  {lat:53.9180,lng:27.5600,name:"Якуба Коласа — рынок"},
+  // Районы спальные
+  {lat:53.8845,lng:27.5345,name:"Серебрянка"},
+  {lat:53.8678,lng:27.5512,name:"Шабаны"},
+  {lat:53.9456,lng:27.5123,name:"Малиновка"},
+  {lat:53.9512,lng:27.6234,name:"Уручье"},
+  {lat:53.9389,lng:27.6456,name:"Зеленый Луг"},
+  {lat:53.8934,lng:27.4789,name:"Михалово"},
+  {lat:53.9234,lng:27.4512,name:"Сухарево"},
+  {lat:53.8712,lng:27.4890,name:"Брилевичи"},
+  {lat:53.8623,lng:27.5890,name:"Степянка"},
+  {lat:53.9678,lng:27.5234,name:"Уздянка"},
+  // Основные улицы
+  {lat:53.8967,lng:27.5789,name:"ул. Притыцкого"},
+  {lat:53.8834,lng:27.5234,name:"ул. Ванеева"},
+  {lat:53.9234,lng:27.5890,name:"пр. Машерова"},
+  {lat:53.9123,lng:27.6012,name:"ул. Орловская"},
+  {lat:53.9045,lng:27.6234,name:"ул. Денисовская"},
+  // Вокзал / транспортные узлы
+  {lat:53.8912,lng:27.5534,name:"Ж/д вокзал"},
+  {lat:53.8934,lng:27.5512,name:"Автовокзал Центральный"},
+  {lat:53.8756,lng:27.5678,name:"Аэропорт Минск-1 р-н"},
+  // Набережные
+  {lat:53.9112,lng:27.5456,name:"Набережная Свислочи — центр"},
+  {lat:53.9234,lng:27.5234,name:"Набережная Свислочи — Лошица"},
+  // Нац. библиотека
+  {lat:53.9234,lng:27.6234,name:"Национальная библиотека"},
+  // МКАД-районы
+  {lat:53.9512,lng:27.5890,name:"Боровая"},
+  {lat:53.8512,lng:27.5234,name:"Сокол"},
+  {lat:53.9623,lng:27.4890,name:"Колядичи"},
+  // Запад
+  {lat:53.9078,lng:27.4456,name:"Кунцевщина"},
+  {lat:53.9145,lng:27.4234,name:"Малиновка запад"},
+  {lat:53.8934,lng:27.4678,name:"Петровщина"},
+  // ул. Немига
+  {lat:53.9068,lng:27.5560,name:"ул. Немига"},
+  {lat:53.9055,lng:27.5578,name:"Романовская слобода"},
+];
+
+var results = [];
+var svService;
+
+function log(msg, cls){
+  var d=document.getElementById('log');
+  var s=document.createElement('div');
+  s.className=cls||'info';
+  s.textContent=new Date().toLocaleTimeString()+' — '+msg;
+  d.appendChild(s);
+  d.scrollTop=d.scrollHeight;
+}
+
+function clearLog(){document.getElementById('log').innerHTML='';}
+
+function updateCount(){document.getElementById('count').textContent=results.length;}
+
+async function checkSeed(seed){
+  return new Promise(function(resolve){
+    var latlng=new google.maps.LatLng(seed.lat,seed.lng);
+    // сначала OUTDOOR radius 100
+    svService.getPanorama({location:latlng,radius:100,source:google.maps.StreetViewSource.OUTDOOR},function(data,status){
+      if(status===google.maps.StreetViewStatus.OK){
+        var loc=data.location;
+        results.push({
+          id:results.length+1,
+          lat:loc.latLng.lat(),
+          lng:loc.latLng.lng(),
+          panoId:loc.pano,
+          name:seed.name
+        });
+        log('✓ '+seed.name+' → '+loc.latLng.lat().toFixed(5)+','+loc.latLng.lng().toFixed(5),'ok');
+        resolve(true);
+      } else {
+        // fallback radius 200
+        svService.getPanorama({location:latlng,radius:200,source:google.maps.StreetViewSource.OUTDOOR},function(d2,s2){
+          if(s2===google.maps.StreetViewStatus.OK){
+            var loc=d2.location;
+            results.push({
+              id:results.length+1,
+              lat:loc.latLng.lat(),
+              lng:loc.latLng.lng(),
+              panoId:loc.pano,
+              name:seed.name
+            });
+            log('✓ '+seed.name+' (fallback 200m)','ok');
+            resolve(true);
+          } else {
+            log('✗ '+seed.name+' — нет панорамы','err');
+            resolve(false);
+          }
+        });
+      }
+    });
+  });
+}
+
+async function startGenerate(){
+  svService=new google.maps.StreetViewService();
+  results=[];
+  log('Начинаем генерацию '+SEEDS.length+' seed-точек...');
+  for(var i=0;i<SEEDS.length;i++){
+    await checkSeed(SEEDS[i]);
+    updateCount();
+    await new Promise(r=>setTimeout(r,150));
+  }
+  log('Готово! Найдено '+results.length+' точек из '+SEEDS.length,'ok');
+  document.getElementById('output').textContent=JSON.stringify(results,null,2);
+}
+
+function exportResult(){
+  if(!results.length){alert('Сначала запустите генерацию');return;}
+  var blob=new Blob([JSON.stringify(results,null,2)],{type:'application/json'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='seed_locations.json';
+  a.click();
+}
+</script>
+</body>
+</html>
