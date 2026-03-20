@@ -75,7 +75,7 @@
   <button style="background:#222;color:#888;margin-top:8px;" onclick="restart()">↩ Ещё раз</button>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLsKut8sS9VuTqFkLtmhmF7tz5_i7ZJlA&libraries=streetView"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLsKut8sS9VuTqFkLtmhmF7tz5_i7ZJlA&libraries=streetView&callback=initMap" async defer></script>
 <script>
 var LOCATIONS = [];
 var BLACKLIST = JSON.parse(localStorage.getItem('mguessr_blacklist')||'[]');
