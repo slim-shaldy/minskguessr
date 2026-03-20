@@ -135,6 +135,51 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
 .loading-dot:nth-child(2){background:var(--pride3);animation-delay:0.2s}
 .loading-dot:nth-child(3){background:var(--pride5);animation-delay:0.4s}
 @keyframes bounce{0%,80%,100%{transform:scale(0.6);opacity:0.4}40%{transform:scale(1);opacity:1}}
+
+/* MOBILE */
+@media(max-width:600px){
+  .header{padding:8px 12px;gap:8px}
+  .logo{font-size:12px}
+  .round-indicator{gap:4px}
+  .round-dot{width:6px;height:6px}
+  .timer-box{font-size:15px;padding:4px 10px;min-width:52px}
+  .mult-badge{font-size:12px;padding:4px 8px}
+  .score-display{font-size:11px}
+  .score-display span{font-size:13px}
+
+  /* карта — снизу на весь экран, скрыта по умолчанию */
+  .map-panel{
+    position:fixed;bottom:0;left:0;right:0;width:100%!important;
+    border-radius:16px 16px 0 0;
+    transform:translateY(calc(100% - 48px));
+    transition:transform 0.3s ease;
+    z-index:100;
+  }
+  .map-panel.open{transform:translateY(0)}
+  .map-panel:hover{width:100%!important}
+  #map{height:260px!important}
+  .map-panel.open #map{height:260px}
+  .map-header{padding:12px 16px;font-size:13px}
+  .map-footer{padding:12px 16px}
+  .btn-primary{font-size:13px;padding:12px 16px}
+  .btn-secondary{padding:12px 12px}
+
+  /* стартовый экран */
+  .start-card{padding:24px 20px;border-radius:16px}
+  .start-logo{font-size:22px}
+  .rules{gap:8px;margin-bottom:20px}
+  .rule{padding:10px 12px}
+  .rule-icon{font-size:16px}
+  .rule-text{font-size:12px}
+  .timer-table{font-size:11px;margin-bottom:16px}
+  .btn-lg{font-size:13px;padding:12px 24px}
+
+  /* результат */
+  .result-card{padding:20px 16px;border-radius:12px}
+  .result-map-container{height:160px}
+  .score-big{font-size:36px}
+  .verdict-banner{font-size:18px;padding:8px 18px}
+}
 </style>
 </head>
 <body>
@@ -167,7 +212,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
 
   <!-- Map panel -->
   <div class="map-panel" id="map-panel">
-    <div class="map-header" onclick="toggleMap()">
+    <div class="map-header" onclick="toggleMap()" id="map-header">
       <span>📍 Где это?</span>
       <span class="map-hint" id="map-hint">Кликни на карту</span>
     </div>
@@ -460,7 +505,14 @@ function haversine(lat1,lng1,lat2,lng2){
 
 function showLoading(msg){document.getElementById('loading-sub').innerHTML=msg;document.getElementById('loading-screen').classList.remove('hidden');}
 function hideLoading(){setTimeout(function(){document.getElementById('loading-screen').classList.add('hidden');},400);}
-function toggleMap(){var p=document.getElementById('map-panel');p.style.width=p.style.width==='480px'?'340px':'480px';}
+function toggleMap(){
+  var p=document.getElementById('map-panel');
+  if(window.innerWidth<=600){
+    p.classList.toggle('open');
+  } else {
+    p.style.width=p.style.width==='480px'?'340px':'480px';
+  }
+}
 
 function buildRoundDots(){
   var c=document.getElementById('round-dots');c.innerHTML='';

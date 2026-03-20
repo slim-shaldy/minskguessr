@@ -312,7 +312,7 @@ function clearAll() {
 
 // ---- AUTO COLLECT ----
 var autoRunning = false;
-var WORKERS = 8; // параллельных воркеров
+var WORKERS = 3; // параллельных воркеров — умеренно, только OUTDOOR
 var activeWorkers = 0;
 
 var MINSK_BOUNDS = {latMin:53.820,latMax:53.975,lngMin:27.410,lngMax:27.700};
@@ -349,7 +349,7 @@ function stopAuto() {
 
 function autoWorker() {
   if (!autoRunning) { activeWorkers--; return; }
-  if (savedPoints.length >= 400) { stopAuto(); setStatus('found', 'Цель 400 достигнута!'); return; }
+  if (savedPoints.length >= 600) { stopAuto(); setStatus('found', 'Цель 600 достигнута!'); return; }
 
   var p = randomMinskPoint();
   var lat = parseFloat(p.lat.toFixed(6));
@@ -360,18 +360,12 @@ function autoWorker() {
   });
   if (isDupe) { setTimeout(autoWorker, 0); return; }
 
-  svService.getPanorama({location:{lat:lat,lng:lng},radius:60,source:google.maps.StreetViewSource.OUTDOOR}, function(data, status) {
+  svService.getPanorama({location:{lat:lat,lng:lng},radius:80,source:google.maps.StreetViewSource.OUTDOOR}, function(data, status) {
     if (!autoRunning) return;
     if (status === 'OK') {
       autoSave(lat, lng, data.location.pano);
-      autoWorker();
-    } else {
-      svService.getPanorama({location:{lat:lat,lng:lng},radius:120,source:google.maps.StreetViewSource.DEFAULT}, function(data2, status2) {
-        if (!autoRunning) return;
-        if (status2 === 'OK') autoSave(lat, lng, data2.location.pano);
-        autoWorker();
-      });
     }
+    autoWorker();
   });
 }
 
