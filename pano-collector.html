@@ -113,12 +113,12 @@ code{background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:4px;font-fa
   </div>
 </div>
 <script>
-var STORAGE_AIzaSyCLsKut8hOnE1Pc_d6xjsZ7xMpVrsFScPc = 'pano_collector_v3';
+var STORAGE_KEY = 'pano_collector_v3';
 var map, svService, clickMarker = null;
 var savedPoints = [], currentPoint = null, skipCount = 0;
 var panoPreviewObj = null;
 
-var raw = localStorage.getItem(STORAGE_AIzaSyCLsKut8hOnE1Pc_d6xjsZ7xMpVrsFScPc);
+var raw = localStorage.getItem(STORAGE_KEY);
 if (raw) { try { savedPoints = JSON.parse(raw); } catch(e) {} }
 
 function initMap() {
@@ -203,7 +203,7 @@ function saveCurrentPoint() {
   if (isDupe) { setStatus('found', 'Такая точка уже есть'); return; }
   var point = {id: savedPoints.length+1, lat:currentPoint.lat, lng:currentPoint.lng, panoId:currentPoint.panoId};
   savedPoints.push(point);
-  localStorage.setItem(STORAGE_AIzaSyCLsKut8hOnE1Pc_d6xjsZ7xMpVrsFScPc, JSON.stringify(savedPoints));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(savedPoints));
   if (clickMarker) { clickMarker.setMap(null); clickMarker = null; }
   addGreenMarker(point);
   var btn = document.getElementById('save-btn');
@@ -247,7 +247,7 @@ function renderSavedList() {
 
 function deletePoint(id) {
   savedPoints = savedPoints.filter(function(p){return p.id!==id;});
-  localStorage.setItem(STORAGE_AIzaSyCLsKut8hOnE1Pc_d6xjsZ7xMpVrsFScPc, JSON.stringify(savedPoints));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(savedPoints));
   updateStats(); renderSavedList();
 }
 
@@ -273,7 +273,7 @@ function closeJSON() { document.getElementById('json-panel').classList.remove('v
 function clearAll() {
   if (!confirm('Удалить все '+savedPoints.length+' точек?')) return;
   savedPoints=[]; skipCount=0;
-  localStorage.removeItem(STORAGE_AIzaSyCLsKut8hOnE1Pc_d6xjsZ7xMpVrsFScPc);
+  localStorage.removeItem(STORAGE_KEY);
   updateStats(); renderSavedList();
   document.getElementById('stat-skip').textContent='0';
 }
