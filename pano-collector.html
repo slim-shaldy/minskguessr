@@ -164,7 +164,7 @@ function onMapClick(e) {
     if (status === 'OK') {
       handleFound(lat, lng, data);
     } else {
-      svService.getPanorama({location:{lat:lat,lng:lng},radius:120}, function(data2,status2) {
+      svService.getPanorama({location:{lat:lat,lng:lng},radius:120,source:google.maps.StreetViewSource.OUTDOOR}, function(data2,status2) {
         if (status2 === 'OK') handleFound(lat, lng, data2);
         else handleNotFound(lat, lng);
       });
@@ -375,7 +375,7 @@ function autoStep() {
     if (status === 'OK') {
       autoSave(lat, lng, data.location.pano);
     } else {
-      svService.getPanorama({location:{lat:lat,lng:lng},radius:120}, function(data2, status2) {
+      svService.getPanorama({location:{lat:lat,lng:lng},radius:120,source:google.maps.StreetViewSource.OUTDOOR}, function(data2, status2) {
         if (!autoRunning) return;
         if (status2 === 'OK') autoSave(lat, lng, data2.location.pano);
         else { autoTimer = setTimeout(autoStep, 100); }
