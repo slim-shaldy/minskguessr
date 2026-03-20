@@ -352,7 +352,8 @@ function initMap(){
 function startGame(){
   if(!LOCATIONS.length){setTimeout(startGame,200);return;}
   document.getElementById('start-overlay').classList.remove('visible');
-  var shuffled=LOCATIONS.slice().sort(function(){return Math.random()-0.5;});
+  var shuffled=LOCATIONS.slice();
+  for(var i=shuffled.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=shuffled[i];shuffled[i]=shuffled[j];shuffled[j]=t;}
   state.gameLocations=shuffled.slice(0,ROUNDS);
   state.currentRound=0;
   state.totalScore=0;
