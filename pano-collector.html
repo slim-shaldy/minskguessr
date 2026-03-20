@@ -312,41 +312,34 @@ function clearAll() {
 
 // ---- AUTO COLLECT ----
 var autoRunning = false;
-var autoTimer = null;
+var WORKERS = 8; // параллельных воркеров
+var activeWorkers = 0;
 
-// Minsk bounding box (примерно в пределах МКАДа)
-var MINSK_BOUNDS = {
-  latMin: 53.820, latMax: 53.975,
-  lngMin: 27.410, lngMax: 27.700
-};
+var MINSK_BOUNDS = {latMin:53.820,latMax:53.975,lngMin:27.410,lngMax:27.700};
 
 function randomMinskPoint() {
   return {
-    lat: MINSK_BOUNDS.latMin + Math.random() * (MINSK_BOUNDS.latMax - MINSK_BOUNDS.latMin),
-    lng: MINSK_BOUNDS.lngMin + Math.random() * (MINSK_BOUNDS.lngMax - MINSK_BOUNDS.lngMin)
+    lat: MINSK_BOUNDS.latMin + Math.random()*(MINSK_BOUNDS.latMax-MINSK_BOUNDS.latMin),
+    lng: MINSK_BOUNDS.lngMin + Math.random()*(MINSK_BOUNDS.lngMax-MINSK_BOUNDS.lngMin)
   };
 }
 
 function toggleAuto() {
-  if (autoRunning) {
-    stopAuto();
-  } else {
-    startAuto();
-  }
+  if (autoRunning) stopAuto(); else startAuto();
 }
 
 function startAuto() {
   autoRunning = true;
+  activeWorkers = 0;
   var btn = document.getElementById('auto-btn');
   btn.textContent = '⏹ Стоп';
   btn.style.background = 'rgba(240,90,79,0.8)';
   btn.style.color = '#fff';
-  autoStep();
+  for (var i = 0; i < WORKERS; i++) autoWorker();
 }
 
 function stopAuto() {
   autoRunning = false;
-  if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; }
   var btn = document.getElementById('auto-btn');
   btn.textContent = '⚡ Авто-сбор';
   btn.style.background = '';
@@ -354,49 +347,42 @@ function stopAuto() {
   setStatus('idle', 'Авто-сбор остановлен');
 }
 
-function autoStep() {
-  if (!autoRunning) return;
+function autoWorker() {
+  if (!autoRunning) { activeWorkers--; return; }
   if (savedPoints.length >= 400) { stopAuto(); setStatus('found', 'Цель 400 достигнута!'); return; }
 
   var p = randomMinskPoint();
   var lat = parseFloat(p.lat.toFixed(6));
   var lng = parseFloat(p.lng.toFixed(6));
 
-  // дубль-проверка
   var isDupe = savedPoints.some(function(s) {
-    return Math.abs(s.lat - lat) < 0.0008 && Math.abs(s.lng - lng) < 0.0008;
+    return Math.abs(s.lat-lat)<0.0008 && Math.abs(s.lng-lng)<0.0008;
   });
-  if (isDupe) { autoTimer = setTimeout(autoStep, 50); return; }
-
-  setStatus('checking', 'Авто: проверяем... (' + savedPoints.length + ' собрано)');
+  if (isDupe) { setTimeout(autoWorker, 0); return; }
 
   svService.getPanorama({location:{lat:lat,lng:lng},radius:60,source:google.maps.StreetViewSource.OUTDOOR}, function(data, status) {
     if (!autoRunning) return;
     if (status === 'OK') {
       autoSave(lat, lng, data.location.pano);
+      autoWorker();
     } else {
       svService.getPanorama({location:{lat:lat,lng:lng},radius:120,source:google.maps.StreetViewSource.OUTDOOR}, function(data2, status2) {
         if (!autoRunning) return;
         if (status2 === 'OK') autoSave(lat, lng, data2.location.pano);
-        else { autoTimer = setTimeout(autoStep, 0); }
+        autoWorker();
       });
     }
   });
-  // запускаем параллельно ещё несколько
-  if (savedPoints.length < 395) {
-    for (var i = 0; i < 4; i++) setTimeout(autoStep, (i+1)*80);
-  }
 }
 
 function autoSave(lat, lng, panoId) {
-  var point = {id: savedPoints.length + 1, lat: lat, lng: lng, panoId: panoId};
+  var point = {id: savedPoints.length+1, lat:lat, lng:lng, panoId:panoId};
   savedPoints.push(point);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(savedPoints));
   addGreenMarker(point);
   updateStats();
   renderSavedList();
   setStatus('found', 'Сохранено: ' + savedPoints.length + ' точек');
-  autoTimer = setTimeout(autoStep, 50);
 }
 // ---- END AUTO COLLECT ----
 
