@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gay or Guessr</title>
+<title>Gay or Guessr (Minsk edition)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@400;500&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -182,6 +182,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
   <div class="overlay overlay-bg visible" id="start-overlay">
     <div class="start-card">
       <div class="start-logo">Gay or Guessr</div>
+      <div style="font-family:'Unbounded',sans-serif;font-size:11px;color:var(--text-dim);margin-top:-2px;margin-bottom:6px;letter-spacing:1px;text-transform:uppercase">Minsk edition</div>
       <div class="start-sub">Угадай район Минска по панораме — быстрее ответишь, больше очков</div>
       <div class="rules">
         <div class="rule">
@@ -366,7 +367,10 @@ function submitGuess(){
   stopTimer();
   var loc=state.gameLocations[state.currentRound];
   var dist=haversine(state.guessLatLng.lat(),state.guessLatLng.lng(),loc.lat,loc.lng);
-  var baseScore=Math.max(0,Math.round(5000*Math.exp(-dist/1.5)));
+  var CUTOFF=4.5;
+  var baseScore=0;
+  if(dist<CUTOFF){var t=1-(dist/CUTOFF);baseScore=Math.round(5000*Math.pow(t,2.5));}
+
   var mult=getMultiplier(timerSeconds);
   var finalScore=Math.round(baseScore*mult);
   state.totalScore+=finalScore;
