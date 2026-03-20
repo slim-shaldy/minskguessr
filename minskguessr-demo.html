@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MinskGuessr</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Inter:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0e0f11; --surface: #161819; --surface2: #1f2124;
+    --border: rgba(255,255,255,0.08); --accent: #d4f04e;
+    --text: #f0f0ee; --text-dim: #7a7a72;
+    --red: #f05a4f; --green: #4fd88a; --radius: 12px;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+  .header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--surface); border-bottom: 1px solid var(--border); flex-shrink: 0; z-index: 10; }
+  .logo { font-family: 'Unbounded', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: -0.5px; color: var(--accent); }
+  .logo span { color: var(--text-dim); font-weight: 400; }
+  .round-indicator { display: flex; gap: 6px; align-items: center; }
+  .round-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: 1.5px solid var(--text-dim); transition: all 0.3s; }
+  .round-dot.active { background: var(--accent); border-color: var(--accent); }
+  .round-dot.done { background: var(--text-dim); border-color: var(--text-dim); }
+  .score-display { font-family: 'Unbounded', sans-serif; font-size: 14px; color: var(--text-dim); }
+  .score-display span { color: var(--accent); font-size: 16px; }
+  .game-area { flex: 1; position: relative; overflow: hidden; }
+  #panorama { width: 100%; height: 100%; background: var(--bg); }
+  .map-panel { position: absolute; bottom: 20px; right: 20px; width: 340px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.5); z-index: 100; }
+  .map-header { padding: 10px 14px; background: var(--surface2); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--text-dim); cursor: pointer; user-select: none; }
+  .map-hint { font-size: 11px; color: var(--text-dim); }
+  .map-hint.placed { color: var(--green); }
+  #map { width: 100%; height: 220px; cursor: crosshair; }
+  .map-footer { padding: 10px 14px; display: flex; gap: 8px; align-items: center; background: var(--surface2); border-top: 1px solid var(--border); }
+  .btn { font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 700; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: all 0.15s; letter-spacing: 0.3px; }
+  .btn-primary { background: var(--accent); color: #0e0f11; flex: 1; }
+  .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+  .btn-primary:disabled { background: var(--surface2); color: var(--text-dim); cursor: not-allowed; transform: none; border: 1px solid var(--border); }
+  .btn-secondary { background: transparent; color: var(--text-dim); border: 1px solid var(--border); font-size: 11px; padding: 8px 10px; }
+  .btn-secondary:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+  .result-overlay { position: absolute; inset: 0; background: rgba(14,15,17,0.92); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+  .result-overlay.visible { opacity: 1; pointer-events: all; }
+  .result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px 40px; text-align: center; max-width: 420px; width: 90%; transform: translateY(20px); transition: transform 0.4s ease; box-shadow: 0 24px 80px rgba(0,0,0,0.6); }
+  .result-overlay.visible .result-card { transform: translateY(0); }
+  .result-map-container { width: 100%; height: 200px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; border: 1px solid var(--border); }
+  #result-map { width: 100%; height: 100%; }
+  .score-big { font-family: 'Unbounded', sans-serif; font-size: 52px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+  .score-big.great { color: var(--accent); }
+  .score-big.good { color: var(--green); }
+  .score-big.ok { color: #f0a04f; }
+  .score-big.bad { color: var(--red); }
+  .score-label { font-size: 13px; color: var(--text-dim); margin-bottom: 16px; }
+  .dist-label { font-size: 14px; color: var(--text-dim); margin-bottom: 24px; }
+  .dist-label strong { color: var(--text); font-weight: 500; }
+  .loading-screen { position: absolute; inset: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; z-index: 300; transition: opacity 0.5s ease; }
+  .loading-screen.hidden { opacity: 0; pointer-events: none; }
+  .loading-logo { font-family: 'Unbounded', sans-serif; font-size: 28px; font-weight: 700; color: var(--accent); }
+  .loading-sub { font-size: 13px; color: var(--text-dim); }
+  .loading-dots { display: flex; gap: 6px; }
+  .loading-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: bounce 1.4s infinite ease-in-out; }
+  .loading-dot:nth-child(2) { animation-delay: 0.2s; }
+  .loading-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%,80%,100%{transform:scale(0.6);opacity:0.4} 40%{transform:scale(1);opacity:1} }
+  .api-prompt { position: absolute; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 400; }
+  .api-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 36px 40px; max-width: 460px; width: 90%; }
+  .api-card h2 { font-family: 'Unbounded', sans-serif; font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .api-card p { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-bottom: 20px; }
+  .api-card a { color: var(--accent); }
+  .api-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--text); font-family: 'Inter', sans-serif; outline: none; margin-bottom: 12px; transition: border-color 0.2s; }
+  .api-input:focus { border-color: var(--accent); }
+  .api-note { font-size: 11px; color: var(--text-dim); margin-top: 12px; line-height: 1.5; }
+  code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+</style>
+</head>
+<body>
+
+<div class="api-prompt" id="api-prompt">
+  <div class="api-card">
+    <h2>MinskGuessr</h2>
+    <p>Нужен ключ <strong>Яндекс JavaScript API</strong>.<br><br>
+    Получить: <a href="https://developer.tech.yandex.ru" target="_blank">developer.tech.yandex.ru</a><br><br>
+    ⚠️ Открывай через <code>http://localhost:8080</code></p>
+    <input class="api-input" id="api-key-input" type="text" placeholder="API ключ...">
+    <button class="btn btn-primary" style="width:100%" onclick="startWithKey()">Поехали →</button>
+    <p class="api-note">Ключ сохраняется в localStorage.</p>
+  </div>
+</div>
+
+<div class="header">
+  <div class="logo">Minsk<span>Guessr</span></div>
+  <div class="round-indicator" id="round-dots"></div>
+  <div class="score-display">Очки: <span id="total-score">0</span></div>
+</div>
+
+<div class="game-area">
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-logo">MinskGuessr</div>
+    <div class="loading-sub" id="loading-sub">Загружаем...</div>
+    <div class="loading-dots"><div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div></div>
+  </div>
+
+  <div id="panorama"></div>
+
+  <div class="map-panel" id="map-panel">
+    <div class="map-header">
+      <span>📍 Где это?</span>
+      <span class="map-hint" id="map-hint">Кликни на карту</span>
+    </div>
+    <div id="map"></div>
+    <div class="map-footer">
+      <button class="btn btn-secondary" onclick="clearGuess()">✕</button>
+      <button class="btn btn-primary" id="guess-btn" disabled onclick="submitGuess()">Подтвердить →</button>
+    </div>
+  </div>
+
+  <div class="result-overlay" id="result-overlay">
+    <div class="result-card" id="result-card">
+      <div class="result-map-container"><div id="result-map"></div></div>
+      <div class="score-big" id="round-score">0</div>
+      <div class="score-label">очков за раунд</div>
+      <div class="dist-label" id="dist-label">—</div>
+      <button class="btn btn-primary" style="width:100%" onclick="nextRound()">Следующий раунд →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const LOCATIONS = [
+  { id:1,  lat:53.9045, lng:27.5615 },
+  { id:2,  lat:53.8994, lng:27.5589 },
+  { id:3,  lat:53.9041, lng:27.5652 },
+  { id:4,  lat:53.9083, lng:27.5495 },
+  { id:5,  lat:53.8952, lng:27.5613 },
+  { id:6,  lat:53.9037, lng:27.5785 },
+  { id:7,  lat:53.8889, lng:27.5490 },
+  { id:8,  lat:53.8961, lng:27.5432 },
+  { id:9,  lat:53.9190, lng:27.5668 },
+  { id:10, lat:53.9310, lng:27.5900 },
+  { id:11, lat:53.8770, lng:27.5530 },
+  { id:12, lat:53.9120, lng:27.6010 },
+  { id:13, lat:53.8860, lng:27.6200 },
+  { id:14, lat:53.9250, lng:27.5120 },
+  { id:15, lat:53.9080, lng:27.4930 },
+  { id:16, lat:53.8720, lng:27.5780 },
+  { id:17, lat:53.9510, lng:27.5610 },
+  { id:18, lat:53.8640, lng:27.5080 },
+  { id:19, lat:53.9400, lng:27.6500 },
+  { id:20, lat:53.9050, lng:27.4680 },
+];
+
+const ROUNDS = 5;
+const API_KEY_STORAGE = 'minskguessr_apikey_v3';
+
+let state = {
+  gameLocations: [], currentRound: 0, totalScore: 0,
+  guessCoords: null, guessMarker: null,
+  guessMap: null, panoramaPlayer: null, resultMap: null,
+  ymaps3loaded: false,
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+  const key = localStorage.getItem(API_KEY_STORAGE);
+  if (key) { document.getElementById('api-prompt').style.display = 'none'; loadAPI(key); }
+  buildRoundDots();
+});
+
+function startWithKey() {
+  const key = document.getElementById('api-key-input').value.trim();
+  if (!key) return;
+  localStorage.setItem(API_KEY_STORAGE, key);
+  document.getElementById('api-prompt').style.display = 'none';
+  loadAPI(key);
+}
+
+async function loadAPI(apiKey) {
+  setLoadingText('Загружаем Яндекс API...');
+  try {
+    await new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = `https://api-maps.yandex.ru/v3/?apikey=${apiKey}&lang=ru_RU`;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+    await ymaps3.ready;
+    state.ymaps3loaded = true;
+    setLoadingText('Инициализация...');
+    initGame();
+  } catch(e) {
+    setLoadingText('❌ Ошибка загрузки API. Открыт через http://localhost?');
+  }
+}
+
+function setLoadingText(t) { document.getElementById('loading-sub').textContent = t; }
+
+function buildRoundDots() {
+  const c = document.getElementById('round-dots'); c.innerHTML = '';
+  for (let i = 0; i < ROUNDS; i++) {
+    const d = document.createElement('div');
+    d.className = 'round-dot' + (i===0?' active':'');
+    d.id = `dot-${i}`; c.appendChild(d);
+  }
+}
+
+function updateDots() {
+  for (let i = 0; i < ROUNDS; i++) {
+    const d = document.getElementById(`dot-${i}`);
+    if (!d) continue;
+    d.className = 'round-dot' + (i<state.currentRound?' done':i===state.currentRound?' active':'');
+  }
+}
+
+async function initGame() {
+  const shuffled = [...LOCATIONS].sort(() => Math.random() - 0.5);
+  state.gameLocations = shuffled.slice(0, ROUNDS);
+  state.currentRound = 0; state.totalScore = 0;
+  await initGuessMap();
+  startRound();
+}
+
+async function initGuessMap() {
+  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapListener, YMapControls, YMapZoomControl } = ymaps3;
+  state.guessMap = new YMap(document.getElementById('map'), {
+    location: { center: [27.562, 53.904], zoom: 10 },
+    behaviors: ['drag', 'scrollZoom'],
+  });
+  state.guessMap.addChild(new YMapDefaultSchemeLayer({}));
+  state.guessMap.addChild(new YMapDefaultFeaturesLayer({}));
+
+  const listener = new YMapListener({
+    layer: 'any',
+    onClick: (obj, e) => placeGuessMarker(e.coordinates),
+  });
+  state.guessMap.addChild(listener);
+}
+
+async function startRound() {
+  const loc = state.gameLocations[state.currentRound];
+  updateDots();
+  document.getElementById('loading-screen').classList.remove('hidden');
+  setLoadingText('Загружаем панораму...');
+
+  // Reset guess
+  state.guessCoords = null;
+  if (state.guessMarker) { state.guessMap.removeChild(state.guessMarker); state.guessMarker = null; }
+  document.getElementById('guess-btn').disabled = true;
+  document.getElementById('map-hint').textContent = 'Кликни на карту';
+  document.getElementById('map-hint').className = 'map-hint';
+
+  // Destroy old panorama
+  if (state.panoramaPlayer) { try { state.panoramaPlayer.destroy(); } catch(e) {} state.panoramaPlayer = null; }
+  document.getElementById('panorama').innerHTML = '';
+
+  // Load panorama
+  const loadingTimeout = setTimeout(() => {
+    document.getElementById('loading-screen').classList.add('hidden');
+    document.getElementById('panorama').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-dim);flex-direction:column;gap:8px;font-size:14px;"><div style="font-size:36px">📷</div><div>Панорама недоступна</div><div style="font-size:12px;opacity:0.6">Ставь метку наугад</div></div>';
+  }, 8000);
+
+  try {
+    const { YMapPanorama } = await ymaps3.import('@yandex/ymaps3-panorama@0.0.1');
+    const result = await YMapPanorama.locate([loc.lng, loc.lat]);
+    clearTimeout(loadingTimeout);
+    if (result && result.length > 0) {
+      const panoEl = document.getElementById('panorama');
+      state.panoramaPlayer = new YMapPanorama(panoEl, { panorama: result[0], controls: [] });
+    } else {
+      document.getElementById('panorama').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-dim);flex-direction:column;gap:8px;font-size:14px;"><div style="font-size:36px">📷</div><div>Панорама недоступна</div><div style="font-size:12px;opacity:0.6">Ставь метку наугад</div></div>';
+    }
+    document.getElementById('loading-screen').classList.add('hidden');
+  } catch(e) {
+    clearTimeout(loadingTimeout);
+    document.getElementById('loading-screen').classList.add('hidden');
+    document.getElementById('panorama').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-dim);flex-direction:column;gap:8px;font-size:14px;"><div style="font-size:36px">📷</div><div>Ошибка загрузки панорамы</div></div>';
+  }
+}
+
+function placeGuessMarker(coords) {
+  state.guessCoords = coords;
+  if (state.guessMarker) state.guessMap.removeChild(state.guessMarker);
+  const el = document.createElement('div');
+  el.style.cssText = 'width:16px;height:16px;border-radius:50%;background:var(--red);border:2.5px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.5);transform:translate(-50%,-50%);';
+  state.guessMarker = new ymaps3.YMapMarker({ coordinates: coords }, el);
+  state.guessMap.addChild(state.guessMarker);
+  document.getElementById('guess-btn').disabled = false;
+  document.getElementById('map-hint').textContent = 'Метка поставлена ✓';
+  document.getElementById('map-hint').className = 'map-hint placed';
+}
+
+function clearGuess() {
+  if (state.guessMarker) { state.guessMap.removeChild(state.guessMarker); state.guessMarker = null; }
+  state.guessCoords = null;
+  document.getElementById('guess-btn').disabled = true;
+  document.getElementById('map-hint').textContent = 'Кликни на карту';
+  document.getElementById('map-hint').className = 'map-hint';
+}
+
+function haversineKm(lat1,lng1,lat2,lng2) {
+  const R=6371, dLat=(lat2-lat1)*Math.PI/180, dLng=(lng2-lng1)*Math.PI/180;
+  const a=Math.sin(dLat/2)**2+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+
+function calcScore(km) { return Math.max(0, Math.round(5000*Math.exp(-km/0.35))); }
+
+async function submitGuess() {
+  if (!state.guessCoords) return;
+  const loc = state.gameLocations[state.currentRound];
+  const [gLng, gLat] = state.guessCoords;
+  const dist = haversineKm(gLat, gLng, loc.lat, loc.lng);
+  const score = calcScore(dist);
+  state.totalScore += score;
+  document.getElementById('total-score').textContent = state.totalScore.toLocaleString('ru');
+  await showResult(loc, gLat, gLng, dist, score);
+}
+
+async function showResult(loc, gLat, gLng, dist, score) {
+  const el = document.getElementById('round-score');
+  el.textContent = score.toLocaleString('ru');
+  el.className = 'score-big ' + (score>=4000?'great':score>=2500?'good':score>=1000?'ok':'bad');
+
+  const distText = dist<1 ? Math.round(dist*1000)+' м' : dist.toFixed(2)+' км';
+  document.getElementById('dist-label').innerHTML = `Расстояние: <strong>${distText}</strong>`;
+
+  // Build result map
+  if (state.resultMap) { try { state.resultMap.destroy(); } catch(e) {} }
+  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapFeature } = ymaps3;
+
+  const midLat = (gLat + loc.lat) / 2;
+  const midLng = (gLng + loc.lng) / 2;
+
+  state.resultMap = new YMap(document.getElementById('result-map'), {
+    location: { center: [midLng, midLat], zoom: 10 },
+  });
+  state.resultMap.addChild(new YMapDefaultSchemeLayer({}));
+  state.resultMap.addChild(new YMapDefaultFeaturesLayer({}));
+
+  // Real location (green)
+  const realEl = document.createElement('div');
+  realEl.style.cssText = 'width:16px;height:16px;border-radius:50%;background:#4fd88a;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.5);transform:translate(-50%,-50%);';
+  state.resultMap.addChild(new YMapMarker({ coordinates: [loc.lng, loc.lat] }, realEl));
+
+  // Guess (red)
+  const guessEl = document.createElement('div');
+  guessEl.style.cssText = 'width:14px;height:14px;border-radius:50%;background:#f05a4f;border:2.5px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.5);transform:translate(-50%,-50%);';
+  state.resultMap.addChild(new YMapMarker({ coordinates: [gLng, gLat] }, guessEl));
+
+  // Line
+  const line = new YMapFeature({
+    geometry: { type: 'LineString', coordinates: [[gLng, gLat], [loc.lng, loc.lat]] },
+    style: { stroke: [{ color: '#d4f04e', width: 2, opacity: 0.8 }] },
+  });
+  state.resultMap.addChild(line);
+
+  document.getElementById('result-overlay').classList.add('visible');
+}
+
+function nextRound() {
+  document.getElementById('result-overlay').classList.remove('visible');
+  state.currentRound++;
+  if (state.currentRound >= ROUNDS) { showFinal(); return; }
+  startRound();
+}
+
+function showFinal() {
+  const ratio = state.totalScore / (ROUNDS * 5000);
+  const comment = ratio>=0.9?'🏆 Настоящий минчанин!':ratio>=0.7?'🗺️ Знаешь город неплохо':ratio>=0.4?'🚌 Нужно больше гулять':'🌍 Ты точно был в Минске?';
+  document.getElementById('result-card').innerHTML = `
+    <div style="font-family:'Unbounded',sans-serif;font-size:14px;color:var(--text-dim);margin-bottom:8px;">ИТОГО</div>
+    <div class="score-big great">${state.totalScore.toLocaleString('ru')}</div>
+    <div class="score-label" style="margin-bottom:24px;">из ${(ROUNDS*5000).toLocaleString('ru')} возможных</div>
+    <div class="dist-label" style="margin-bottom:24px;">${comment}</div>
+    <button class="btn btn-primary" style="width:100%" onclick="location.reload()">Играть снова →</button>
+  `;
+  document.getElementById('result-overlay').classList.add('visible');
+}
+</script>
+</body>
+</html>
