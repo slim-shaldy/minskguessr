@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minsk Guessr — Модерация</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',sans-serif;background:#0f0f0f;color:#eee;height:100dvh;display:flex;flex-direction:column;overflow:hidden;}
+
+  #header{padding:10px 16px;background:#1a1a1a;border-bottom:1px solid #2a2a2a;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+  #header h1{font-size:14px;color:#a78bfa;font-weight:700;}
+  .stats{display:flex;gap:10px;font-size:12px;}
+  .stat{color:#666;} .stat b{color:#eee;}
+
+  #pano{flex:1;width:100%;min-height:0;}
+
+  #bottom{padding:16px;background:#1a1a1a;border-top:1px solid #2a2a2a;flex-shrink:0;}
+  #point-label{font-size:13px;color:#a78bfa;text-align:center;margin-bottom:4px;font-weight:600;}
+  #point-sub{font-size:11px;color:#555;text-align:center;margin-bottom:14px;}
+  #actions{display:flex;gap:10px;}
+  #actions button{flex:1;padding:14px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;transition:transform 0.1s;}
+  #actions button:active{transform:scale(0.96);}
+  #btn-bad{background:#7f1d1d;color:#fca5a5;}
+  #btn-bad:hover{background:#991b1b;}
+  #btn-ok{background:#14532d;color:#86efac;}
+  #btn-ok:hover{background:#166534;}
+
+  #progress-bar{height:3px;background:#2a2a2a;flex-shrink:0;}
+  #progress-fill{height:3px;background:#a78bfa;transition:width 0.3s;}
+
+  #done-screen{display:none;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:16px;padding:24px;text-align:center;}
+  #done-screen h2{color:#a78bfa;font-size:22px;}
+  #done-screen p{color:#888;font-size:14px;}
+  #done-screen button{padding:12px 24px;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;width:100%;}
+  .btn-export{background:#6b21a8;color:#fff;}
+  .btn-export:hover{background:#7c3aed;}
+  .btn-clean{background:#14532d;color:#86efac;margin-top:4px;}
+  .btn-clean:hover{background:#166534;}
+
+  #skip-btn{background:none;border:none;color:#444;font-size:12px;text-align:center;display:block;width:100%;margin-top:10px;cursor:pointer;padding:4px;}
+  #skip-btn:hover{color:#888;}
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>🗺️ Модерация точек</h1>
+  <div class="stats">
+    <div class="stat">✓ <b id="cnt-ok">0</b></div>
+    <div class="stat">🚫 <b id="cnt-bad">0</b></div>
+    <div class="stat">осталось <b id="cnt-left">—</b></div>
+  </div>
+</div>
+
+<div id="progress-bar"><div id="progress-fill" style="width:0%"></div></div>
+
+<div id="pano"></div>
+
+<div id="bottom">
+  <div id="point-label">Загрузка...</div>
+  <div id="point-sub"></div>
+  <div id="actions">
+    <button id="btn-bad" onclick="vote(false)">🚫 Стоп</button>
+    <button id="btn-ok" onclick="vote(true)">✓ Норм</button>
+  </div>
+  <button id="skip-btn" onclick="skip()">Пропустить →</button>
+</div>
+
+<div id="done-screen">
+  <h2>🎉 Готово!</h2>
+  <p id="done-stats"></p>
+  <button class="btn-export" onclick="exportBlacklist()">📤 Скачать стоп-лист (blacklist.json)</button>
+  <button class="btn-clean" onclick="exportClean()">💾 Скачать чистые точки (locations_clean.json)</button>
+  <button style="background:#222;color:#888;margin-top:8px;" onclick="restart()">↩ Ещё раз</button>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLsKut8sS9VuTqFkLtmhmF7tz5_i7ZJlA&libraries=streetView"></script>
+<script>
+var LOCATIONS = [];
+var BLACKLIST = JSON.parse(localStorage.getItem('mguessr_blacklist')||'[]');
+var queue = []; // индексы непросмотренных
+var currentIdx = -1;
+var cntOk = 0, cntBad = 0;
+var panorama;
+
+function saveBlacklist(){localStorage.setItem('mguessr_blacklist',JSON.stringify(BLACKLIST));}
+function getKey(loc){return loc.panoId || (loc.lat.toFixed(4)+'_'+loc.lng.toFixed(4));}
+function isBlacklisted(loc){return BLACKLIST.indexOf(getKey(loc))!==-1;}
+
+function initPano(){
+  panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'),{
+    disableDefaultUI: true,
+    motionTracking: false,
+    motionTrackingControl: false,
+    showRoadLabels: false,
+    visible: true
+  });
+}
+
+function showPoint(idx){
+  currentIdx = idx;
+  var loc = LOCATIONS[idx];
+  document.getElementById('point-label').textContent = (loc.name || 'Без названия');
+  document.getElementById('point-sub').textContent = loc.lat.toFixed(5)+', '+loc.lng.toFixed(5);
+
+  if(loc.panoId){
+    panorama.setPano(loc.panoId);
+    panorama.setPov({heading: Math.random()*360, pitch: 0});
+  } else {
+    panorama.setPosition({lat:loc.lat, lng:loc.lng});
+  }
+  panorama.setVisible(true);
+
+  // Прогресс
+  var done = LOCATIONS.length - queue.length;
+  var pct = Math.round(done/LOCATIONS.length*100);
+  document.getElementById('progress-fill').style.width = pct+'%';
+  document.getElementById('cnt-left').textContent = queue.length;
+}
+
+function vote(good){
+  if(currentIdx < 0) return;
+  var loc = LOCATIONS[currentIdx];
+  if(!good){
+    var key = getKey(loc);
+    if(BLACKLIST.indexOf(key)===-1) BLACKLIST.push(key);
+    saveBlacklist();
+    cntBad++;
+    document.getElementById('cnt-bad').textContent = cntBad;
+  } else {
+    cntOk++;
+    document.getElementById('cnt-ok').textContent = cntOk;
+  }
+  next();
+}
+
+function skip(){next();}
+
+function next(){
+  if(queue.length === 0){
+    showDone();
+    return;
+  }
+  var idx = queue.shift();
+  showPoint(idx);
+}
+
+function showDone(){
+  document.getElementById('bottom').style.display='none';
+  document.getElementById('pano').style.display='none';
+  document.getElementById('done-screen').style.display='flex';
+  document.getElementById('done-stats').textContent =
+    '✓ Одобрено: '+cntOk+' | 🚫 В стоп-лист: '+cntBad+' | Всего в стоп-листе: '+BLACKLIST.length;
+}
+
+function restart(){
+  document.getElementById('bottom').style.display='block';
+  document.getElementById('pano').style.display='block';
+  document.getElementById('done-screen').style.display='none';
+  startQueue();
+}
+
+function exportBlacklist(){
+  var blob=new Blob([JSON.stringify(BLACKLIST,null,2)],{type:'application/json'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='blacklist.json';a.click();
+}
+
+function exportClean(){
+  var clean=LOCATIONS.filter(function(l){return !isBlacklisted(l);});
+  for(var i=0;i<clean.length;i++) clean[i].id=i+1;
+  var blob=new Blob([JSON.stringify(clean,null,2)],{type:'application/json'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='locations_clean.json';a.click();
+}
+
+function startQueue(){
+  // Только ещё не просмотренные (не в blacklist и без отметки в этой сессии)
+  // Для простоты — все точки не в blacklist
+  queue = [];
+  for(var i=0;i<LOCATIONS.length;i++){
+    if(!isBlacklisted(LOCATIONS[i])) queue.push(i);
+  }
+  cntOk=0; cntBad=0;
+  document.getElementById('cnt-ok').textContent='0';
+  document.getElementById('cnt-bad').textContent='0';
+  document.getElementById('cnt-left').textContent=queue.length;
+  next();
+}
+
+function initMap(){
+  initPano();
+  fetch('locations.json?v='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(data){
+      LOCATIONS = data;
+      startQueue();
+    });
+}
+</script>
+</body>
+</html>
