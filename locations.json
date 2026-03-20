@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "lat": 53.915022,
+    "lng": 27.633754,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEzZUhyNHdF"
+  },
+  {
+    "id": 2,
+    "lat": 53.892166,
+    "lng": 27.644054,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNqZHlWVmc."
+  },
+  {
+    "id": 3,
+    "lat": 53.875977,
+    "lng": 27.628261,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ3l1YmJ3clFF"
+  },
+  {
+    "id": 4,
+    "lat": 53.881644,
+    "lng": 27.583286,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2M4OFhjNmdF"
+  },
+  {
+    "id": 5,
+    "lat": 53.870344,
+    "lng": 27.542381,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1OUdyRVE."
+  },
+  {
+    "id": 6,
+    "lat": 53.876786,
+    "lng": 27.487156,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzYTNQUmc."
+  },
+  {
+    "id": 7,
+    "lat": 53.905112,
+    "lng": 27.43806,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ242OEwwMndF"
+  },
+  {
+    "id": 8,
+    "lat": 53.908788,
+    "lng": 27.520065,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2l4TmEwcHdF"
+  },
+  {
+    "id": 9,
+    "lat": 53.904303,
+    "lng": 27.540714,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDYyOEdta2dF"
+  },
+  {
+    "id": 10,
+    "lat": 53.912226,
+    "lng": 27.58667,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDQwX25GaXdF"
+  },
+  {
+    "id": 11,
+    "lat": 53.935071,
+    "lng": 27.65401,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR6T2ljb2dF"
+  },
+  {
+    "id": 12,
+    "lat": 53.953055,
+    "lng": 27.67358,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHEwS1RSOUFF"
+  },
+  {
+    "id": 13,
+    "lat": 53.932645,
+    "lng": 27.693836,
+    "panoId": "CAoSHENJQUJJaENweHdBUHgtZlhtUUFTdDM0SDlDY2k."
+  },
+  {
+    "id": 14,
+    "lat": 53.950227,
+    "lng": 27.68285,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR6S0RwQWc."
+  },
+  {
+    "id": 15,
+    "lat": 53.942548,
+    "lng": 27.425652,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREgwYVhsT0E."
+  },
+  {
+    "id": 16,
+    "lat": 53.930422,
+    "lng": 27.48127,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3E4NlduV3c."
+  },
+  {
+    "id": 17,
+    "lat": 53.909192,
+    "lng": 27.4823,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHluZS1SNWdF"
+  },
+  {
+    "id": 18,
+    "lat": 53.942893,
+    "lng": 27.685079,
+    "panoId": "CAoSHENJQUJJaERCLTFnNmZrNkpkcnlleEVtaFc5eTM."
+  },
+  {
+    "id": 19,
+    "lat": 53.91354,
+    "lng": 27.675247,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHl1cXZMdEFF"
+  },
+  {
+    "id": 20,
+    "lat": 53.942121,
+    "lng": 27.643462,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRFgwS3EtdVFF"
+  },
+  {
+    "id": 21,
+    "lat": 53.930191,
+    "lng": 27.649665,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHEzSmFYT0E."
+  },
+  {
+    "id": 22,
+    "lat": 53.930625,
+    "lng": 27.639022,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzZvdEtoQ3c."
+  },
+  {
+    "id": 23,
+    "lat": 53.927435,
+    "lng": 27.65016,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHExWTNYT1E."
+  },
+  {
+    "id": 24,
+    "lat": 53.919545,
+    "lng": 27.640226,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFg0TDNpS1E."
+  },
+  {
+    "id": 25,
+    "lat": 53.926852,
+    "lng": 27.611998,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREd2TnVBa1FF"
+  },
+  {
+    "id": 26,
+    "lat": 53.929904,
+    "lng": 27.597865,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRG55YXVRS1E."
+  },
+  {
+    "id": 27,
+    "lat": 53.943571,
+    "lng": 27.615326,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VqWmJkTFE."
+  },
+  {
+    "id": 28,
+    "lat": 53.931005,
+    "lng": 27.577725,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHF5NkxSR0E."
+  },
+  {
+    "id": 29,
+    "lat": 53.93216,
+    "lng": 27.561715,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREV4YnZucFFF"
+  },
+  {
+    "id": 30,
+    "lat": 53.929236,
+    "lng": 27.569225,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFoZld1amdF"
+  },
+  {
+    "id": 31,
+    "lat": 53.922463,
+    "lng": 27.561157,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsYl9yVnc."
+  },
+  {
+    "id": 32,
+    "lat": 53.923171,
+    "lng": 27.545201,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHF6YkdzM2dF"
+  },
+  {
+    "id": 33,
+    "lat": 53.910468,
+    "lng": 27.539775,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRGNqdTJOQ2c."
+  },
+  {
+    "id": 34,
+    "lat": 53.90779,
+    "lng": 27.532231,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2s1cWJYNkFF"
+  },
+  {
+    "id": 35,
+    "lat": 53.907487,
+    "lng": 27.551114,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzR5OXI4UVE."
+  },
+  {
+    "id": 36,
+    "lat": 53.901914,
+    "lng": 27.554848,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1o1SkNvTXc."
+  },
+  {
+    "id": 37,
+    "lat": 53.897192,
+    "lng": 27.55621,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDR6SWlZSlE."
+  },
+  {
+    "id": 38,
+    "lat": 53.891845,
+    "lng": 27.574348,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTEhqX1FF"
+  },
+  {
+    "id": 39,
+    "lat": 53.844324,
+    "lng": 27.506676,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2NpOG53UHc."
+  },
+  {
+    "id": 40,
+    "lat": 53.848979,
+    "lng": 27.471652,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2IwZWJaeFFF"
+  },
+  {
+    "id": 41,
+    "lat": 53.855409,
+    "lng": 27.485642,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0s2OHVRb3dF"
+  },
+  {
+    "id": 42,
+    "lat": 53.845953,
+    "lng": 27.535329,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3FfTkhrQnc."
+  },
+  {
+    "id": 43,
+    "lat": 53.85331,
+    "lng": 27.55198,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRG14NG15LWdF"
+  },
+  {
+    "id": 44,
+    "lat": 53.844539,
+    "lng": 27.575993,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0h6T2pJYXc."
+  },
+  {
+    "id": 45,
+    "lat": 53.837542,
+    "lng": 27.63068,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsX0hEVlE."
+  },
+  {
+    "id": 46,
+    "lat": 53.864026,
+    "lng": 27.666889,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqZHJNQ2c."
+  },
+  {
+    "id": 47,
+    "lat": 53.881467,
+    "lng": 27.598369,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3ExYXZJTEE."
+  },
+  {
+    "id": 48,
+    "lat": 53.864922,
+    "lng": 27.613385,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzJqTmJ3WFE."
+  },
+  {
+    "id": 49,
+    "lat": 53.90332,
+    "lng": 27.607462,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1gxNkRuN2dF"
+  },
+  {
+    "id": 50,
+    "lat": 53.917625,
+    "lng": 27.553006,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1U4cVNzMndF"
+  },
+  {
+    "id": 51,
+    "lat": 53.919344,
+    "lng": 27.498074,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREVzWldEaXdF"
+  },
+  {
+    "id": 52,
+    "lat": 53.891027,
+    "lng": 27.525025,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRGFpSTY5bXdF"
+  },
+  {
+    "id": 53,
+    "lat": 53.884502,
+    "lng": 27.503296,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VwWmZCVUE."
+  },
+  {
+    "id": 54,
+    "lat": 53.901473,
+    "lng": 27.474219,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0N6NUtKa3dF"
+  },
+  {
+    "id": 55,
+    "lat": 53.906024,
+    "lng": 27.454723,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VuZFh3b3dF"
+  },
+  {
+    "id": 56,
+    "lat": 53.915908,
+    "lng": 27.437064,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDd6WVR1X3dF"
+  },
+  {
+    "id": 57,
+    "lat": 53.92974,
+    "lng": 27.476203,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VvSmYzb0FF"
+  },
+  {
+    "id": 58,
+    "lat": 53.910067,
+    "lng": 27.50588,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRxX213X1FF"
+  },
+  {
+    "id": 59,
+    "lat": 53.895138,
+    "lng": 27.499075,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDRsYmUyRlE."
+  },
+  {
+    "id": 60,
+    "lat": 53.907188,
+    "lng": 27.572097,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzQ3TG11V3c."
+  },
+  {
+    "id": 61,
+    "lat": 53.908957,
+    "lng": 27.55772,
+    "panoId": "F1rN4nhe9mdGHbxgo2Vcyw"
+  },
+  {
+    "id": 62,
+    "lat": 53.904402,
+    "lng": 27.584499,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0V1T2VGOWdF"
+  },
+  {
+    "id": 63,
+    "lat": 53.898055,
+    "lng": 27.605229,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0VrNXVHQ3c."
+  },
+  {
+    "id": 64,
+    "lat": 53.878989,
+    "lng": 27.610054,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqYnIwZkE."
+  },
+  {
+    "id": 65,
+    "lat": 53.86084,
+    "lng": 27.677775,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzRyZUs0SWc."
+  },
+  {
+    "id": 66,
+    "lat": 53.96037,
+    "lng": 27.594079,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ1h0NTdtd1FF"
+  },
+  {
+    "id": 67,
+    "lat": 53.928389,
+    "lng": 27.533109,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0VvZDdld1FF"
+  },
+  {
+    "id": 68,
+    "lat": 53.955253,
+    "lng": 27.535135,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRHFucUgza3dF"
+  },
+  {
+    "id": 69,
+    "lat": 53.945959,
+    "lng": 27.455999,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ2VucjJWN2dF"
+  },
+  {
+    "id": 70,
+    "lat": 53.887616,
+    "lng": 27.451994,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHExYnJ1WEE."
+  },
+  {
+    "id": 71,
+    "lat": 53.916643,
+    "lng": 27.567005,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREM4ZEtXQnc."
+  },
+  {
+    "id": 72,
+    "lat": 53.915389,
+    "lng": 27.603722,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREd1cnlVTGc."
+  },
+  {
+    "id": 73,
+    "lat": 53.906895,
+    "lng": 27.623807,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV3ckNSSmc."
+  },
+  {
+    "id": 74,
+    "lat": 53.94874,
+    "lng": 27.597027,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFxOXk3Qmc."
+  },
+  {
+    "id": 75,
+    "lat": 53.919389,
+    "lng": 27.576011,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJREV0UDdzTUE."
+  },
+  {
+    "id": 76,
+    "lat": 53.926465,
+    "lng": 27.591976,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR6S0RwdUFF"
+  },
+  {
+    "id": 77,
+    "lat": 53.900124,
+    "lng": 27.57275,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTGEwdEFF"
+  },
+  {
+    "id": 78,
+    "lat": 53.871794,
+    "lng": 27.559753,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ3B1NzNpYnc."
+  },
+  {
+    "id": 79,
+    "lat": 53.895875,
+    "lng": 27.537265,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzYxb1RhSkE."
+  },
+  {
+    "id": 80,
+    "lat": 53.96359,
+    "lng": 27.591491,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ2UyNWVqRHc."
+  },
+  {
+    "id": 81,
+    "lat": 53.931969,
+    "lng": 27.516964,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gyTl92elFF"
+  },
+  {
+    "id": 82,
+    "lat": 53.916503,
+    "lng": 27.538765,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ0htTnJRYXc."
+  },
+  {
+    "id": 83,
+    "lat": 53.887595,
+    "lng": 27.545347,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQzQ3WldfVkE."
+  },
+  {
+    "id": 84,
+    "lat": 53.885571,
+    "lng": 27.566462,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDQyN21FQ3c."
+  },
+  {
+    "id": 85,
+    "lat": 53.891439,
+    "lng": 27.554617,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzhpcWpabXdF"
+  },
+  {
+    "id": 86,
+    "lat": 53.895688,
+    "lng": 27.549811,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREU0b2Zsd0FF"
+  },
+  {
+    "id": 87,
+    "lat": 53.877982,
+    "lng": 27.569552,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJREUyTXp4bXdF"
+  },
+  {
+    "id": 88,
+    "lat": 53.889965,
+    "lng": 27.540002,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRFVrZVBuT0E."
+  },
+  {
+    "id": 89,
+    "lat": 53.893405,
+    "lng": 27.570472,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1U0TFBqYUE."
+  },
+  {
+    "id": 90,
+    "lat": 53.89125,
+    "lng": 27.582434,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0gzTEdYMkFF"
+  },
+  {
+    "id": 91,
+    "lat": 53.886646,
+    "lng": 27.581576,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzQ5Y3pZX0FF"
+  },
+  {
+    "id": 92,
+    "lat": 53.878754,
+    "lng": 27.598313,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzR5LWIwNFFF"
+  },
+  {
+    "id": 93,
+    "lat": 53.869648,
+    "lng": 27.599768,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJRDR2NE9Sd2dF"
+  },
+  {
+    "id": 94,
+    "lat": 53.853127,
+    "lng": 27.615706,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQzRuNWZtb1FF"
+  },
+  {
+    "id": 95,
+    "lat": 53.851842,
+    "lng": 27.643551,
+    "panoId": "CAoSF0NJSE0wb2dLRUlDQWdJQ0Vockw1dUFF"
+  },
+  {
+    "id": 96,
+    "lat": 53.858127,
+    "lng": 27.591172,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFqZFM3ZHc."
+  },
+  {
+    "id": 97,
+    "lat": 53.869909,
+    "lng": 27.580449,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHF2WkM0UEE."
+  },
+  {
+    "id": 98,
+    "lat": 53.873929,
+    "lng": 27.576758,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJQ1c1S1B6Q0E."
+  },
+  {
+    "id": 99,
+    "lat": 53.956899,
+    "lng": 27.58593,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRDg3NENDZUE."
+  },
+  {
+    "id": 100,
+    "lat": 53.898423,
+    "lng": 27.54351,
+    "panoId": "CAoSFkNJSE0wb2dLRUlDQWdJRHFzNl9pUFE."
+  }
+]
