@@ -137,14 +137,19 @@ function collectNext() {
         setTimeout(collectNext, 100);
         return;
       }
-      var lat = pos[0];
-      var lng = pos[1];
+      var pLat = pos[0];
+      var pLng = pos[1];
       var name = pano._name || '';
+
+      // Определяем что есть что по значению: Минск lat~53, lng~27
+      var realLat, realLng;
+      if (pLat > 50) { realLat = pLat; realLng = pLng; }
+      else           { realLat = pLng; realLng = pLat; }
 
       // проверка на дубликат (ближе 200м)
       var dup = found.some(function(f) {
-        var dlat = f.lat - lat;
-        var dlng = f.lng - lng;
+        var dlat = f.lat - realLat;
+        var dlng = f.lng - realLng;
         return Math.sqrt(dlat*dlat + dlng*dlng) < 0.002;
       });
 
@@ -154,14 +159,13 @@ function collectNext() {
         return;
       }
 
-      // pos[0]=lng (~27), pos[1]=lat (~53) в Яндекс API
-      var loc = { id: found.length + 1, lat: lng, lng: lat, name: name };
+      var loc = { id: found.length + 1, lat: realLat, lng: realLng, name: name };
       found.push(loc);
-      log('#' + attempts + ' ✅ lat=' + lng.toFixed(4) + ' lng=' + lat.toFixed(4) + ' ' + name, '#1a7a1a');
+      log('#' + attempts + ' ✅ lat=' + realLat.toFixed(4) + ' lng=' + realLng.toFixed(4) + ' ' + name, '#1a7a1a');
       updateProgress();
 
-      // Метка на карте — ymaps принимает [lat, lng], lat~53
-      map.geoObjects.add(new ymaps.Placemark([lng, lat], {
+      // ymaps.Placemark принимает [lat, lng]
+      map.geoObjects.add(new ymaps.Placemark([realLat, realLng], {
         balloonContent: (found.length) + '. ' + name
       }, { preset: 'islands#redCircleDotIcon' }));
 
