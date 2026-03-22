@@ -293,6 +293,15 @@ ymaps.ready(function(){
     placeGuessMarker(coords);
   });
 
+  // При ховере на панель карты — обновить размер
+  var mapPanel = document.getElementById('map-panel');
+  mapPanel.addEventListener('mouseenter', function(){
+    setTimeout(function(){ state.guessMap.container.fitToViewport(); }, 300);
+  });
+  mapPanel.addEventListener('mouseleave', function(){
+    setTimeout(function(){ state.guessMap.container.fitToViewport(); }, 300);
+  });
+
   document.getElementById('loading-screen').classList.add('hidden');
 });
 
