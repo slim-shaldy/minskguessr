@@ -55,9 +55,13 @@ ymaps.ready(function() {
       return;
     }
 
+    console.log('panoramas result:', panoramas);
+    console.log('type:', typeof panoramas[0]);
+    console.log('keys:', Object.keys(panoramas[0]));
+
     document.getElementById('status').textContent =
-      '✅ Панорама найдена! ID: ' + panoramas[0].getId() +
-      ' | Координаты: ' + panoramas[0].getPosition().join(', ');
+      '✅ Найдено: ' + panoramas.length + ' | тип[0]: ' + typeof panoramas[0] +
+      ' | keys: ' + Object.keys(panoramas[0]).join(', ');
 
     // Показываем панораму
     try {
@@ -70,7 +74,7 @@ ymaps.ready(function() {
       });
       document.getElementById('status').textContent += ' | Player создан';
     } catch(e) {
-      document.getElementById('status').textContent = '❌ Player exception: ' + e.message;
+      document.getElementById('status').textContent += ' | ❌ ' + e.message;
       console.error('panorama player exception', e);
     }
 
