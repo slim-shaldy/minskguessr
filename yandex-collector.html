@@ -131,9 +131,27 @@ function collectNext() {
         return;
       }
 
-      var pos = pano._position; // Яндекс возвращает [lng, lat, alt]
-      var lat = pos[1];
-      var lng = pos[0];
+      var pos = pano._position;
+      console.log('_position raw:', pos, 'type:', typeof pos, Array.isArray(pos) ? 'isArray len='+pos.length : 'NOT array');
+      console.log('pano keys:', Object.keys(pano));
+
+      // Яндекс может возвращать по-разному — пробуем оба варианта
+      var lat, lng;
+      if (Array.isArray(pos)) {
+        // определяем порядок по значению: lat Минска ~53, lng ~27
+        if (pos[0] > 50) { lat = pos[0]; lng = pos[1]; }
+        else              { lat = pos[1]; lng = pos[0]; }
+      } else if (pos && typeof pos === 'object') {
+        lat = pos.lat || pos[0];
+        lng = pos.lng || pos[1];
+      }
+
+      if (!lat || !lng) {
+        log('#' + attempts + ' не удалось получить координаты, пропуск', '#c00');
+        console.warn('bad pos:', pos);
+        setTimeout(collectNext, 100);
+        return;
+      }
       var name = pano._name || '';
 
       // проверка на дубликат (ближе 200м)
