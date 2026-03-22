@@ -131,7 +131,12 @@ function collectNext() {
         return;
       }
 
-      var pos = pano._position; // [lat, lng, alt]
+      var pos = pano._position;
+      if (!pos || pos[0] == null || pos[1] == null) {
+        log('#' + attempts + ' нет координат, пропуск', '#aaa');
+        setTimeout(collectNext, 100);
+        return;
+      }
       var lat = pos[0];
       var lng = pos[1];
       var name = pano._name || '';
