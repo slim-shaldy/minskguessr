@@ -284,7 +284,7 @@ ymaps.ready(function(){
   // Мини-карта для угадывания
   state.guessMap = new ymaps.Map('map', {
     center: [53.904, 27.562],
-    zoom: 10,
+    zoom: 11,
     controls: ['zoomControl']
   });
 
@@ -296,16 +296,10 @@ ymaps.ready(function(){
   // При ховере на панель карты — обновить размер
   var mapPanel = document.getElementById('map-panel');
   mapPanel.addEventListener('mouseenter', function(){
-    setTimeout(function(){
-      state.guessMap.container.fitToViewport();
-      state.guessMap.setZoom(state.guessMap.getZoom() + 1, {duration: 200});
-    }, 300);
+    setTimeout(function(){ state.guessMap.container.fitToViewport(); }, 300);
   });
   mapPanel.addEventListener('mouseleave', function(){
-    setTimeout(function(){
-      state.guessMap.container.fitToViewport();
-      state.guessMap.setZoom(state.guessMap.getZoom() - 1, {duration: 200});
-    }, 300);
+    setTimeout(function(){ state.guessMap.container.fitToViewport(); }, 300);
   });
 
   document.getElementById('loading-screen').classList.add('hidden');
