@@ -131,27 +131,9 @@ function collectNext() {
         return;
       }
 
-      var pos = pano._position;
-      console.log('_position raw:', pos, 'type:', typeof pos, Array.isArray(pos) ? 'isArray len='+pos.length : 'NOT array');
-      console.log('pano keys:', Object.keys(pano));
-
-      // Яндекс может возвращать по-разному — пробуем оба варианта
-      var lat, lng;
-      if (Array.isArray(pos)) {
-        // определяем порядок по значению: lat Минска ~53, lng ~27
-        if (pos[0] > 50) { lat = pos[0]; lng = pos[1]; }
-        else              { lat = pos[1]; lng = pos[0]; }
-      } else if (pos && typeof pos === 'object') {
-        lat = pos.lat || pos[0];
-        lng = pos.lng || pos[1];
-      }
-
-      if (!lat || !lng) {
-        log('#' + attempts + ' не удалось получить координаты, пропуск', '#c00');
-        console.warn('bad pos:', pos);
-        setTimeout(collectNext, 100);
-        return;
-      }
+      var pos = pano._position; // [lat, lng, alt]
+      var lat = pos[0];
+      var lng = pos[1];
       var name = pano._name || '';
 
       // проверка на дубликат (ближе 200м)
@@ -167,13 +149,14 @@ function collectNext() {
         return;
       }
 
-      var loc = { id: found.length + 1, lat: lat, lng: lng, name: name };
+      // pos[0]=lng (~27), pos[1]=lat (~53) в Яндекс API
+      var loc = { id: found.length + 1, lat: lng, lng: lat, name: name };
       found.push(loc);
-      log('#' + attempts + ' ✅ [' + lat.toFixed(4) + ', ' + lng.toFixed(4) + '] ' + name, '#1a7a1a');
+      log('#' + attempts + ' ✅ lat=' + lng.toFixed(4) + ' lng=' + lat.toFixed(4) + ' ' + name, '#1a7a1a');
       updateProgress();
 
-      // Метка на карте
-      map.geoObjects.add(new ymaps.Placemark([lat, lng], {
+      // Метка на карте — ymaps принимает [lat, lng], lat~53
+      map.geoObjects.add(new ymaps.Placemark([lng, lat], {
         balloonContent: (found.length) + '. ' + name
       }, { preset: 'islands#redCircleDotIcon' }));
 
