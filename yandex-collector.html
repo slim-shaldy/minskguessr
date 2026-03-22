@@ -131,13 +131,15 @@ function collectNext() {
         return;
       }
 
-      var pos = pano._position; // [lat, lng, alt]
+      var pos = pano._position; // Яндекс возвращает [lng, lat, alt]
+      var lat = pos[1];
+      var lng = pos[0];
       var name = pano._name || '';
 
       // проверка на дубликат (ближе 200м)
       var dup = found.some(function(f) {
-        var dlat = f.lat - pos[0];
-        var dlng = f.lng - pos[1];
+        var dlat = f.lat - lat;
+        var dlng = f.lng - lng;
         return Math.sqrt(dlat*dlat + dlng*dlng) < 0.002;
       });
 
@@ -147,13 +149,13 @@ function collectNext() {
         return;
       }
 
-      var loc = { id: found.length + 1, lat: pos[0], lng: pos[1], name: name };
+      var loc = { id: found.length + 1, lat: lat, lng: lng, name: name };
       found.push(loc);
-      log('#' + attempts + ' ✅ [' + pos[0].toFixed(4) + ', ' + pos[1].toFixed(4) + '] ' + name, '#1a7a1a');
+      log('#' + attempts + ' ✅ [' + lat.toFixed(4) + ', ' + lng.toFixed(4) + '] ' + name, '#1a7a1a');
       updateProgress();
 
       // Метка на карте
-      map.geoObjects.add(new ymaps.Placemark([pos[0], pos[1]], {
+      map.geoObjects.add(new ymaps.Placemark([lat, lng], {
         balloonContent: (found.length) + '. ' + name
       }, { preset: 'islands#redCircleDotIcon' }));
 
