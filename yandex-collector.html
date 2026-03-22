@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Яндекс — коллектор локаций</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+h1 { margin-bottom: 12px; font-size: 18px; }
+.controls { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; }
+button { padding: 8px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; }
+#btn-start { background: #fc3f1d; color: #fff; }
+#btn-start:disabled { background: #ccc; cursor: not-allowed; }
+#btn-copy { background: #1a73e8; color: #fff; display: none; }
+.progress { font-size: 13px; color: #555; }
+.layout { display: flex; gap: 16px; }
+#map { width: 500px; height: 450px; border: 1px solid #ccc; border-radius: 8px; flex-shrink: 0; }
+.right { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+#log { height: 200px; overflow-y: auto; font-size: 12px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-family: monospace; }
+#preview { flex: 1; height: 230px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; background: #ddd; }
+#output { margin-top: 16px; }
+textarea { width: 100%; height: 120px; font-family: monospace; font-size: 11px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; resize: vertical; }
+</style>
+</head>
+<body>
+
+<h1>Коллектор яндекс-локаций для MinskGuessr</h1>
+
+<div class="controls">
+  <button id="btn-start">▶ Собрать 20 локаций</button>
+  <button id="btn-copy">📋 Скопировать JSON</button>
+  <span class="progress" id="progress">Готов к запуску</span>
+</div>
+
+<div class="layout">
+  <div id="map"></div>
+  <div class="right">
+    <div id="log"></div>
+    <div id="preview"></div>
+  </div>
+</div>
+
+<div id="output" style="display:none">
+  <b>Готово! JSON с локациями:</b>
+  <textarea id="json-out" readonly></textarea>
+</div>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU"></script>
+<script>
+// Минск bbox
+var MINSK = {
+  latMin: 53.830,
+  latMax: 53.960,
+  lngMin: 27.420,
+  lngMax: 27.680
+};
+
+var TARGET = 20;
+var found = [];
+var attempts = 0;
+var running = false;
+var map, previewPlayer;
+
+function rnd(min, max) {
+  return min + Math.random() * (max - min);
+}
+
+function log(msg, color) {
+  var el = document.getElementById('log');
+  var line = document.createElement('div');
+  line.style.color = color || '#333';
+  line.textContent = msg;
+  el.appendChild(line);
+  el.scrollTop = el.scrollHeight;
+}
+
+function updateProgress() {
+  document.getElementById('progress').textContent =
+    'Найдено: ' + found.length + '/' + TARGET + ' | Попыток: ' + attempts;
+}
+
+ymaps.ready(function() {
+  map = new ymaps.Map('map', {
+    center: [53.904, 27.562],
+    zoom: 11,
+    controls: ['zoomControl']
+  });
+
+  document.getElementById('btn-start').addEventListener('click', startCollect);
+  document.getElementById('btn-copy').addEventListener('click', copyJson);
+});
+
+function startCollect() {
+  if (running) return;
+  running = true;
+  found = [];
+  attempts = 0;
+  document.getElementById('btn-start').disabled = true;
+  document.getElementById('log').innerHTML = '';
+  document.getElementById('output').style.display = 'none';
+  document.getElementById('btn-copy').style.display = 'none';
+  collectNext();
+}
+
+function collectNext() {
+  if (found.length >= TARGET) {
+    finish();
+    return;
+  }
+
+  var lat = rnd(MINSK.latMin, MINSK.latMax);
+  var lng = rnd(MINSK.lngMin, MINSK.lngMax);
+  attempts++;
+  updateProgress();
+
+  ymaps.panorama.locate([lat, lng], { layer: 'yandex#panorama' }).done(
+    function(panoramas) {
+      if (panoramas.length === 0) {
+        log('#' + attempts + ' [' + lat.toFixed(4) + ', ' + lng.toFixed(4) + '] — нет панорамы', '#aaa');
+        setTimeout(collectNext, 100);
+        return;
+      }
+
+      var pano = panoramas[0];
+      var layer = pano._layer;
+
+      if (layer !== 'yandex#panorama') {
+        log('#' + attempts + ' пропуск (layer: ' + layer + ')', '#e8a000');
+        setTimeout(collectNext, 100);
+        return;
+      }
+
+      var pos = pano._position; // [lat, lng, alt]
+      var name = pano._name || '';
+
+      // проверка на дубликат (ближе 200м)
+      var dup = found.some(function(f) {
+        var dlat = f.lat - pos[0];
+        var dlng = f.lng - pos[1];
+        return Math.sqrt(dlat*dlat + dlng*dlng) < 0.002;
+      });
+
+      if (dup) {
+        log('#' + attempts + ' дубликат, пропуск', '#aaa');
+        setTimeout(collectNext, 100);
+        return;
+      }
+
+      var loc = { id: found.length + 1, lat: pos[0], lng: pos[1], name: name };
+      found.push(loc);
+      log('#' + attempts + ' ✅ [' + pos[0].toFixed(4) + ', ' + pos[1].toFixed(4) + '] ' + name, '#1a7a1a');
+      updateProgress();
+
+      // Метка на карте
+      map.geoObjects.add(new ymaps.Placemark([pos[0], pos[1]], {
+        balloonContent: (found.length) + '. ' + name
+      }, { preset: 'islands#redCircleDotIcon' }));
+
+      // Превью последней найденной
+      if (previewPlayer) {
+        try { previewPlayer.destroy(); } catch(e) {}
+      }
+      document.getElementById('preview').innerHTML = '';
+      try {
+        previewPlayer = new ymaps.panorama.Player('preview', pano, {
+          controls: []
+        });
+      } catch(e) {}
+
+      setTimeout(collectNext, 200);
+    },
+    function(err) {
+      log('#' + attempts + ' ошибка: ' + (err && err.message), '#c00');
+      setTimeout(collectNext, 300);
+    }
+  );
+}
+
+function finish() {
+  running = false;
+  document.getElementById('btn-start').disabled = false;
+  document.getElementById('btn-copy').style.display = 'inline-block';
+  document.getElementById('output').style.display = 'block';
+  document.getElementById('json-out').value = JSON.stringify(found, null, 2);
+  log('=== Готово! ' + found.length + ' локаций собрано ===', '#1a73e8');
+}
+
+function copyJson() {
+  var ta = document.getElementById('json-out');
+  ta.select();
+  document.execCommand('copy');
+  document.getElementById('btn-copy').textContent = '✅ Скопировано!';
+  setTimeout(function() {
+    document.getElementById('btn-copy').textContent = '📋 Скопировать JSON';
+  }, 2000);
+}
+</script>
+</body>
+</html>
