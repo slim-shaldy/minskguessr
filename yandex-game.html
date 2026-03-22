@@ -296,10 +296,16 @@ ymaps.ready(function(){
   // При ховере на панель карты — обновить размер
   var mapPanel = document.getElementById('map-panel');
   mapPanel.addEventListener('mouseenter', function(){
-    setTimeout(function(){ state.guessMap.container.fitToViewport(); }, 300);
+    setTimeout(function(){
+      state.guessMap.container.fitToViewport();
+      state.guessMap.setZoom(state.guessMap.getZoom() + 1, {duration: 200});
+    }, 300);
   });
   mapPanel.addEventListener('mouseleave', function(){
-    setTimeout(function(){ state.guessMap.container.fitToViewport(); }, 300);
+    setTimeout(function(){
+      state.guessMap.container.fitToViewport();
+      state.guessMap.setZoom(state.guessMap.getZoom() - 1, {duration: 200});
+    }, 300);
   });
 
   document.getElementById('loading-screen').classList.add('hidden');
