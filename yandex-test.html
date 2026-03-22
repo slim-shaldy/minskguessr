@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Яндекс Панорама — тест</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+h1 { margin-bottom: 16px; font-size: 18px; }
+.info { margin-bottom: 12px; font-size: 13px; color: #555; }
+.layout { display: flex; gap: 16px; height: 500px; }
+#panorama { flex: 1; border-radius: 12px; overflow: hidden; border: 1px solid #ccc; background: #ddd; }
+#map { width: 340px; border-radius: 12px; overflow: hidden; border: 1px solid #ccc; }
+#status { margin-top: 12px; font-size: 13px; padding: 10px 14px; background: #fff; border-radius: 8px; border: 1px solid #ccc; }
+</style>
+</head>
+<body>
+
+<h1>Яндекс Панорама — тест одной точки</h1>
+<div class="info">Координаты: 53.8818, 27.5849 (Минск)</div>
+
+<div class="layout">
+  <div id="panorama"></div>
+  <div id="map"></div>
+</div>
+
+<div id="status">Загрузка...</div>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU" type="text/javascript"></script>
+<script>
+var LAT = 53.881762560475075;
+var LNG = 27.58490697140977;
+
+ymaps.ready(function() {
+  document.getElementById('status').textContent = 'API загружен, ищем панораму...';
+
+  // Мини-карта
+  var map = new ymaps.Map('map', {
+    center: [LAT, LNG],
+    zoom: 14,
+    controls: ['zoomControl']
+  });
+
+  // Метка на карте
+  var placemark = new ymaps.Placemark([LAT, LNG], {}, {
+    preset: 'islands#redCircleDotIcon'
+  });
+  map.geoObjects.add(placemark);
+
+  // Ищем панораму по координатам
+  ymaps.panorama.locate([LAT, LNG]).done(function(panoramas) {
+    if (panoramas.length === 0) {
+      document.getElementById('status').textContent = '❌ Панорама не найдена для этих координат';
+      return;
+    }
+
+    document.getElementById('status').textContent =
+      '✅ Панорама найдена! ID: ' + panoramas[0].getId() +
+      ' | Координаты: ' + panoramas[0].getPosition().join(', ');
+
+    // Показываем панораму
+    var player = new ymaps.panorama.Player('panorama', panoramas[0], {
+      controls: ['fullscreenControl', 'zoomControl']
+    });
+
+  }, function(err) {
+    document.getElementById('status').textContent = '❌ Ошибка: ' + err.message;
+  });
+});
+</script>
+</body>
+</html>
