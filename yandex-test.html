@@ -60,12 +60,23 @@ ymaps.ready(function() {
       ' | Координаты: ' + panoramas[0].getPosition().join(', ');
 
     // Показываем панораму
-    var player = new ymaps.panorama.Player('panorama', panoramas[0], {
-      controls: ['fullscreenControl', 'zoomControl']
-    });
+    try {
+      var player = new ymaps.panorama.Player('panorama', panoramas[0], {
+        controls: ['fullscreenControl', 'zoomControl']
+      });
+      player.events.add('error', function(e) {
+        document.getElementById('status').textContent = '❌ Player error: ' + JSON.stringify(e.get('error'));
+        console.error('panorama player error', e);
+      });
+      document.getElementById('status').textContent += ' | Player создан';
+    } catch(e) {
+      document.getElementById('status').textContent = '❌ Player exception: ' + e.message;
+      console.error('panorama player exception', e);
+    }
 
   }, function(err) {
-    document.getElementById('status').textContent = '❌ Ошибка: ' + err.message;
+    document.getElementById('status').textContent = '❌ locate error: ' + (err && err.message ? err.message : JSON.stringify(err));
+    console.error('panorama locate error', err);
   });
 });
 </script>
