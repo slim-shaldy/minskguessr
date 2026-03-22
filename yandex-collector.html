@@ -159,16 +159,8 @@ function collectNext() {
         balloonContent: (found.length) + '. ' + name
       }, { preset: 'islands#redCircleDotIcon' }));
 
-      // Превью последней найденной
-      if (previewPlayer) {
-        try { previewPlayer.destroy(); } catch(e) {}
-      }
-      document.getElementById('preview').innerHTML = '';
-      try {
-        previewPlayer = new ymaps.panorama.Player('preview', pano, {
-          controls: []
-        });
-      } catch(e) {}
+      // Сохраняем последнюю панораму для превью после финиша
+      window._lastPano = pano;
 
       setTimeout(collectNext, 200);
     },
@@ -186,6 +178,13 @@ function finish() {
   document.getElementById('output').style.display = 'block';
   document.getElementById('json-out').value = JSON.stringify(found, null, 2);
   log('=== Готово! ' + found.length + ' локаций собрано ===', '#1a73e8');
+
+  // Показываем превью последней панорамы
+  if (window._lastPano) {
+    try {
+      previewPlayer = new ymaps.panorama.Player('preview', window._lastPano, { controls: [] });
+    } catch(e) {}
+  }
 }
 
 function copyJson() {
