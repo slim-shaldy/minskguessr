@@ -8,19 +8,22 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
 h1 { margin-bottom: 12px; font-size: 18px; }
-.controls { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; }
+.controls { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
 button { padding: 8px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; }
 #btn-start { background: #fc3f1d; color: #fff; }
 #btn-start:disabled { background: #ccc; cursor: not-allowed; }
 #btn-copy { background: #1a73e8; color: #fff; display: none; }
+#btn-download { background: #00b86e; color: #fff; display: none; }
+input[type=number] { width: 80px; padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
+label { font-size: 13px; color: #555; }
 .progress { font-size: 13px; color: #555; }
+.existing-info { font-size: 12px; color: #888; background: #fff; padding: 6px 12px; border-radius: 6px; border: 1px solid #ddd; }
 .layout { display: flex; gap: 16px; }
 #map { width: 500px; height: 450px; border: 1px solid #ccc; border-radius: 8px; flex-shrink: 0; }
 .right { flex: 1; display: flex; flex-direction: column; gap: 10px; }
-#log { height: 200px; overflow-y: auto; font-size: 12px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-family: monospace; }
-#preview { flex: 1; height: 230px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; background: #ddd; }
+#log { height: 430px; overflow-y: auto; font-size: 12px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-family: monospace; }
 #output { margin-top: 16px; }
-textarea { width: 100%; height: 120px; font-family: monospace; font-size: 11px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; resize: vertical; }
+textarea { width: 100%; height: 150px; font-family: monospace; font-size: 11px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; resize: vertical; }
 </style>
 </head>
 <body>
@@ -28,43 +31,38 @@ textarea { width: 100%; height: 120px; font-family: monospace; font-size: 11px; 
 <h1>Коллектор яндекс-локаций для MinskGuessr</h1>
 
 <div class="controls">
-  <button id="btn-start">▶ Собрать 20 локаций</button>
+  <label>Собрать: <input type="number" id="target-input" value="300" min="1" max="1000"></label>
+  <button id="btn-start">▶ Старт</button>
   <button id="btn-copy">📋 Скопировать JSON</button>
+  <button id="btn-download">💾 Скачать locations-yandex.json</button>
   <span class="progress" id="progress">Готов к запуску</span>
 </div>
+<div class="existing-info" id="existing-info">Загрузка существующих локаций...</div>
 
 <div class="layout">
   <div id="map"></div>
   <div class="right">
     <div id="log"></div>
-    <div id="preview"></div>
   </div>
 </div>
 
 <div id="output" style="display:none">
-  <b>Готово! JSON с локациями:</b>
+  <b>Итоговый JSON (существующие + новые):</b>
   <textarea id="json-out" readonly></textarea>
 </div>
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU"></script>
 <script>
-// Минск bbox
-var MINSK = {
-  latMin: 53.830,
-  latMax: 53.960,
-  lngMin: 27.420,
-  lngMax: 27.680
-};
+var MINSK = { latMin: 53.830, latMax: 53.960, lngMin: 27.420, lngMax: 27.680 };
 
-var TARGET = 20;
-var found = [];
+var existing = [];    // уже есть в locations-yandex.json
+var newFound = [];    // новые найденные
 var attempts = 0;
+var target = 300;
 var running = false;
-var map, previewPlayer;
+var map;
 
-function rnd(min, max) {
-  return min + Math.random() * (max - min);
-}
+function rnd(min, max) { return min + Math.random() * (max - min); }
 
 function log(msg, color) {
   var el = document.getElementById('log');
@@ -76,38 +74,70 @@ function log(msg, color) {
 }
 
 function updateProgress() {
+  var total = existing.length + newFound.length;
   document.getElementById('progress').textContent =
-    'Найдено: ' + found.length + '/' + TARGET + ' | Попыток: ' + attempts;
+    'Новых: ' + newFound.length + '/' + target + ' | Всего: ' + total + ' | Попыток: ' + attempts;
 }
 
-ymaps.ready(function() {
-  map = new ymaps.Map('map', {
-    center: [53.904, 27.562],
-    zoom: 11,
-    controls: ['zoomControl']
+// Все локации (existing + new) для проверки дубликатов
+function allLocations() { return existing.concat(newFound); }
+
+function isDuplicate(lat, lng) {
+  return allLocations().some(function(f) {
+    var dlat = f.lat - lat;
+    var dlng = f.lng - lng;
+    return Math.sqrt(dlat * dlat + dlng * dlng) < 0.002; // ~200м
   });
+}
+
+// Загружаем существующие локации
+fetch('locations-yandex.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    existing = data;
+    document.getElementById('existing-info').textContent =
+      'Существующих локаций: ' + existing.length + ' (дубликаты с ними исключаются)';
+  })
+  .catch(function() {
+    existing = [];
+    document.getElementById('existing-info').textContent =
+      'locations-yandex.json не найден — начнём с нуля';
+  });
+
+ymaps.ready(function() {
+  map = new ymaps.Map('map', { center: [53.904, 27.562], zoom: 11, controls: ['zoomControl'] });
+
+  // Показываем существующие точки серым
+  setTimeout(function() {
+    existing.forEach(function(loc) {
+      map.geoObjects.add(new ymaps.Placemark([loc.lat, loc.lng], {}, {
+        preset: 'islands#grayCircleDotIcon'
+      }));
+    });
+  }, 500);
 
   document.getElementById('btn-start').addEventListener('click', startCollect);
   document.getElementById('btn-copy').addEventListener('click', copyJson);
+  document.getElementById('btn-download').addEventListener('click', downloadJson);
 });
 
 function startCollect() {
   if (running) return;
+  target = parseInt(document.getElementById('target-input').value) || 300;
   running = true;
-  found = [];
+  newFound = [];
   attempts = 0;
   document.getElementById('btn-start').disabled = true;
   document.getElementById('log').innerHTML = '';
   document.getElementById('output').style.display = 'none';
   document.getElementById('btn-copy').style.display = 'none';
+  document.getElementById('btn-download').style.display = 'none';
+  log('Старт сбора ' + target + ' новых локаций (существующих: ' + existing.length + ')', '#1a73e8');
   collectNext();
 }
 
 function collectNext() {
-  if (found.length >= TARGET) {
-    finish();
-    return;
-  }
+  if (newFound.length >= target) { finish(); return; }
 
   var lat = rnd(MINSK.latMin, MINSK.latMax);
   var lng = rnd(MINSK.lngMin, MINSK.lngMax);
@@ -117,84 +147,69 @@ function collectNext() {
   ymaps.panorama.locate([lat, lng], { layer: 'yandex#panorama' }).done(
     function(panoramas) {
       if (panoramas.length === 0) {
-        log('#' + attempts + ' [' + lat.toFixed(4) + ', ' + lng.toFixed(4) + '] — нет панорамы', '#aaa');
         setTimeout(collectNext, 100);
         return;
       }
 
       var pano = panoramas[0];
-      var layer = pano._layer;
-
-      if (layer !== 'yandex#panorama') {
-        log('#' + attempts + ' пропуск (layer: ' + layer + ')', '#e8a000');
+      if (pano._layer !== 'yandex#panorama') {
         setTimeout(collectNext, 100);
         return;
       }
 
       var pos = pano._position;
       if (!pos || pos[0] == null || pos[1] == null) {
-        log('#' + attempts + ' нет координат, пропуск', '#aaa');
         setTimeout(collectNext, 100);
         return;
       }
-      var pLat = pos[0];
-      var pLng = pos[1];
-      var name = pano._name || '';
 
-      // Определяем что есть что по значению: Минск lat~53, lng~27
+      var pLat = pos[0], pLng = pos[1];
       var realLat, realLng;
       if (pLat > 50) { realLat = pLat; realLng = pLng; }
       else           { realLat = pLng; realLng = pLat; }
 
-      // проверка на дубликат (ближе 200м)
-      var dup = found.some(function(f) {
-        var dlat = f.lat - realLat;
-        var dlng = f.lng - realLng;
-        return Math.sqrt(dlat*dlat + dlng*dlng) < 0.002;
-      });
+      var name = pano._name || '';
 
-      if (dup) {
-        log('#' + attempts + ' дубликат, пропуск', '#aaa');
+      if (isDuplicate(realLat, realLng)) {
         setTimeout(collectNext, 100);
         return;
       }
 
-      var loc = { id: found.length + 1, lat: realLat, lng: realLng, name: name };
-      found.push(loc);
-      log('#' + attempts + ' ✅ lat=' + realLat.toFixed(4) + ' lng=' + realLng.toFixed(4) + ' ' + name, '#1a7a1a');
+      var nextId = existing.length + newFound.length + 1;
+      var loc = { id: nextId, lat: realLat, lng: realLng, name: name };
+      newFound.push(loc);
+      log('#' + newFound.length + ' ✅ [' + realLat.toFixed(4) + ', ' + realLng.toFixed(4) + '] ' + name, '#1a7a1a');
       updateProgress();
 
-      // ymaps.Placemark принимает [lat, lng]
       map.geoObjects.add(new ymaps.Placemark([realLat, realLng], {
-        balloonContent: (found.length) + '. ' + name
+        balloonContent: nextId + '. ' + name
       }, { preset: 'islands#redCircleDotIcon' }));
-
-      // Сохраняем последнюю панораму для превью после финиша
-      window._lastPano = pano;
 
       setTimeout(collectNext, 200);
     },
     function(err) {
-      log('#' + attempts + ' ошибка: ' + (err && err.message), '#c00');
+      log('ошибка: ' + (err && err.message), '#c00');
       setTimeout(collectNext, 300);
     }
   );
+}
+
+function getMergedJson() {
+  // Объединяем и перенумеровываем
+  var all = existing.concat(newFound);
+  all.forEach(function(loc, i) { loc.id = i + 1; });
+  return all;
 }
 
 function finish() {
   running = false;
   document.getElementById('btn-start').disabled = false;
   document.getElementById('btn-copy').style.display = 'inline-block';
+  document.getElementById('btn-download').style.display = 'inline-block';
   document.getElementById('output').style.display = 'block';
-  document.getElementById('json-out').value = JSON.stringify(found, null, 2);
-  log('=== Готово! ' + found.length + ' локаций собрано ===', '#1a73e8');
-
-  // Показываем превью последней панорамы
-  if (window._lastPano) {
-    try {
-      previewPlayer = new ymaps.panorama.Player('preview', window._lastPano, { controls: [] });
-    } catch(e) {}
-  }
+  var merged = getMergedJson();
+  document.getElementById('json-out').value = JSON.stringify(merged, null, 2);
+  log('=== Готово! +' + newFound.length + ' новых, всего ' + merged.length + ' ===', '#1a73e8');
 }
 
 function copyJson() {
@@ -202,9 +217,16 @@ function copyJson() {
   ta.select();
   document.execCommand('copy');
   document.getElementById('btn-copy').textContent = '✅ Скопировано!';
-  setTimeout(function() {
-    document.getElementById('btn-copy').textContent = '📋 Скопировать JSON';
-  }, 2000);
+  setTimeout(function() { document.getElementById('btn-copy').textContent = '📋 Скопировать JSON'; }, 2000);
+}
+
+function downloadJson() {
+  var merged = getMergedJson();
+  var blob = new Blob([JSON.stringify(merged, null, 2)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'locations-yandex.json';
+  a.click();
 }
 </script>
 </body>

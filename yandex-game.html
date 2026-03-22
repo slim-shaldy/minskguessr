@@ -249,28 +249,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
 <script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU"></script>
 <script>
 var ROUNDS = 10;
-var LOCATIONS = [
-  {"id":1,"lat":53.84558443039998,"lng":27.452092631899998,"name":"Слабадская вуліца"},
-  {"id":2,"lat":53.93075593220001,"lng":27.4329509928,"name":""},
-  {"id":3,"lat":53.910338544,"lng":27.6726063214,"name":"вуліца Карвата"},
-  {"id":4,"lat":53.933430217599984,"lng":27.615490225099997,"name":""},
-  {"id":5,"lat":53.940593455699975,"lng":27.4683371268,"name":""},
-  {"id":6,"lat":53.861504020099986,"lng":27.4485464252,"name":"вуліца Бялецкага"},
-  {"id":7,"lat":53.88558963769998,"lng":27.667009029599996,"name":"Ангарскі завулак"},
-  {"id":8,"lat":53.8432040902,"lng":27.671999535,"name":"Свіслацкая вуліца"},
-  {"id":9,"lat":53.9451488569,"lng":27.671131615599997,"name":"Гарадзецкая вуліца"},
-  {"id":10,"lat":53.915309891199996,"lng":27.500031595499998,"name":""},
-  {"id":11,"lat":53.890996394899986,"lng":27.646665396699998,"name":"Радыяльная вуліца"},
-  {"id":12,"lat":53.898273617399994,"lng":27.524510466999995,"name":"вуліца Волаха"},
-  {"id":13,"lat":53.909165836199996,"lng":27.5829606419,"name":"вуліца Смалячкова"},
-  {"id":14,"lat":53.849559227899995,"lng":27.451331681199996,"name":""},
-  {"id":15,"lat":53.884496594299996,"lng":27.599086619099996,"name":"Планёрная вуліца"},
-  {"id":16,"lat":53.93885800000001,"lng":27.522049999999997,"name":""},
-  {"id":17,"lat":53.87673431820001,"lng":27.4488031287,"name":"вуліца Юрыя Семянякі"},
-  {"id":18,"lat":53.929756992799994,"lng":27.5471571905,"name":""},
-  {"id":19,"lat":53.83549466799999,"lng":27.5706117063,"name":"вуліца Прушынскіх"},
-  {"id":20,"lat":53.90646583959999,"lng":27.587220695599996,"name":"Берасцянская вуліца"}
-];
+var LOCATIONS = [];
+fetch('locations-yandex.json')
+  .then(function(r){return r.json();})
+  .then(function(d){LOCATIONS=d;})
+  .catch(function(e){console.error('Failed to load locations:', e);});
 
 var timerInterval = null;
 var timerSeconds = 0;
@@ -314,6 +297,7 @@ ymaps.ready(function(){
 });
 
 function startGame(){
+  if(!LOCATIONS.length){setTimeout(startGame,200);return;}
   document.getElementById('start-overlay').classList.remove('visible');
   var shuffled = LOCATIONS.slice();
   for(var i=shuffled.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=shuffled[i];shuffled[i]=shuffled[j];shuffled[j]=t;}
