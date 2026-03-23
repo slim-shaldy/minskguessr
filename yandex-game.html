@@ -76,6 +76,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
 .overlay-bg{background:rgba(250,249,247,0.93);backdrop-filter:blur(8px)}
 
 .start-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px 44px;max-width:480px;width:90%;box-shadow:0 24px 80px rgba(0,0,0,0.1);max-height:90vh;overflow-y:auto}
+.mode-btn{background:var(--surface2);color:var(--text-dim)}
+.mode-btn.active{background:linear-gradient(135deg,var(--pride5),var(--pride6));color:#fff}
 .start-logo{font-family:'Unbounded',sans-serif;font-size:28px;font-weight:900;background:linear-gradient(90deg,var(--pride1),var(--pride2),var(--pride3),var(--pride4),var(--pride5),var(--pride6));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;line-height:1.2}
 .start-sub{font-size:13px;color:var(--text-dim);margin-bottom:28px}
 .rules{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
@@ -230,6 +232,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
         <tr><td>45–60 сек</td><td><span class="pill pill-r">x0.8</span></td><td style="color:var(--red)">−20%</td></tr>
         <tr><td>больше 60 сек</td><td><span class="pill pill-d">x0.7</span></td><td style="color:var(--text-dim)">−30%</td></tr>
       </table>
+      <div id="mode-box" style="display:flex;gap:0;margin-bottom:16px;border-radius:10px;overflow:hidden;border:1px solid var(--border)">
+        <button class="mode-btn active" id="mode-city" onclick="setMode('city')" style="flex:1;padding:10px;border:none;cursor:pointer;font-family:Unbounded,sans-serif;font-size:11px;font-weight:700;transition:all 0.2s">🏙 Весь Минск</button>
+        <button class="mode-btn" id="mode-center" onclick="setMode('center')" style="flex:1;padding:10px;border:none;cursor:pointer;font-family:Unbounded,sans-serif;font-size:11px;font-weight:700;transition:all 0.2s">🎯 Центр (1-е кольцо)</button>
+      </div>
       <div id="seed-box" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:16px;text-align:center">
         <div style="font-size:12px;color:var(--text-dim);margin-bottom:8px">Сид: <strong id="challenge-seed" style="font-family:monospace;color:var(--text);font-size:14px"></strong></div>
         <div id="challenge-label" style="display:none;font-family:Unbounded,sans-serif;font-size:10px;color:var(--pride5);font-weight:700;margin-bottom:8px">СОРЕВНОВАНИЕ — одинаковые локации для всех</div>
@@ -259,6 +265,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
 <script>
 var ROUNDS = 10;
 var LOCATIONS = [];
+var LOCATIONS_CENTER = [];
+var gameMode = 'city'; // 'city' or 'center'
 var gameSeed = null;
 
 // Seeded PRNG (mulberry32)
@@ -280,11 +288,18 @@ function generateSeed(){
 var urlParams = new URLSearchParams(window.location.search);
 var urlSeed = urlParams.get('seed');
 if(urlSeed) gameSeed = urlSeed;
+var urlMode = urlParams.get('mode');
+if(urlMode === 'center') gameMode = 'center';
 
 fetch('locations-yandex.json')
   .then(function(r){return r.json();})
   .then(function(d){LOCATIONS=d;})
   .catch(function(e){console.error('Failed to load locations:', e);});
+
+fetch('locations-yandex-center.json')
+  .then(function(r){return r.json();})
+  .then(function(d){LOCATIONS_CENTER=d;})
+  .catch(function(e){console.log('Center locations not loaded');});
 
 var timerInterval = null;
 var timerSeconds = 0;
@@ -335,21 +350,23 @@ ymaps.ready(function(){
 
   document.getElementById('loading-screen').classList.add('hidden');
 
-  // Инициализируем seed
+  // Инициализируем seed и mode
   if(!gameSeed) gameSeed = generateSeed();
   document.getElementById('challenge-seed').textContent = gameSeed;
   if(urlSeed) document.getElementById('challenge-label').style.display = 'block';
+  if(gameMode === 'center') setMode('center');
 });
 
 function startGame(){
-  if(!LOCATIONS.length){setTimeout(startGame,200);return;}
+  var locs = gameMode === 'center' ? LOCATIONS_CENTER : LOCATIONS;
+  if(!locs.length){setTimeout(startGame,200);return;}
   document.getElementById('start-overlay').classList.remove('visible');
 
   // Генерируем seed если нет
   if(!gameSeed) gameSeed = generateSeed();
 
   // Обновляем URL без перезагрузки
-  var newUrl = window.location.pathname + '?seed=' + gameSeed;
+  var newUrl = window.location.pathname + '?seed=' + gameSeed + '&mode=' + gameMode;
   history.replaceState(null, '', newUrl);
 
   // Показываем seed в хедере
@@ -358,7 +375,7 @@ function startGame(){
 
   // Seeded Fisher-Yates shuffle
   var rng = mulberry32(seedFromString(gameSeed));
-  var shuffled = LOCATIONS.slice();
+  var shuffled = locs.slice();
   for(var i=shuffled.length-1;i>0;i--){var j=Math.floor(rng()*(i+1));var t=shuffled[i];shuffled[i]=shuffled[j];shuffled[j]=t;}
   state.gameLocations = shuffled.slice(0, ROUNDS);
   state.currentRound = 0;
@@ -522,7 +539,7 @@ function showFinalScreen(){
 }
 
 function copyShareLink(){
-  var url = window.location.origin + window.location.pathname + '?seed=' + gameSeed;
+  var url = window.location.origin + window.location.pathname + '?seed=' + gameSeed + '&mode=' + gameMode;
   navigator.clipboard.writeText(url).then(function(){
     event.target.textContent = '✅ Скопировано!';
     setTimeout(function(){ event.target.textContent = '📋 Скопировать ссылку'; }, 2000);
@@ -538,7 +555,7 @@ function playNewGame(){
 }
 
 function copySeedLink(){
-  var url = window.location.origin + window.location.pathname + '?seed=' + gameSeed;
+  var url = window.location.origin + window.location.pathname + '?seed=' + gameSeed + '&mode=' + gameMode;
   navigator.clipboard.writeText(url).then(function(){
     var btn = document.querySelector('#seed-box .btn-secondary');
     btn.textContent = '✅ Скопировано!';
@@ -551,6 +568,12 @@ function reshuffleSeed(){
   document.getElementById('challenge-seed').textContent = gameSeed;
   document.getElementById('challenge-label').style.display = 'none';
   history.replaceState(null, '', window.location.pathname);
+}
+
+function setMode(mode){
+  gameMode = mode;
+  document.getElementById('mode-city').className = 'mode-btn' + (mode==='city' ? ' active' : '');
+  document.getElementById('mode-center').className = 'mode-btn' + (mode==='center' ? ' active' : '');
 }
 
 function getFinalVerdict(r){
