@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Коллектор — Центр Минска (1-е кольцо)</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+h1 { margin-bottom: 12px; font-size: 18px; }
+.controls { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
+button { padding: 8px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; }
+#btn-start { background: #fc3f1d; color: #fff; }
+#btn-start:disabled { background: #ccc; cursor: not-allowed; }
+#btn-copy { background: #1a73e8; color: #fff; display: none; }
+#btn-download { background: #00b86e; color: #fff; display: none; }
+input[type=number] { width: 80px; padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
+label { font-size: 13px; color: #555; }
+.progress { font-size: 13px; color: #555; }
+.existing-info { font-size: 12px; color: #888; background: #fff; padding: 6px 12px; border-radius: 6px; border: 1px solid #ddd; }
+.layout { display: flex; gap: 16px; }
+#map { width: 500px; height: 450px; border: 1px solid #ccc; border-radius: 8px; flex-shrink: 0; }
+.right { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+#log { height: 430px; overflow-y: auto; font-size: 12px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-family: monospace; }
+#output { margin-top: 16px; }
+textarea { width: 100%; height: 150px; font-family: monospace; font-size: 11px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; resize: vertical; }
+</style>
+</head>
+<body>
+
+<h1>Коллектор — Центр Минска (1-е транспортное кольцо)</h1>
+
+<div class="controls">
+  <label>Собрать: <input type="number" id="target-input" value="100" min="1" max="500"></label>
+  <button id="btn-start">▶ Старт</button>
+  <button id="btn-copy">📋 Скопировать JSON</button>
+  <button id="btn-download">💾 Скачать locations-yandex-center.json</button>
+  <span class="progress" id="progress">Готов к запуску</span>
+</div>
+<div class="existing-info" id="existing-info">Загрузка существующих локаций...</div>
+
+<div class="layout">
+  <div id="map"></div>
+  <div class="right">
+    <div id="log"></div>
+  </div>
+</div>
+
+<div id="output" style="display:none">
+  <b>Итоговый JSON (существующие + новые):</b>
+  <textarea id="json-out" readonly></textarea>
+</div>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU"></script>
+<script>
+// Полигон первого транспортного кольца Минска
+// пр. Дзержинского → ул. Толстого → Аранская → ул. Козлова → пр. Машерова
+var RING1 = [
+  [53.9125, 27.5390], // пр. Машерова / начало (запад)
+  [53.9140, 27.5480], // пр. Машерова
+  [53.9130, 27.5570], // пр. Машерова / ул. Козлова
+  [53.9100, 27.5630], // ул. Козлова
+  [53.9050, 27.5680], // ул. Козлова / поворот
+  [53.9000, 27.5700], // Аранская (восток)
+  [53.8960, 27.5680], // Аранская
+  [53.8930, 27.5620], // Аранская / ул. Толстого
+  [53.8900, 27.5550], // ул. Толстого
+  [53.8880, 27.5470], // ул. Толстого
+  [53.8870, 27.5380], // ул. Толстого / пр. Дзержинского
+  [53.8900, 27.5300], // пр. Дзержинского
+  [53.8950, 27.5270], // пр. Дзержинского
+  [53.9000, 27.5260], // пр. Дзержинского
+  [53.9050, 27.5280], // пр. Дзержинского
+  [53.9100, 27.5330], // пр. Дзержинского / пр. Машерова
+  [53.9125, 27.5390]  // замыкаем
+];
+
+// Bbox для быстрой генерации точек внутри полигона
+var CENTER = {
+  latMin: 53.8870, latMax: 53.9140,
+  lngMin: 27.5260, lngMax: 27.5700
+};
+
+var existing = [];
+var newFound = [];
+var attempts = 0;
+var target = 100;
+var running = false;
+var map;
+
+function rnd(min, max) { return min + Math.random() * (max - min); }
+
+// Point-in-polygon (ray casting)
+function pointInPolygon(lat, lng, polygon) {
+  var inside = false;
+  for (var i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    var yi = polygon[i][0], xi = polygon[i][1];
+    var yj = polygon[j][0], xj = polygon[j][1];
+    if (((yi > lat) !== (yj > lat)) && (lng < (xj - xi) * (lat - yi) / (yj - yi) + xi)) {
+      inside = !inside;
+    }
+  }
+  return inside;
+}
+
+function log(msg, color) {
+  var el = document.getElementById('log');
+  var line = document.createElement('div');
+  line.style.color = color || '#333';
+  line.textContent = msg;
+  el.appendChild(line);
+  el.scrollTop = el.scrollHeight;
+}
+
+function updateProgress() {
+  var total = existing.length + newFound.length;
+  document.getElementById('progress').textContent =
+    'Новых: ' + newFound.length + '/' + target + ' | Всего: ' + total + ' | Попыток: ' + attempts;
+}
+
+function allLocations() { return existing.concat(newFound); }
+
+function isDuplicate(lat, lng) {
+  return allLocations().some(function(f) {
+    var dlat = f.lat - lat;
+    var dlng = f.lng - lng;
+    return Math.sqrt(dlat * dlat + dlng * dlng) < 0.001; // ~100м (центр плотнее)
+  });
+}
+
+// Загружаем существующие локации центра
+fetch('locations-yandex-center.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    existing = data;
+    document.getElementById('existing-info').textContent =
+      'Существующих локаций: ' + existing.length + ' (дубликаты исключаются)';
+  })
+  .catch(function() {
+    existing = [];
+    document.getElementById('existing-info').textContent =
+      'locations-yandex-center.json не найден — начнём с нуля';
+  });
+
+ymaps.ready(function() {
+  map = new ymaps.Map('map', { center: [53.900, 27.550], zoom: 13, controls: ['zoomControl'] });
+
+  // Рисуем полигон первого кольца
+  var ring = new ymaps.Polygon([RING1], {}, {
+    fillColor: 'rgba(0, 119, 255, 0.08)',
+    strokeColor: '#0077ff',
+    strokeWidth: 2,
+    strokeStyle: 'dash'
+  });
+  map.geoObjects.add(ring);
+
+  // Показываем существующие точки
+  setTimeout(function() {
+    existing.forEach(function(loc) {
+      map.geoObjects.add(new ymaps.Placemark([loc.lat, loc.lng], {}, {
+        preset: 'islands#grayCircleDotIcon'
+      }));
+    });
+  }, 500);
+
+  document.getElementById('btn-start').addEventListener('click', startCollect);
+  document.getElementById('btn-copy').addEventListener('click', copyJson);
+  document.getElementById('btn-download').addEventListener('click', downloadJson);
+});
+
+function startCollect() {
+  if (running) return;
+  target = parseInt(document.getElementById('target-input').value) || 100;
+  running = true;
+  newFound = [];
+  attempts = 0;
+  document.getElementById('btn-start').disabled = true;
+  document.getElementById('log').innerHTML = '';
+  document.getElementById('output').style.display = 'none';
+  document.getElementById('btn-copy').style.display = 'none';
+  document.getElementById('btn-download').style.display = 'none';
+  log('Старт сбора ' + target + ' локаций в 1-м кольце (существующих: ' + existing.length + ')', '#1a73e8');
+  collectNext();
+}
+
+function collectNext() {
+  if (newFound.length >= target) { finish(); return; }
+
+  // Генерируем точку внутри bbox, проверяем полигон
+  var lat = rnd(CENTER.latMin, CENTER.latMax);
+  var lng = rnd(CENTER.lngMin, CENTER.lngMax);
+
+  if (!pointInPolygon(lat, lng, RING1)) {
+    setTimeout(collectNext, 0);
+    return;
+  }
+
+  attempts++;
+  updateProgress();
+
+  ymaps.panorama.locate([lat, lng], { layer: 'yandex#panorama' }).done(
+    function(panoramas) {
+      if (panoramas.length === 0) {
+        setTimeout(collectNext, 100);
+        return;
+      }
+
+      var pano = panoramas[0];
+      if (pano._layer !== 'yandex#panorama') {
+        setTimeout(collectNext, 100);
+        return;
+      }
+
+      var pos = pano._position;
+      if (!pos || pos[0] == null || pos[1] == null) {
+        setTimeout(collectNext, 100);
+        return;
+      }
+
+      var pLat = pos[0], pLng = pos[1];
+      var realLat, realLng;
+      if (pLat > 50) { realLat = pLat; realLng = pLng; }
+      else           { realLat = pLng; realLng = pLat; }
+
+      // Проверяем что найденная панорама тоже внутри кольца
+      if (!pointInPolygon(realLat, realLng, RING1)) {
+        setTimeout(collectNext, 100);
+        return;
+      }
+
+      var name = pano._name || '';
+
+      if (isDuplicate(realLat, realLng)) {
+        setTimeout(collectNext, 100);
+        return;
+      }
+
+      var nextId = existing.length + newFound.length + 1;
+      var loc = { id: nextId, lat: realLat, lng: realLng, name: name };
+      newFound.push(loc);
+      log('#' + newFound.length + ' ✅ [' + realLat.toFixed(4) + ', ' + realLng.toFixed(4) + '] ' + name, '#1a7a1a');
+      updateProgress();
+
+      map.geoObjects.add(new ymaps.Placemark([realLat, realLng], {
+        balloonContent: nextId + '. ' + name
+      }, { preset: 'islands#redCircleDotIcon' }));
+
+      setTimeout(collectNext, 200);
+    },
+    function(err) {
+      log('ошибка: ' + (err && err.message), '#c00');
+      setTimeout(collectNext, 300);
+    }
+  );
+}
+
+function getMergedJson() {
+  var all = existing.concat(newFound);
+  all.forEach(function(loc, i) { loc.id = i + 1; });
+  return all;
+}
+
+function finish() {
+  running = false;
+  document.getElementById('btn-start').disabled = false;
+  document.getElementById('btn-copy').style.display = 'inline-block';
+  document.getElementById('btn-download').style.display = 'inline-block';
+  document.getElementById('output').style.display = 'block';
+  var merged = getMergedJson();
+  document.getElementById('json-out').value = JSON.stringify(merged, null, 2);
+  log('=== Готово! +' + newFound.length + ' новых, всего ' + merged.length + ' ===', '#1a73e8');
+}
+
+function copyJson() {
+  var ta = document.getElementById('json-out');
+  ta.select();
+  document.execCommand('copy');
+  document.getElementById('btn-copy').textContent = '✅ Скопировано!';
+  setTimeout(function() { document.getElementById('btn-copy').textContent = '📋 Скопировать JSON'; }, 2000);
+}
+
+function downloadJson() {
+  var merged = getMergedJson();
+  var blob = new Blob([JSON.stringify(merged, null, 2)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'locations-yandex-center.json';
+  a.click();
+}
+</script>
+</body>
+</html>
