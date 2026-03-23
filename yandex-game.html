@@ -230,9 +230,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
         <tr><td>30–45 сек</td><td><span class="pill pill-r">x0.8</span></td><td style="color:var(--red)">−20%</td></tr>
         <tr><td>больше 45 сек</td><td><span class="pill pill-d">x0.7</span></td><td style="color:var(--text-dim)">−30%</td></tr>
       </table>
-      <div id="challenge-info" style="display:none;background:linear-gradient(135deg,rgba(0,119,255,0.08),rgba(155,48,255,0.08));border:1px solid rgba(0,119,255,0.2);border-radius:10px;padding:12px 16px;margin-bottom:16px;text-align:center">
-        <div style="font-family:Unbounded,sans-serif;font-size:11px;color:var(--pride5);font-weight:700;margin-bottom:4px">СОРЕВНОВАНИЕ</div>
-        <div style="font-size:12px;color:var(--text-dim)">Сид: <strong id="challenge-seed" style="font-family:monospace;color:var(--text)"></strong> — все игроки получат одинаковые локации</div>
+      <div id="seed-box" style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:16px;text-align:center">
+        <div style="font-size:12px;color:var(--text-dim);margin-bottom:8px">Сид: <strong id="challenge-seed" style="font-family:monospace;color:var(--text);font-size:14px"></strong></div>
+        <div id="challenge-label" style="display:none;font-family:Unbounded,sans-serif;font-size:10px;color:var(--pride5);font-weight:700;margin-bottom:8px">СОРЕВНОВАНИЕ — одинаковые локации для всех</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-secondary" style="flex:1;font-size:11px" onclick="copySeedLink()">📋 Скопировать ссылку</button>
+          <button class="btn btn-secondary" style="flex:1;font-size:11px" onclick="reshuffleSeed()">🎲 Новый сид</button>
+        </div>
       </div>
       <button class="btn btn-primary btn-lg" style="width:100%" onclick="startGame()">🏳️‍🌈 Начать игру</button>
     </div>
@@ -331,11 +335,10 @@ ymaps.ready(function(){
 
   document.getElementById('loading-screen').classList.add('hidden');
 
-  // Показать инфо о соревновании если есть seed в URL
-  if(gameSeed){
-    document.getElementById('challenge-info').style.display = 'block';
-    document.getElementById('challenge-seed').textContent = gameSeed;
-  }
+  // Инициализируем seed
+  if(!gameSeed) gameSeed = generateSeed();
+  document.getElementById('challenge-seed').textContent = gameSeed;
+  if(urlSeed) document.getElementById('challenge-label').style.display = 'block';
 });
 
 function startGame(){
@@ -532,6 +535,22 @@ function playAgainSameSeed(){
 
 function playNewGame(){
   window.location.href = window.location.pathname;
+}
+
+function copySeedLink(){
+  var url = window.location.origin + window.location.pathname + '?seed=' + gameSeed;
+  navigator.clipboard.writeText(url).then(function(){
+    var btn = document.querySelector('#seed-box .btn-secondary');
+    btn.textContent = '✅ Скопировано!';
+    setTimeout(function(){ btn.textContent = '📋 Скопировать ссылку'; }, 2000);
+  });
+}
+
+function reshuffleSeed(){
+  gameSeed = generateSeed();
+  document.getElementById('challenge-seed').textContent = gameSeed;
+  document.getElementById('challenge-label').style.display = 'none';
+  history.replaceState(null, '', window.location.pathname);
 }
 
 function getFinalVerdict(r){
