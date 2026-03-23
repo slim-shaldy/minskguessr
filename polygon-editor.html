@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Редактор полигона — MinskGuessr</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+h1 { margin-bottom: 6px; font-size: 18px; }
+.hint { font-size: 13px; color: #666; margin-bottom: 16px; }
+.layout { display: flex; gap: 16px; }
+#map { width: 700px; height: 550px; border: 1px solid #ccc; border-radius: 8px; flex-shrink: 0; cursor: crosshair; }
+.right { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; }
+button { padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; }
+#btn-clear { background: #e53935; color: #fff; }
+#btn-undo { background: #fb8c00; color: #fff; }
+#btn-copy { background: #1a73e8; color: #fff; }
+textarea { width: 100%; flex: 1; font-family: monospace; font-size: 11px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; resize: none; }
+.count { font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+
+<h1>Редактор полигона</h1>
+<div class="hint">Кликай по карте чтобы расставить точки границы. Последняя точка автоматически соединяется с первой.</div>
+
+<div class="layout">
+  <div id="map"></div>
+  <div class="right">
+    <div class="controls">
+      <button id="btn-undo">↩ Отменить точку</button>
+      <button id="btn-clear">✕ Очистить</button>
+      <button id="btn-copy">📋 Скопировать</button>
+    </div>
+    <div class="count" id="count">Точек: 0</div>
+    <textarea id="output" readonly placeholder="Координаты появятся здесь..."></textarea>
+  </div>
+</div>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU"></script>
+<script>
+var points = [];
+var map, polygon, placemarks = [];
+
+ymaps.ready(function() {
+  map = new ymaps.Map('map', { center: [53.900, 27.550], zoom: 13, controls: ['zoomControl'] });
+
+  map.events.add('click', function(e) {
+    var coords = e.get('coords');
+    points.push([coords[0], coords[1]]);
+    updateMap();
+    updateOutput();
+  });
+
+  document.getElementById('btn-undo').addEventListener('click', function() {
+    points.pop();
+    updateMap();
+    updateOutput();
+  });
+
+  document.getElementById('btn-clear').addEventListener('click', function() {
+    points = [];
+    updateMap();
+    updateOutput();
+  });
+
+  document.getElementById('btn-copy').addEventListener('click', function() {
+    var ta = document.getElementById('output');
+    ta.select();
+    document.execCommand('copy');
+    this.textContent = '✅ Скопировано!';
+    var btn = this;
+    setTimeout(function() { btn.textContent = '📋 Скопировать'; }, 2000);
+  });
+});
+
+function updateMap() {
+  // Удаляем старое
+  map.geoObjects.removeAll();
+
+  // Метки
+  points.forEach(function(p, i) {
+    var pm = new ymaps.Placemark(p, { iconContent: '' + (i + 1) }, {
+      preset: 'islands#blueCircleIcon'
+    });
+    map.geoObjects.add(pm);
+  });
+
+  // Полигон
+  if (points.length >= 3) {
+    var closed = points.concat([points[0]]);
+    polygon = new ymaps.Polygon([closed], {}, {
+      fillColor: 'rgba(0, 119, 255, 0.1)',
+      strokeColor: '#0077ff',
+      strokeWidth: 2
+    });
+    map.geoObjects.add(polygon);
+  } else if (points.length >= 2) {
+    var line = new ymaps.Polyline(points, {}, {
+      strokeColor: '#0077ff',
+      strokeWidth: 2
+    });
+    map.geoObjects.add(line);
+  }
+
+  document.getElementById('count').textContent = 'Точек: ' + points.length;
+}
+
+function updateOutput() {
+  var lines = points.map(function(p) {
+    return '  [' + p[0].toFixed(6) + ', ' + p[1].toFixed(6) + ']';
+  });
+  var out = 'var RING = [\n' + lines.join(',\n');
+  if (points.length > 0) out += ',\n  [' + points[0][0].toFixed(6) + ', ' + points[0][1].toFixed(6) + ']  // замыкаем';
+  out += '\n];';
+  document.getElementById('output').value = out;
+}
+</script>
+</body>
+</html>
