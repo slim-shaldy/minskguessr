@@ -449,7 +449,7 @@ function submitGuess(){
   stopTimer();
   var loc = state.gameLocations[state.currentRound];
   var dist = haversine(state.guessCoords[0], state.guessCoords[1], loc.lat, loc.lng);
-  var CUTOFF = 5.0;
+  var CUTOFF = gameMode === 'center' ? 2.0 : 5.0;
   var baseScore = 0;
   if(dist < CUTOFF){var t = 1 - (dist/CUTOFF); baseScore = Math.round(5000 * Math.pow(t, 1.8));}
 
