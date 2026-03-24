@@ -55,8 +55,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
 .game-area{flex:1;position:relative;overflow:hidden}
 #panorama{width:100%;height:100%}
 .map-panel{position:absolute;bottom:20px;right:20px;width:340px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.12);z-index:100;transition:width 0.25s ease,height 0.25s ease}
-.map-panel:hover{width:510px}
-.map-panel:hover #map{height:330px}
+.map-panel:hover{width:612px}
+.map-panel:hover #map{height:396px}
 .map-header{padding:10px 14px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--text-dim);cursor:pointer;user-select:none}
 .map-hint{font-size:11px;color:var(--text-dim)}
 .map-hint.placed{color:var(--green)}
@@ -193,6 +193,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
   </div>
 
   <div id="panorama"></div>
+  <button id="reset-pano-btn" class="btn btn-secondary" onclick="resetPanorama()" style="position:absolute;top:14px;left:14px;z-index:50;font-size:11px;padding:8px 14px;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,0.15);display:none">↩ На старт</button>
 
   <div class="map-panel" id="map-panel">
     <div class="map-header" onclick="toggleMap()" id="map-header">
@@ -227,10 +228,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);heigh
       </div>
       <table class="timer-table">
         <tr><th>Время ответа</th><th>Множитель</th><th>Очки</th></tr>
-        <tr><td>до 30 сек</td><td><span class="pill pill-g">x1.0</span></td><td style="color:var(--green)">максимум</td></tr>
-        <tr><td>30–45 сек</td><td><span class="pill pill-o">x0.9</span></td><td style="color:var(--orange)">−10%</td></tr>
-        <tr><td>45–60 сек</td><td><span class="pill pill-r">x0.8</span></td><td style="color:var(--red)">−20%</td></tr>
-        <tr><td>больше 60 сек</td><td><span class="pill pill-d">x0.7</span></td><td style="color:var(--text-dim)">−30%</td></tr>
+        <tr><td>до 25 сек</td><td><span class="pill pill-g">x1.0</span></td><td style="color:var(--green)">максимум</td></tr>
+        <tr><td>25–35 сек</td><td><span class="pill pill-o">x0.9</span></td><td style="color:var(--orange)">−10%</td></tr>
+        <tr><td>35–50 сек</td><td><span class="pill pill-r">x0.8</span></td><td style="color:var(--red)">−20%</td></tr>
+        <tr><td>50–70 сек</td><td><span class="pill pill-d">x0.7</span></td><td style="color:var(--text-dim)">−30%</td></tr>
+        <tr><td>больше 70 сек</td><td><span class="pill pill-d" style="background:rgba(255,60,95,0.2);color:var(--red)">0</span></td><td style="color:var(--red)">Опоздал!</td></tr>
       </table>
       <div id="mode-box" style="display:flex;gap:0;margin-bottom:16px;border-radius:10px;overflow:hidden;border:1px solid var(--border)">
         <button class="mode-btn active" id="mode-city" onclick="setMode('city')" style="flex:1;padding:10px;border:none;cursor:pointer;font-family:Unbounded,sans-serif;font-size:11px;font-weight:700;transition:all 0.2s">🏙 Весь Минск</button>
@@ -310,13 +312,13 @@ var state = {
   started:false
 };
 
-function getMultiplier(sec){if(sec<=30)return 1.0;if(sec<=45)return 0.9;if(sec<=60)return 0.8;return 0.7;}
-function getMultClass(sec){if(sec<=30)return 'm1';if(sec<=45)return 'm09';if(sec<=60)return 'm08';return 'm07';}
-function getTimerClass(sec){if(sec<=30)return 't1';if(sec<=45)return 't2';if(sec<=60)return 't3';return 't4';}
+function getMultiplier(sec){if(sec<=25)return 1.0;if(sec<=35)return 0.9;if(sec<=50)return 0.8;if(sec<=70)return 0.7;return 0;}
+function getMultClass(sec){if(sec<=25)return 'm1';if(sec<=35)return 'm09';if(sec<=50)return 'm08';return 'm07';}
+function getTimerClass(sec){if(sec<=25)return 't1';if(sec<=35)return 't2';if(sec<=50)return 't3';return 't4';}
 
 function startTimer(){
   stopTimer();timerSeconds=0;updateTimerUI();
-  timerInterval=setInterval(function(){timerSeconds++;updateTimerUI();},1000);
+  timerInterval=setInterval(function(){timerSeconds++;updateTimerUI();if(timerSeconds>=70){autoTimeout();}},1000);
 }
 function stopTimer(){if(timerInterval){clearInterval(timerInterval);timerInterval=null;}}
 function updateTimerUI(){
@@ -406,10 +408,17 @@ function startRound(){
     }
     document.getElementById('panorama').innerHTML = '';
 
+    initialPanorama = panoramas[0];
+    document.getElementById('reset-pano-btn').style.display = 'none';
+
     state.panoPlayer = new ymaps.panorama.Player('panorama', panoramas[0], {
       direction: [0, 0],
       controls: ['zoomControl'],
       suppressMapOpenBlock: true
+    });
+
+    state.panoPlayer.events.add('panoramachange', function(){
+      document.getElementById('reset-pano-btn').style.display = 'block';
     });
 
     hideLoading();
@@ -587,6 +596,44 @@ function haversine(lat1,lng1,lat2,lng2){
   var R=6371,dLat=(lat2-lat1)*Math.PI/180,dLng=(lng2-lng1)*Math.PI/180;
   var a=Math.pow(Math.sin(dLat/2),2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.pow(Math.sin(dLng/2),2);
   return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+
+var initialPanorama = null;
+
+function resetPanorama(){
+  if(initialPanorama && state.panoPlayer){
+    state.panoPlayer.setPanorama(initialPanorama);
+    document.getElementById('reset-pano-btn').style.display = 'none';
+  }
+}
+
+function autoTimeout(){
+  stopTimer();
+  var loc = state.gameLocations[state.currentRound];
+  var dist = state.guessCoords ? haversine(state.guessCoords[0], state.guessCoords[1], loc.lat, loc.lng) : 999;
+  state.totalScore += 0;
+  document.getElementById('total-score').textContent = state.totalScore.toLocaleString('ru');
+  // Показываем результат с 0 очков
+  document.getElementById('round-score').textContent = '0';
+  document.getElementById('round-score').className = 'score-big bad';
+  var vb = document.getElementById('verdict-banner');
+  vb.textContent = 'Опоздал!';
+  vb.className = 'verdict-banner verdict-gay';
+  document.getElementById('result-meta').innerHTML =
+    '<span>⏱ <strong>70s+</strong></span><span>🚫 <strong>0 очков</strong></span>';
+  // Мини-карта результата
+  if(state.resultMap){state.resultMap.destroy();state.resultMap=null;}
+  var realPos = [loc.lat, loc.lng];
+  var guessPos = state.guessCoords || [53.904, 27.562];
+  state.resultMap = new ymaps.Map('result-map', {center:realPos, zoom:13, controls:[]});
+  state.resultMap.geoObjects.add(new ymaps.Placemark(realPos, {}, {preset:'islands#greenCircleDotIcon'}));
+  if(state.guessCoords){
+    state.resultMap.geoObjects.add(new ymaps.Placemark(guessPos, {}, {preset:'islands#redCircleDotIcon'}));
+    state.resultMap.geoObjects.add(new ymaps.Polyline([guessPos, realPos], {}, {strokeColor:'#0077ff',strokeWidth:2,strokeOpacity:0.8}));
+    var bounds = state.resultMap.geoObjects.getBounds();
+    if(bounds) state.resultMap.setBounds(bounds, {checkZoomRange:true, zoomMargin:30});
+  }
+  document.getElementById('result-overlay').classList.add('visible');
 }
 
 function showLoading(msg){document.getElementById('loading-sub').innerHTML=msg;document.getElementById('loading-screen').classList.remove('hidden');}
