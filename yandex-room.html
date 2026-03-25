@@ -459,7 +459,7 @@ function showGame(msg){
   if(guessMap){guessMap.setCenter([53.904,27.562]);guessMap.setZoom(10);}
 
   console.log('Locating panorama at', msg.location.lat, msg.location.lng);
-  ymaps.panorama.locate([msg.location.lat, msg.location.lng], {layer: 'yandex#panorama'}).done(function(panoramas){
+  ymaps.panorama.locate([msg.location.lat, msg.location.lng]).done(function(panoramas){
     console.log('Panoramas found:', panoramas.length);
     if(!panoramas.length){
       document.getElementById('loading-screen').classList.add('hidden');
