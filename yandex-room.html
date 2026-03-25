@@ -458,9 +458,12 @@ function showGame(msg){
 
   if(guessMap){guessMap.setCenter([53.904,27.562]);guessMap.setZoom(10);}
 
-  ymaps.panorama.locate([msg.location.lat, msg.location.lng]).done(function(panoramas){
+  console.log('Locating panorama at', msg.location.lat, msg.location.lng);
+  ymaps.panorama.locate([msg.location.lat, msg.location.lng], {layer: 'yandex#panorama'}).done(function(panoramas){
+    console.log('Panoramas found:', panoramas.length);
     if(!panoramas.length){
       document.getElementById('loading-screen').classList.add('hidden');
+      document.getElementById('loading-sub').textContent = 'Панорама не найдена';
       startTimer();
       return;
     }
@@ -478,7 +481,8 @@ function showGame(msg){
 
     setTimeout(function(){document.getElementById('loading-screen').classList.add('hidden');},400);
     startTimer();
-  }, function(){
+  }, function(err){
+    console.error('Panorama locate error:', err);
     document.getElementById('loading-screen').classList.add('hidden');
     startTimer();
   });
