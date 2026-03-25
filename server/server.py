@@ -6,11 +6,16 @@ import string
 import time
 from dataclasses import dataclass, field
 
+from pathlib import Path
+
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+
+ROOM_HTML = Path(__file__).parent.parent / "yandex-room.html"
 
 # --- Location data (loaded at startup) ---
 LOCATIONS_CITY: list[dict] = []
@@ -245,7 +250,7 @@ async def websocket_endpoint(ws: WebSocket):
                 room = Room(
                     code=code,
                     mode=msg.get("mode", "city"),
-                    num_rounds=min(max(int(msg.get("num_rounds", 5)), 3), 10),
+                    num_rounds=min(max(int(msg.get("num_rounds", 5)), 1), 10),
                     max_players=min(max(int(msg.get("max_players", 4)), 2), 8),
                 )
                 room.locations = pick_locations(room.mode, room.num_rounds)
@@ -280,6 +285,11 @@ async def websocket_endpoint(ws: WebSocket):
                 if not p or not p.is_creator:
                     await send(ws, {"type": "error", "message": "Только создатель может начать"})
                     continue
+                player_room.status = "countdown"
+                # Countdown 5..1
+                for i in range(5, 0, -1):
+                    await broadcast(player_room, {"type": "countdown", "seconds": i})
+                    await asyncio.sleep(1)
                 player_room.status = "playing"
                 player_room.current_round = 0
                 await start_round(player_room)
@@ -363,3 +373,15 @@ async def cleanup_loop():
 @app.get("/health")
 async def health():
     return {"status": "ok", "rooms": len(rooms)}
+
+
+@app.get("/")
+async def serve_room():
+    html = ROOM_HTML.read_text(encoding="utf-8")
+    return HTMLResponse(html)
+
+
+@app.get("/room")
+async def serve_room_alias():
+    html = ROOM_HTML.read_text(encoding="utf-8")
+    return HTMLResponse(html)

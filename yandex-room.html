@@ -193,6 +193,8 @@ select.form-input{cursor:pointer}
           <div class="form-group">
             <label>Раунды</label>
             <select class="form-input" id="create-rounds">
+              <option value="1">1</option>
+              <option value="2">2</option>
               <option value="3">3</option>
               <option value="5" selected>5</option>
               <option value="7">7</option>
@@ -258,6 +260,14 @@ select.form-input{cursor:pointer}
     </div>
   </div>
 
+  <!-- COUNTDOWN SCREEN -->
+  <div class="overlay overlay-bg" id="countdown-overlay">
+    <div style="text-align:center">
+      <div style="font-family:'Unbounded',sans-serif;font-size:14px;color:var(--text-dim);margin-bottom:16px">Игра начинается через</div>
+      <div id="countdown-number" style="font-family:'Unbounded',sans-serif;font-size:96px;font-weight:900;background:linear-gradient(90deg,var(--pride1),var(--pride2),var(--pride3),var(--pride4),var(--pride5),var(--pride6));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">5</div>
+    </div>
+  </div>
+
   <!-- FINAL SCREEN -->
   <div class="overlay overlay-bg" id="final-overlay">
     <div class="card" style="text-align:center">
@@ -275,7 +285,7 @@ select.form-input{cursor:pointer}
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU"></script>
 <script>
-var WS_URL = 'ws://62.171.186.4:8090/ws';
+var WS_URL = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws';
 
 var ws = null;
 var myNick = '';
@@ -367,6 +377,12 @@ function handleMessage(msg){
       roomCode = msg.room_code;
       roomMode = msg.mode;
       showLobby(msg);
+      break;
+
+    case 'countdown':
+      hideAll();
+      document.getElementById('countdown-overlay').classList.add('visible');
+      document.getElementById('countdown-number').textContent = msg.seconds;
       break;
 
     case 'round_start':
@@ -607,7 +623,7 @@ function copyRoomLink(){
 }
 
 function hideAll(){
-  ['menu-overlay','lobby-overlay','result-overlay','final-overlay'].forEach(function(id){
+  ['menu-overlay','lobby-overlay','result-overlay','final-overlay','countdown-overlay'].forEach(function(id){
     document.getElementById(id).classList.remove('visible');
   });
   document.getElementById('map-panel').style.display = 'none';
