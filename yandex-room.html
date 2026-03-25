@@ -237,7 +237,7 @@ select.form-input{cursor:pointer}
       <div class="card-logo">Комната</div>
       <div class="room-code-big" id="lobby-code"></div>
       <div style="display:flex;gap:8px;justify-content:center;margin-bottom:16px">
-        <button class="btn btn-secondary" style="font-size:11px" onclick="copyRoomLink()">&#128203; Скопировать ссылку</button>
+        <button class="btn btn-secondary" style="font-size:11px" onclick="copyRoomLink(this)">Скопировать ссылку</button>
       </div>
       <div style="font-size:12px;color:var(--text-dim);margin-bottom:4px" id="lobby-info"></div>
       <div class="player-list" id="lobby-players"></div>
@@ -270,11 +270,11 @@ select.form-input{cursor:pointer}
 
   <!-- FINAL SCREEN -->
   <div class="overlay overlay-bg" id="final-overlay">
-    <div class="card" style="text-align:center">
-      <div style="font-family:'Unbounded',sans-serif;font-size:12px;color:var(--text-dim);margin-bottom:12px">ИТОГИ</div>
-      <div class="verdict-banner" id="final-verdict"></div>
+    <div class="card" style="text-align:center;max-width:580px">
+      <div style="font-family:'Unbounded',sans-serif;font-size:12px;color:var(--text-dim);margin-bottom:16px">ИТОГИ</div>
+      <div id="podium" style="display:flex;align-items:flex-end;justify-content:center;gap:8px;margin-bottom:24px;min-height:180px"></div>
       <table class="scoreboard" id="final-scoreboard">
-        <thead><tr><th>#</th><th>Игрок</th><th>Итого</th></tr></thead>
+        <thead><tr><th>#</th><th>Игрок</th><th>Раунды</th><th>Итого</th></tr></thead>
         <tbody id="final-scoreboard-body"></tbody>
       </table>
       <button class="btn btn-primary btn-lg" style="width:100%;margin-top:16px" onclick="location.reload()">Новая игра</button>
@@ -445,6 +445,8 @@ var guessedPlayers = [];
 function showGame(msg){
   hideAll();
   document.getElementById('map-panel').style.display = 'block';
+  document.getElementById('panorama').style.width = '100%';
+  document.getElementById('panorama').style.height = '100%';
   document.getElementById('loading-screen').classList.remove('hidden');
   document.getElementById('loading-sub').textContent = 'Раунд ' + currentRound + '/' + totalRounds;
   clearGuess();
@@ -524,10 +526,12 @@ function clearGuess(){
 function submitGuess(){
   if(!guessCoords || hasGuessed) return;
   hasGuessed = true;
-  stopTimer();
   sendMsg({type:'submit_guess', lat:guessCoords[0], lng:guessCoords[1]});
   document.getElementById('guess-btn').disabled = true;
   document.getElementById('guess-btn').textContent = 'Ожидаем...';
+  document.getElementById('map-hint').textContent = 'Ожидание других игроков...';
+  document.getElementById('map-hint').className = 'map-hint';
+  // Timer keeps running visually
 }
 
 function showRoundResult(msg){
@@ -541,7 +545,7 @@ function showRoundResult(msg){
   resultMap = new ymaps.Map('result-map', {center:[loc.lat,loc.lng], zoom:12, controls:[]});
 
   // Real location marker
-  resultMap.geoObjects.add(new ymaps.Placemark([loc.lat,loc.lng], {iconCaption:'&#9733;'}, {preset:'islands#greenCircleDotIcon'}));
+  resultMap.geoObjects.add(new ymaps.Placemark([loc.lat,loc.lng], {}, {preset:'islands#greenCircleDotIcon'}));
 
   // Player guesses
   msg.results.forEach(function(r){
@@ -591,22 +595,45 @@ function showFinal(leaderboard){
   hideAll();
   document.getElementById('final-overlay').classList.add('visible');
 
-  var winner = leaderboard[0];
-  var vb = document.getElementById('final-verdict');
-  if(winner.nickname === myNick){
-    vb.textContent = 'Ты победил!';
-    vb.className = 'verdict-banner verdict-slonyara';
-  } else {
-    vb.textContent = winner.nickname + ' победил!';
-    vb.className = 'verdict-banner verdict-good';
-  }
+  // Podium (top 3)
+  var podium = document.getElementById('podium');
+  podium.innerHTML = '';
+  var podiumOrder = [1, 0, 2]; // 2nd, 1st, 3rd
+  var podiumHeights = [120, 160, 90];
+  var podiumColors = ['linear-gradient(180deg,#c0c0c0,#a8a8a8)', 'linear-gradient(180deg,#ffd700,#daa520)', 'linear-gradient(180deg,#cd7f32,#a0522d)'];
+  var medals = ['\u{1F947}', '\u{1F948}', '\u{1F949}'];
 
+  podiumOrder.forEach(function(idx){
+    var p = leaderboard[idx];
+    if(!p) return;
+    var col = document.createElement('div');
+    col.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:6px;';
+    var nameEl = document.createElement('div');
+    nameEl.style.cssText = 'font-family:Unbounded,sans-serif;font-size:12px;font-weight:700;color:var(--text);max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+    nameEl.textContent = p.nickname;
+    var scoreEl = document.createElement('div');
+    scoreEl.style.cssText = 'font-family:Unbounded,sans-serif;font-size:11px;color:var(--text-dim);';
+    scoreEl.textContent = p.total_score.toLocaleString('ru');
+    var bar = document.createElement('div');
+    bar.style.cssText = 'width:80px;height:'+podiumHeights[idx]+'px;background:'+podiumColors[idx]+';border-radius:8px 8px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;';
+    var medalEl = document.createElement('div');
+    medalEl.style.cssText = 'font-size:28px;';
+    medalEl.textContent = medals[idx];
+    bar.appendChild(medalEl);
+    col.appendChild(nameEl);
+    col.appendChild(scoreEl);
+    col.appendChild(bar);
+    podium.appendChild(col);
+  });
+
+  // Scoreboard with per-round scores
   var tbody = document.getElementById('final-scoreboard-body');
   tbody.innerHTML = '';
   leaderboard.forEach(function(p, i){
     var tr = document.createElement('tr');
-    var medal = i===0?'&#129351; ':i===1?'&#129352; ':i===2?'&#129353; ':'';
-    tr.innerHTML = '<td class="rank">'+(i+1)+'</td><td><span class="color-dot" style="background:'+(playerColors[p.nickname]||'#888')+'"></span>'+medal+p.nickname+(p.is_creator?' &#128081;':'')+'</td><td class="score-cell" style="color:var(--pride5)">'+p.total_score.toLocaleString('ru')+'</td>';
+    var medal = i===0?'\u{1F947} ':i===1?'\u{1F948} ':i===2?'\u{1F949} ':'';
+    var roundScores = p.scores.map(function(s){ return s.toLocaleString('ru'); }).join(' / ');
+    tr.innerHTML = '<td class="rank">'+(i+1)+'</td><td><span class="color-dot" style="background:'+(playerColors[p.nickname]||'#888')+'"></span>'+medal+p.nickname+'</td><td style="font-size:11px;color:var(--text-dim)">'+roundScores+'</td><td class="score-cell" style="color:var(--pride5)">'+p.total_score.toLocaleString('ru')+'</td>';
     tbody.appendChild(tr);
   });
 }
@@ -614,12 +641,26 @@ function showFinal(leaderboard){
 function sendStart(){ sendMsg({type:'start_game'}); }
 function sendNextRound(){ sendMsg({type:'next_round'}); }
 
-function copyRoomLink(){
-  var url = window.location.origin + window.location.pathname + '?room=' + roomCode;
-  navigator.clipboard.writeText(url).then(function(){
-    event.target.textContent = '&#10003; Скопировано!';
-    setTimeout(function(){ event.target.textContent = '&#128203; Скопировать ссылку'; }, 2000);
-  });
+function copyRoomLink(btn){
+  var url = window.location.origin + '/?room=' + roomCode;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent = 'Скопировано!';
+      setTimeout(function(){ btn.textContent = 'Скопировать ссылку'; }, 2000);
+    }).catch(function(){ fallbackCopy(url, btn); });
+  } else { fallbackCopy(url, btn); }
+}
+function fallbackCopy(text, btn){
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand('copy');
+  document.body.removeChild(ta);
+  btn.textContent = 'Скопировано!';
+  setTimeout(function(){ btn.textContent = 'Скопировать ссылку'; }, 2000);
 }
 
 function hideAll(){
