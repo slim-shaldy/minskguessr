@@ -283,7 +283,7 @@ select.form-input{cursor:pointer}
 
 </div>
 
-<script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 <script>
 var WS_URL = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws';
 
@@ -482,7 +482,7 @@ function showGame(msg){
     setTimeout(function(){document.getElementById('loading-screen').classList.add('hidden');},400);
     startTimer();
   }, function(err){
-    console.error('Panorama locate error:', err);
+    console.error('Panorama locate error:', JSON.stringify(err), err.message, err);
     document.getElementById('loading-screen').classList.add('hidden');
     startTimer();
   });
