@@ -149,7 +149,6 @@ select.form-input{cursor:pointer}
 
   <div id="panorama"></div>
   <button id="reset-pano-btn" class="btn btn-secondary" onclick="resetPanorama()" style="position:absolute;top:14px;left:14px;z-index:50;font-size:11px;padding:8px 14px;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,0.15);display:none">&#8617; На старт</button>
-<div id="hint-used-badge" style="position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:50;font-size:11px;padding:6px 14px;background:rgba(255,140,0,0.92);color:#fff;border-radius:20px;font-family:'Unbounded',sans-serif;font-weight:700;backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,0.15);display:none">&#128064; Подсказка использована −1000</div>
 
   <div class="players-guessed" id="players-guessed"></div>
 
@@ -311,6 +310,7 @@ var totalRounds = 5;
 var currentRound = 0;
 var hasGuessed = false;
 var hintUsedThisRound = false;
+var hintObserver = null;
 var pendingLeaderboard = null;
 var playerColors = {};
 var colorPalette = ['#ff3c5f','#0077ff','#00b86e','#ff8c00','#9b30ff','#f5c800','#00bcd4','#e91e63'];
@@ -423,6 +423,7 @@ function handleMessage(msg){
 
 function showLobby(msg){
   hideAll();
+  document.querySelector('.header').style.display = '';
   document.getElementById('lobby-overlay').classList.add('visible');
   document.getElementById('lobby-code').textContent = roomCode;
   var modeLabel = msg.mode === 'center' ? 'Центр' : 'Весь Минск';
@@ -453,6 +454,7 @@ var guessedPlayers = [];
 
 function showGame(msg){
   hideAll();
+  document.querySelector('.header').style.display = '';
   document.getElementById('map-panel').style.display = 'block';
   document.getElementById('panorama').style.width = '100%';
   document.getElementById('panorama').style.height = '100%';
@@ -467,6 +469,7 @@ function showGame(msg){
 
   hintUsedThisRound = false;
   document.getElementById('hint-used-badge').style.display = 'none';
+  if(hintObserver){ hintObserver.disconnect(); hintObserver = null; }
   if(guessMap){guessMap.setCenter([53.904,27.562]);guessMap.setZoom(10);}
 
   console.log('Locating panorama at', msg.location.lat, msg.location.lng);
@@ -488,14 +491,6 @@ function showGame(msg){
     });
     panoPlayer.events.add('panoramachange', function(){
       document.getElementById('reset-pano-btn').style.display = 'block';
-    });
-    // Track clicks on panorama objects (house numbers, POIs = hints)
-    panoPlayer.events.add('objectclick', function(e){
-      if(!hintUsedThisRound){
-        hintUsedThisRound = true;
-        document.getElementById('hint-used-badge').style.display = 'block';
-        console.log('Hint used: clicked panorama object');
-      }
     });
 
     setTimeout(function(){document.getElementById('loading-screen').classList.add('hidden');},400);
@@ -551,6 +546,10 @@ function goToFinal(){
 }
 
 function sendRestart(){
+  if(!ws || ws.readyState !== WebSocket.OPEN){
+    console.warn('WS not open, cannot restart');
+    return;
+  }
   sendMsg({type:'restart_game'});
   pendingLeaderboard = null;
   myTotalScore = 0;
@@ -641,8 +640,11 @@ function showRoundResult(msg){
 
 function showFinal(leaderboard){
   hideAll();
+  stopTimer();
   document.getElementById('final-overlay').classList.add('visible');
   document.getElementById('restart-btn').style.display = isCreator ? 'block' : 'none';
+  // Hide header during final screen (timer is irrelevant)
+  document.querySelector('.header').style.display = 'none';
 
   // Podium (top 3)
   var podium = document.getElementById('podium');
@@ -741,6 +743,18 @@ ymaps.ready(function(){
   var mapPanel = document.getElementById('map-panel');
   mapPanel.addEventListener('mouseenter', function(){setTimeout(function(){guessMap.container.fitToViewport();},300);});
   mapPanel.addEventListener('mouseleave', function(){setTimeout(function(){guessMap.container.fitToViewport();},300);});
+
+  // Observer: trigger fitToViewport when map-panel becomes visible
+  var _mapPanelObserver = new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      if(m.type === 'attributes' && m.attributeName === 'style'){
+        if(mapPanel.style.display !== 'none'){
+          setTimeout(function(){guessMap.container.fitToViewport();}, 100);
+        }
+      }
+    });
+  });
+  _mapPanelObserver.observe(mapPanel, {attributes: true});
 
   document.getElementById('loading-screen').classList.add('hidden');
 

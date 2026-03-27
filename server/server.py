@@ -193,7 +193,8 @@ async def send_round_result(room: Room):
                 "time_sec": g["time_sec"],
                 "guess_lat": g["lat"],
                 "guess_lng": g["lng"],
-                "timed_out": False
+                "timed_out": False,
+                "hint_used": g.get("hint_used", False)
             })
         else:
             results.append({
