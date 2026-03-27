@@ -149,6 +149,7 @@ select.form-input{cursor:pointer}
 
   <div id="panorama"></div>
   <button id="reset-pano-btn" class="btn btn-secondary" onclick="resetPanorama()" style="position:absolute;top:14px;left:14px;z-index:50;font-size:11px;padding:8px 14px;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,0.15);display:none">&#8617; На старт</button>
+<div id="hint-used-badge" style="position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:50;font-size:11px;padding:6px 14px;background:rgba(255,140,0,0.92);color:#fff;border-radius:20px;font-family:'Unbounded',sans-serif;font-weight:700;backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,0.15);display:none">&#128064; Подсказка использована −1000</div>
 
   <div class="players-guessed" id="players-guessed"></div>
 
@@ -256,6 +257,7 @@ select.form-input{cursor:pointer}
         <tbody id="round-scoreboard-body"></tbody>
       </table>
       <button class="btn btn-primary" style="width:100%;margin-top:12px;display:none" id="next-round-btn" onclick="sendNextRound()">Следующий раунд &#8594;</button>
+      <button class="btn btn-primary" style="width:100%;margin-top:12px;display:none" id="go-final-btn" onclick="goToFinal()">&#127942; Итоги игры</button>
       <div id="result-wait" style="font-size:12px;color:var(--text-dim);margin-top:12px">Ждём создателя...</div>
     </div>
   </div>
@@ -277,13 +279,16 @@ select.form-input{cursor:pointer}
         <thead><tr><th>#</th><th>Игрок</th><th>Раунды</th><th>Итого</th></tr></thead>
         <tbody id="final-scoreboard-body"></tbody>
       </table>
-      <button class="btn btn-primary btn-lg" style="width:100%;margin-top:16px" onclick="location.reload()">Новая игра</button>
+      <div style="display:flex;gap:10px;margin-top:16px">
+        <button class="btn btn-primary btn-lg" style="flex:1" id="restart-btn" onclick="sendRestart()">&#128257; Ещё раунд</button>
+        <button class="btn btn-secondary btn-lg" style="flex:1" onclick="location.reload()">Новая игра</button>
+      </div>
     </div>
   </div>
 
 </div>
 
-<script src="https://api-maps.yandex.ru/2.1/?apikey=480b17c3-63d4-4b93-8d26-03f7a1afcafd&lang=ru_RU"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d5cc97e3-29bb-4142-bf04-aea0857d0829&lang=ru_RU"></script>
 <script>
 var WS_URL = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws';
 
@@ -305,6 +310,8 @@ var currentLocation = null;
 var totalRounds = 5;
 var currentRound = 0;
 var hasGuessed = false;
+var hintUsedThisRound = false;
+var pendingLeaderboard = null;
 var playerColors = {};
 var colorPalette = ['#ff3c5f','#0077ff','#00b86e','#ff8c00','#9b30ff','#f5c800','#00bcd4','#e91e63'];
 
@@ -402,7 +409,9 @@ function handleMessage(msg){
       break;
 
     case 'game_over':
-      showFinal(msg.leaderboard);
+      if(msg.you_are_creator !== undefined) isCreator = msg.you_are_creator;
+      pendingLeaderboard = msg.leaderboard;
+      // Don't show final yet — wait for user to click "Итоги" on last round result
       break;
 
     case 'error':
@@ -456,6 +465,8 @@ function showGame(msg){
   buildRoundDots();
   updateRoundDots();
 
+  hintUsedThisRound = false;
+  document.getElementById('hint-used-badge').style.display = 'none';
   if(guessMap){guessMap.setCenter([53.904,27.562]);guessMap.setZoom(10);}
 
   console.log('Locating panorama at', msg.location.lat, msg.location.lng);
@@ -477,6 +488,14 @@ function showGame(msg){
     });
     panoPlayer.events.add('panoramachange', function(){
       document.getElementById('reset-pano-btn').style.display = 'block';
+    });
+    // Track clicks on panorama objects (house numbers, POIs = hints)
+    panoPlayer.events.add('objectclick', function(e){
+      if(!hintUsedThisRound){
+        hintUsedThisRound = true;
+        document.getElementById('hint-used-badge').style.display = 'block';
+        console.log('Hint used: clicked panorama object');
+      }
     });
 
     setTimeout(function(){document.getElementById('loading-screen').classList.add('hidden');},400);
@@ -527,10 +546,21 @@ function clearGuess(){
   document.getElementById('map-hint').className = 'map-hint';
 }
 
+function goToFinal(){
+  if(pendingLeaderboard) showFinal(pendingLeaderboard);
+}
+
+function sendRestart(){
+  sendMsg({type:'restart_game'});
+  pendingLeaderboard = null;
+  myTotalScore = 0;
+  document.getElementById('total-score').textContent = '0';
+}
+
 function submitGuess(){
   if(!guessCoords || hasGuessed) return;
   hasGuessed = true;
-  sendMsg({type:'submit_guess', lat:guessCoords[0], lng:guessCoords[1]});
+  sendMsg({type:'submit_guess', lat:guessCoords[0], lng:guessCoords[1], hint_used:hintUsedThisRound});
   document.getElementById('guess-btn').disabled = true;
   document.getElementById('guess-btn').textContent = 'Ожидаем...';
   document.getElementById('map-hint').textContent = 'Ожидание других игроков...';
@@ -582,22 +612,37 @@ function showRoundResult(msg){
   });
   document.getElementById('total-score').textContent = myTotalScore.toLocaleString('ru');
 
-  // Next round button
-  if(isCreator && !msg.is_last_round){
-    document.getElementById('next-round-btn').style.display = 'block';
-    document.getElementById('result-wait').style.display = 'none';
-  } else if(!msg.is_last_round) {
-    document.getElementById('next-round-btn').style.display = 'none';
-    document.getElementById('result-wait').style.display = 'block';
+  // Next round / go to final buttons
+  var nextBtn = document.getElementById('next-round-btn');
+  var finalBtn = document.getElementById('go-final-btn');
+  var waitEl = document.getElementById('result-wait');
+
+  nextBtn.style.display = 'none';
+  finalBtn.style.display = 'none';
+  waitEl.style.display = 'none';
+
+  if(!msg.is_last_round){
+    if(isCreator){
+      nextBtn.style.display = 'block';
+    } else {
+      waitEl.style.display = 'block';
+    }
   } else {
-    document.getElementById('next-round-btn').style.display = 'none';
-    document.getElementById('result-wait').style.display = 'none';
+    // Last round — show "Итоги" button for everyone (leaderboard arrives via game_over)
+    // Show it once pendingLeaderboard is ready, or after a short delay
+    var checkFinal = setInterval(function(){
+      if(pendingLeaderboard){
+        clearInterval(checkFinal);
+        finalBtn.style.display = 'block';
+      }
+    }, 200);
   }
 }
 
 function showFinal(leaderboard){
   hideAll();
   document.getElementById('final-overlay').classList.add('visible');
+  document.getElementById('restart-btn').style.display = isCreator ? 'block' : 'none';
 
   // Podium (top 3)
   var podium = document.getElementById('podium');
@@ -673,6 +718,7 @@ function hideAll(){
   });
   document.getElementById('map-panel').style.display = 'none';
   document.getElementById('players-guessed').innerHTML = '';
+  document.getElementById('hint-used-badge').style.display = 'none';
 }
 
 function toggleMap(){

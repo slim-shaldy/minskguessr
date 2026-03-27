@@ -229,7 +229,15 @@ async def send_round_result(room: Room):
                 "is_creator": p.is_creator
             })
         leaderboard.sort(key=lambda x: x["total_score"], reverse=True)
-        await broadcast(room, {"type": "game_over", "leaderboard": leaderboard})
+        # Send game_over to each player with their is_creator flag
+        data_base = {"type": "game_over", "leaderboard": leaderboard}
+        for p in room.players.values():
+            msg_out = dict(data_base)
+            msg_out["you_are_creator"] = p.is_creator
+            try:
+                await p.ws.send_text(json.dumps(msg_out))
+            except Exception:
+                pass
 
 
 # --- WebSocket handler ---
@@ -312,6 +320,9 @@ async def websocket_endpoint(ws: WebSocket):
                 glat, glng = float(msg["lat"]), float(msg["lng"])
                 dist = haversine(glat, glng, loc["lat"], loc["lng"])
                 base_score = calc_score(dist, player_room.mode)
+                hint_used = bool(msg.get("hint_used", False))
+                if hint_used:
+                    base_score = max(0, base_score - 1000)
                 final_score = round(base_score * mult)
 
                 while len(p.guesses) <= player_room.current_round:
@@ -319,7 +330,8 @@ async def websocket_endpoint(ws: WebSocket):
                 p.guesses[player_room.current_round] = {
                     "lat": glat, "lng": glng,
                     "dist": dist, "score": final_score,
-                    "time_sec": time_sec
+                    "time_sec": time_sec,
+                    "hint_used": hint_used
                 }
                 while len(p.scores) <= player_room.current_round:
                     p.scores.append(0)
@@ -340,6 +352,27 @@ async def websocket_endpoint(ws: WebSocket):
                 player_room.current_round += 1
                 if player_room.current_round < player_room.num_rounds:
                     await start_round(player_room)
+
+            elif t == "restart_game":
+                if not player_room or player_room.status != "finished":
+                    continue
+                p = player_room.players.get(player_id)
+                if not p or not p.is_creator:
+                    await send(ws, {"type": "error", "message": "Только создатель может перезапустить"})
+                    continue
+                # Reset room state
+                player_room.status = "lobby"
+                player_room.current_round = 0
+                player_room.locations = pick_locations(player_room.mode, player_room.num_rounds)
+                player_room.round_start_time = 0
+                if player_room.round_timer_task and not player_room.round_timer_task.done():
+                    player_room.round_timer_task.cancel()
+                player_room.round_timer_task = None
+                # Reset scores and guesses for all players
+                for pl in player_room.players.values():
+                    pl.scores = []
+                    pl.guesses = []
+                await broadcast(player_room, lobby_update(player_room))
 
     except WebSocketDisconnect:
         if player_room and player_id in player_room.players:
